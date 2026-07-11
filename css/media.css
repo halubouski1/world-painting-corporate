@@ -436,3 +436,62 @@
         gap: 7px;
     }
 }
+
+@media (max-width: 1430px) {
+    /* header */
+    .nav-list__link {
+        font-size: 11px;
+    }
+
+    /* hero */
+    .hero__side-nav {
+        display: none;
+    }
+
+    .hero__painting img {
+        width: 500px;
+        height: auto;
+    }
+
+    /* collectibles */
+    .collectibles__container {
+        --container-padding: 100px;
+    }
+
+    .collectible-card__desc br {
+        display: none;
+    }
+
+    /* painting */
+    .painting__morricone .painting__image img {
+        width: 700px;
+        height: auto;
+    }
+
+    /* everest */
+    .everest__image img {
+        height: 400px;
+        width: auto;
+    }
+
+    .painting__image img {
+        width: 512px;
+        height: auto;
+    }
+
+    .painting__fenomeno .painting__image img {
+        width: 600px;
+        height: auto;
+    }
+}
+
+@media (max-width: 1270px) {
+    .collectibles__container {
+        column-gap: 100px;
+        --container-padding: 50px;
+    }
+
+    .painting__fenomeno .painting__image img {
+        width: 500px;
+    }
+}
