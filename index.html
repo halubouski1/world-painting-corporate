@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/media.css">
+      <script>document.documentElement.style.setProperty("--fixed-vh", window.innerHeight + "px");</script>
+      <title>Razumovsky Construction</title>
+</head>
+<body>
+
+<header class="header">
+    <div class="container header__container">
+        <a href="#" class="header__logo" aria-label="World Painting">
+            <img src="assets/img/logo.svg" alt="World Painting" width="118" height="53">
+        </a>
+
+        <nav class="header__nav">
+            <ul class="nav-list">
+                <li class="nav-list__item"><a href="#" class="nav-list__link">Faces of Humanity &amp; Influence</a></li>
+                <li class="nav-list__item"><a href="#" class="nav-list__link">Recognition and Achievements</a></li>
+                <li class="nav-list__item"><a href="#" class="nav-list__link">The Coin of Peace</a></li>
+                <li class="nav-list__item"><a href="#" class="nav-list__link">The Collection</a></li>
+                <li class="nav-list__item"><a href="#" class="nav-list__link">Beyond Earth</a></li>
+                <li class="nav-list__item"><a href="#" class="nav-list__link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <button class="burger" type="button" aria-label="Open menu">
+            <img src="assets/icons/burger.svg" alt="">
+        </button>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero__painting">
+        <img src="assets/img/hero-painting.jpg" alt="World Painting coin signed by Andy Serkis" width="776" height="800">
+    </div>
+
+    <ul class="hero__side-nav">
+        <li class="hero__side-nav-item"><a href="#" class="hero__side-nav-link">Influence</a></li>
+        <li class="hero__side-nav-item"><a href="#" class="hero__side-nav-link">Artists</a></li>
+        <li class="hero__side-nav-item"><a href="#" class="hero__side-nav-link">Champions of the ring</a></li>
+        <li class="hero__side-nav-item"><a href="#" class="hero__side-nav-link">Queens of the ring</a></li>
+        <li class="hero__side-nav-item"><a href="#" class="hero__side-nav-link">Champions beyond borders</a></li>
+        <li class="hero__side-nav-item"><a href="#" class="hero__side-nav-link">Visionaries of cinema</a></li>
+    </ul>
+
+    <div class="hero__bottom">
+        <div class="hero__intro">
+            <img class="hero__signature" src="assets/img/hero-signature.svg" alt="" width="263" height="159">
+            <h1 class="hero__title">Art Collectibles</h1>
+        </div>
+
+        <p class="hero__brand">
+            <span class="hero__brand-by">by</span>
+            <span class="hero__brand-name">World Painting</span>
+        </p>
+    </div>
+</section>
+
+<section class="collectibles">
+    <div class="container collectibles__container" data-aos="fade-up">
+        <article class="collectible-card">
+            <h2 class="collectible-card__title">
+                World Painting with signature of Jennifer Lopez
+            </h2>
+            <p class="collectible-card__desc">
+                Exclusive collectible World Painting art object featuring the personal <br> signature of Jennifer Lopez on the official project coin.
+            </p>
+            <div class="collectible-card__divider"></div>
+            <div class="collectible-card__row">
+                <div class="collectible-card__purchase">
+                    <span class="collectible-card__label">Collector's Price</span>
+                    <p class="collectible-card__price">$ 2 000</p>
+                    <button class="collectible-card__button" type="button">
+                        <span>Buy now</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.3346 2.6665V7.33317C13.3346 8.04041 13.0537 8.71869 12.5536 9.21879C12.0535 9.71889 11.3752 9.99984 10.668 9.99984H2.66797" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.0013 6.6665L2.66797 9.99984L6.0013 13.3332" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    </button>
+                </div>
+                <img class="collectible-card__sign" src="assets/img/collectible-card-sign-1.svg" alt="Jennifer Lopez signature" width="275" height="184">
+            </div>
+            <img class="collectible-card__image" src="assets/img/collectible-card-1.jpg" alt="World Painting collectible signed by Jennifer Lopez" width="585" height="829">
+        </article>
+
+        <article class="collectible-card">
+            <h2 class="collectible-card__title">
+                World Painting with signature of Manny Pacquiao
+            </h2>
+            <p class="collectible-card__desc">
+                Exclusive collectible World Painting art object featuring the personal signature of <br> Manny Pacquiao on a World Painting fragment. Eight-division world boxing champion and one of the greatest fighters in boxing history.
+            </p>
+            <div class="collectible-card__divider"></div>
+            <div class="collectible-card__row">
+                <div class="collectible-card__purchase">
+                    <span class="collectible-card__label">Collector's Price</span>
+                    <p class="collectible-card__price">$ 700</p>
+                    <button class="collectible-card__button" type="button">
+                        <span>Buy now</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.3346 2.6665V7.33317C13.3346 8.04041 13.0537 8.71869 12.5536 9.21879C12.0535 9.71889 11.3752 9.99984 10.668 9.99984H2.66797" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.0013 6.6665L2.66797 9.99984L6.0013 13.3332" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    </button>
+                </div>
+                <img class="collectible-card__sign" src="assets/img/collectible-card-sign-2.svg" alt="Manny Pacquiao signature" width="284" height="189">
+            </div>
+            <img class="collectible-card__image" src="assets/img/collectible-card-2.jpg" alt="World Painting collectible signed by Manny Pacquiao" width="551" height="829">
+        </article>
+    </div>
+</section>
+
+<section class="painting">
+    <div class="container painting__top" data-aos="fade-up">
+        <h2 class="painting__title">
+            World Painting with signature of Andy Serkis
+        </h2>
+        <a href="#" class="painting__logo" aria-label="World Painting">
+            <img src="assets/img/logo.svg" alt="World Painting" width="118" height="53">
+        </a>
+    </div>
+
+    <div class="painting__image" data-aos="fade-up">
+        <img src="assets/img/andy-serkis-collectible.jpg" alt="World Painting collectible signed by Andy Serkis" width="816" height="841">
+    </div>
+
+    <div class="container painting__bottom" data-aos="fade-up">
+        <div class="painting__intro">
+            <img class="painting__signature" src="assets/img/andy-serkis-signature.svg" alt="" width="263" height="159">
+            <p class="painting__desc">
+                Exclusive collectible World Painting art object featuring the personal signature of Andy Serkis as Supreme Leader Snoke from Star Wars on the official World Painting coin.
+            </p>
+        </div>
+
+        <div class="painting__buy">
+            <span class="painting__label">Collector's Price</span>
+            <p class="painting__price">$ 1 000</p>
+            <button class="painting__button collectible-card__button" type="button">
+                <span>Buy now</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.3346 2.6665V7.33317C13.3346 8.04041 13.0537 8.71869 12.5536 9.21879C12.0535 9.71889 11.3752 9.99984 10.668 9.99984H2.66797" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6.0013 6.6665L2.66797 9.99984L6.0013 13.3332" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="collectibles">
+    <div class="container collectibles__container" data-aos="fade-up">
+        <article class="collectible-card">
+            <h2 class="collectible-card__title">
+                World Painting with signature of Esai Morales
+            </h2>
+            <p class="collectible-card__desc">
+                Exclusive collectible World Painting art object featuring the personal <br> signature of Esai Morales on the official World Painting coin. Known <br> for his role in Mission: Impossible - The Final Reckoning.
+            </p>
+            <div class="collectible-card__divider"></div>
+            <div class="collectible-card__row">
+                <div class="collectible-card__purchase">
+                    <span class="collectible-card__label">Collector's Price</span>
+                    <p class="collectible-card__price">$ 1 000</p>
+                    <button class="collectible-card__button" type="button">
+                        <span>Buy now</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.3346 2.6665V7.33317C13.3346 8.04041 13.0537 8.71869 12.5536 9.21879C12.0535 9.71889 11.3752 9.99984 10.668 9.99984H2.66797" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.0013 6.6665L2.66797 9.99984L6.0013 13.3332" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    </button>
+                </div>
+                <img class="collectible-card__sign" src="assets/img/collectible-card-sign-3.svg" alt="Esai Morales signature" width="275" height="183">
+            </div>
+            <img class="collectible-card__image" src="assets/img/collectible-card-3.jpg" alt="World Painting collectible signed by Esai Morales" width="610" height="640">
+        </article>
+
+        <article class="collectible-card">
+            <h2 class="collectible-card__title">
+                <span class="collectible-card__title-accent">World Painting</span> with signature of <span class="collectible-card__title-accent">Adrien Brody</span>
+            </h2>
+            <p class="collectible-card__desc">
+                Exclusive collectible World Painting art object featuring the personal <br> signature of Adrien Brody on the official project coin. Adrien Brody is <br> a two-time Academy Award winner for Best Actor.
+            </p>
+            <div class="collectible-card__divider"></div>
+            <div class="collectible-card__row">
+                <div class="collectible-card__purchase">
+                    <span class="collectible-card__label">Collector's Price</span>
+                    <p class="collectible-card__price">$ 2 000</p>
+                    <button class="collectible-card__button" type="button">
+                        <span>Buy now</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.3346 2.6665V7.33317C13.3346 8.04041 13.0537 8.71869 12.5536 9.21879C12.0535 9.71889 11.3752 9.99984 10.668 9.99984H2.66797" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.0013 6.6665L2.66797 9.99984L6.0013 13.3332" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    </button>
+                </div>
+                <img class="collectible-card__sign" src="assets/img/collectible-card-sign-4.svg" alt="Adrien Brody signature" width="223" height="183">
+            </div>
+            <img class="collectible-card__image" src="assets/img/collectible-card-4.jpg" alt="World Painting collectible signed by Adrien Brody" width="656" height="639">
+        </article>
+    </div>
+</section>
+
+<section class="painting painting__fenomeno">
+    <div class="container painting__top" data-aos="fade-up">
+        <h2 class="painting__title">
+            World Painting with signature of Ronaldo «El Fenomeno»
+        </h2>
+        <a href="#" class="painting__logo" aria-label="World Painting">
+            <img src="assets/img/logo.svg" alt="World Painting" width="118" height="53">
+        </a>
+    </div>
+
+    <div class="painting__image" data-aos="fade-up">
+        <img src="assets/img/fenomeno-collectible.jpg" alt="World Painting collectible signed by Ronaldo El Fenomeno" width="930" height="799">
+    </div>
+
+    <div class="container painting__bottom" data-aos="fade-up">
+        <div class="painting__intro">
+            <img class="painting__signature" src="assets/img/fenomeno-signature.svg" alt="" width="186" height="186">
+            <p class="painting__desc">
+                Exclusive collectible World Painting art object featuring the personal signature of Ronaldo «El Fenomeno» on the official World Painting coin. One of the greatest footballers of all time.
+            </p>
+        </div>
+
+        <div class="painting__buy">
+            <span class="painting__label">Collector's Price</span>
+            <p class="painting__price">$ 1 000</p>
+            <button class="painting__button collectible-card__button" type="button">
+                <span>Buy now</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.3346 2.6665V7.33317C13.3346 8.04041 13.0537 8.71869 12.5536 9.21879C12.0535 9.71889 11.3752 9.99984 10.668 9.99984H2.66797" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6.0013 6.6665L2.66797 9.99984L6.0013 13.3332" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="collectibles" data-aos="fade-up">
+    <div class="container collectibles__container">
+        <article class="collectible-card">
+            <h2 class="collectible-card__title">
+                World Painting with signature of Baigali Serkebaev
+            </h2>
+            <p class="collectible-card__desc">
+                Exclusive collectible World Painting art object featuring the <br> personal signature of Baigali Serkebaev, founder of A'Studio, <br> on the official World Painting coin.
+            </p>
+            <div class="collectible-card__divider"></div>
+            <div class="collectible-card__row">
+                <div class="collectible-card__purchase">
+                    <span class="collectible-card__label">Collector's Price</span>
+                    <p class="collectible-card__price">$ 1 000</p>
+                    <button class="collectible-card__button" type="button">
+                        <span>Buy now</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.3346 2.6665V7.33317C13.3346 8.04041 13.0537 8.71869 12.5536 9.21879C12.0535 9.71889 11.3752 9.99984 10.668 9.99984H2.66797" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.0013 6.6665L2.66797 9.99984L6.0013 13.3332" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    </button>
+                </div>
+                <img class="collectible-card__sign" src="assets/img/collectible-card-sign-5.svg" alt="Baigali Serkebaev signature" width="275" height="184">
+            </div>
+            <img class="collectible-card__image" src="assets/img/collectible-card-5.jpg" alt="World Painting collectible signed by Baigali Serkebaev" width="641" height="659">
+        </article>
+
+        <article class="collectible-card">
+            <h2 class="collectible-card__title">
+                World Painting with signature of Craig David
+            </h2>
+            <p class="collectible-card__desc">
+                Exclusive collectible World Painting art object featuring the personal <br> signature of Craig David on the official World Painting coin. Internationally <br> acclaimed British singer, songwriter, and music producer.
+            </p>
+            <div class="collectible-card__divider"></div>
+            <div class="collectible-card__row">
+                <div class="collectible-card__purchase">
+                    <span class="collectible-card__label">Collector's Price</span>
+                    <p class="collectible-card__price">$ 1 000</p>
+                    <button class="collectible-card__button" type="button">
+                        <span>Buy now</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.3346 2.6665V7.33317C13.3346 8.04041 13.0537 8.71869 12.5536 9.21879C12.0535 9.71889 11.3752 9.99984 10.668 9.99984H2.66797" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.0013 6.6665L2.66797 9.99984L6.0013 13.3332" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    </button>
+                </div>
+                <img class="collectible-card__sign" src="assets/img/collectible-card-sign-6.svg" alt="Craig David signature" width="289" height="193">
+            </div>
+            <img class="collectible-card__image" src="assets/img/collectible-card-6.jpg" alt="World Painting collectible signed by Craig David" width="626" height="770">
+        </article>
+    </div>
+</section>
+
+<section class="painting painting__morricone">
+    <div class="container painting__top" data-aos="fade-up">
+        <h2 class="painting__title">
+            World Painting with signature of Ennio Morricone
+        </h2>
+        <a href="#" class="painting__logo" aria-label="World Painting">
+            <img src="assets/img/logo.svg" alt="World Painting" width="118" height="53">
+        </a>
+    </div>
+
+    <div class="painting__image" data-aos="fade-up">
+        <img src="assets/img/morricone-collectible.jpg" alt="World Painting collectible signed by Ennio Morricone" width="1237" height="667">
+    </div>
+
+    <div class="container painting__bottom" data-aos="fade-up">
+        <div class="painting__intro">
+            <img class="painting__signature" src="assets/img/morricone-signature.svg" alt="" width="246" height="165">
+            <p class="painting__desc">
+                Exclusive collectible World Painting art object featuring the personal signature of Ennio Morricone on the official World Painting coin. Legendary Italian composer and Academy Award winner.
+            </p>
+        </div>
+
+        <div class="painting__buy">
+            <span class="painting__label">Collector's Price</span>
+            <p class="painting__price">$ 1 000</p>
+            <button class="painting__button collectible-card__button" type="button">
+                <span>Buy now</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.3346 2.6665V7.33317C13.3346 8.04041 13.0537 8.71869 12.5536 9.21879C12.0535 9.71889 11.3752 9.99984 10.668 9.99984H2.66797" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6.0013 6.6665L2.66797 9.99984L6.0013 13.3332" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="everest">
+    <div class="container">
+        <div class="everest__top" data-aos="fade-up">
+            <div class="everest__intro">
+                <h2 class="everest__title">World Painting expedition artifact of Mount Everest</h2>
+                <button class="everest__button collectible-card__button" type="button">
+                    <span>Buy now</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.3346 2.6665V7.33317C13.3346 8.04041 13.0537 8.71869 12.5536 9.21879C12.0535 9.71889 11.3752 9.99984 10.668 9.99984H2.66797" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.0013 6.6665L2.66797 9.99984L6.0013 13.3332" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="everest__info">
+                <p class="everest__desc">Collectible World Painting expedition artifact that reached the summit of Mount Everest together with Maxut Zhumayev.</p>
+                <div class="everest__divider"></div>
+                <div class="everest__price-group">
+                    <span class="everest__label">Collector's Price</span>
+                    <p class="everest__price">$ 1 000</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="everest__image" data-aos="fade-up">
+            <img src="assets/img/everest-collectible.jpg" alt="World Painting expedition artifact of Mount Everest" width="1544" height="661">
+        </div>
+    </div>
+</section>
+
+<section class="product-slider" data-aos="fade-up">
+    <div class="container">
+        <div class="product-slider__divider"></div>
+
+        <div class="product-slider__body">
+            <div class="swiper product-slider__swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide product-card product-card--wide">
+                        <div class="product-card__image">
+                            <img src="assets/img/product-slider-1.jpg" alt="«The Shanyrak of the World» — a symbolic World Painting" width="853" height="593">
+                        </div>
+                        <h3 class="product-card__title">«The Shanyrak of the World» - a symbolic World Painting</h3>
+                        <p class="product-card__desc">«The Shanyrak of the World» - a symbolic World Painting art object uniting the flags of countries from around the world in a single artistic composition. Created by participants from different nations, the object became a visual symbol of peace, cultural diversity, and the unity of humanity.</p>
+                        <div class="product-card__divider"></div>
+                        <span class="product-card__label">Collector's Price</span>
+                        <p class="product-card__price">$ 10 000</p>
+                    </div>
+
+                    <div class="swiper-slide product-card product-card--narrow">
+                        <div class="product-card__image">
+                            <img src="assets/img/product-slider-2.jpg" alt="Official World Painting collectible T-shirt" width="608" height="917">
+                        </div>
+                        <h3 class="product-card__title">Official World Painting collectible T-shirt</h3>
+                        <p class="product-card__desc">Official World Painting collectible T-shirt featuring the iconic World Painting artwork print, created in collaboration with the Saber brand.</p>
+                        <div class="product-card__divider"></div>
+                        <span class="product-card__label">Collector's Price</span>
+                        <p class="product-card__price">$ 100</p>
+                    </div>
+
+                    <div class="swiper-slide product-card product-card--wide">
+                        <div class="product-card__image">
+                            <img src="assets/img/product-slider-1.jpg" alt="«The Shanyrak of the World» — a symbolic World Painting" width="853" height="593">
+                        </div>
+                        <h3 class="product-card__title">«The Shanyrak of the World» - a symbolic World Painting</h3>
+                        <p class="product-card__desc">«The Shanyrak of the World» - a symbolic World Painting art object uniting the flags of countries from around the world in a single artistic composition. Created by participants from different nations, the object became a visual symbol of peace, cultural diversity, and the unity of humanity.</p>
+                        <div class="product-card__divider"></div>
+                        <span class="product-card__label">Collector's Price</span>
+                        <p class="product-card__price">$ 10 000</p>
+                    </div>
+
+                    <div class="swiper-slide product-card product-card--narrow">
+                        <div class="product-card__image">
+                            <img src="assets/img/product-slider-2.jpg" alt="Official World Painting collectible T-shirt" width="608" height="917">
+                        </div>
+                        <h3 class="product-card__title">Official World Painting collectible T-shirt</h3>
+                        <p class="product-card__desc">Official World Painting collectible T-shirt featuring the iconic World Painting artwork print, created in collaboration with the Saber brand.</p>
+                        <div class="product-card__divider"></div>
+                        <span class="product-card__label">Collector's Price</span>
+                        <p class="product-card__price">$ 100</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-slider__nav">
+                <button class="product-slider__button product-slider__button--prev" type="button" aria-label="Previous slide">
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M11.5 4.18164C11.7761 4.18164 12 3.95778 12 3.68164C12 3.4055 11.7761 3.18164 11.5 3.18164V3.68164V4.18164ZM0.146446 3.32809C-0.0488157 3.52335 -0.0488157 3.83993 0.146446 4.03519L3.32843 7.21717C3.52369 7.41244 3.84027 7.41244 4.03553 7.21717C4.2308 7.02191 4.2308 6.70533 4.03553 6.51007L1.20711 3.68164L4.03553 0.853214C4.2308 0.657951 4.2308 0.341369 4.03553 0.146107C3.84027 -0.0491555 3.52369 -0.0491555 3.32843 0.146107L0.146446 3.32809ZM11.5 3.68164V3.18164L0.5 3.18164V3.68164V4.18164L11.5 4.18164V3.68164Z" fill="currentColor" />
+                    </svg>
+                    <span>Previous</span>
+                </button>
+                <button class="product-slider__button product-slider__button--next" type="button" aria-label="Next slide">
+                    <span>Next</span>
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M0.5 3.18164C0.223858 3.18164 0 3.4055 0 3.68164C0 3.95778 0.223858 4.18164 0.5 4.18164V3.68164V3.18164ZM11.8536 4.03519C12.0488 3.83993 12.0488 3.52335 11.8536 3.32809L8.67157 0.146107C8.47631 -0.0491555 8.15973 -0.0491555 7.96447 0.146107C7.7692 0.341369 7.7692 0.657951 7.96447 0.853214L10.7929 3.68164L7.96447 6.51007C7.7692 6.70533 7.7692 7.02191 7.96447 7.21717C8.15973 7.41244 8.47631 7.41244 8.67157 7.21717L11.8536 4.03519ZM0.5 3.68164V4.18164H11.5V3.68164V3.18164H0.5V3.68164Z" fill="currentColor" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <img class="footer__decor" src="assets/img/footer-decor.png" alt="" width="639" height="355">
+
+    <div class="footer__head">
+        <div class="footer__top">
+            <ul class="footer__nav">
+                <li><a href="#" class="footer__nav-link">properties</a></li>
+                <li><a href="#" class="footer__nav-link">services</a></li>
+                <li><a href="#" class="footer__nav-link">contact</a></li>
+                <li><a href="#" class="footer__nav-link">team</a></li>
+            </ul>
+
+            <div class="footer__top-wrapper">
+                <div class="footer__meta">
+                    <span class="footer__copyright">© 2025</span>
+                    <a href="#" class="footer__privacy">Privacy Policy</a>
+                </div>
+    
+                <button class="footer__to-top" type="button" aria-label="Back to top">
+                        <img src="assets/icons/footer-to-top.svg" alt="" width="14" height="14">
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer__divider"></div>
+
+    <div class="footer__bottom">
+        <div class="footer__contact">
+            <a href="#" class="footer__request">
+                <span>Submit a request</span>
+                <img src="assets/icons/footer-submit-arrow.svg" alt="" width="15" height="14">
+            </a>
+            <a href="#" class="footer__dev">
+                <img src="assets/icons/dev-logo.svg" alt="Fernandes Media — Website development" width="144" height="58">
+            </a>
+        </div>
+
+        <div class="footer__info">
+            <div class="footer__info-block">
+                <div class="footer__info-head">
+                    <span class="footer__info-label">office</span>
+                    <img class="footer__info-star" src="assets/icons/footer-star-label.svg" alt="" width="19" height="19">
+                </div>
+                <span class="footer__info-value">Dubai, United Arab Emirates</span>
+            </div>
+
+            <div class="footer__info-block">
+                <div class="footer__info-head">
+                    <span class="footer__info-label">phone</span>
+                    <img class="footer__info-star" src="assets/icons/footer-star-label.svg" alt="" width="19" height="19">
+                </div>
+                <a class="footer__info-value" href="tel:+971509587009">+971 50 958 70 09</a>
+            </div>
+
+            <div class="footer__info-block">
+                <div class="footer__info-head">
+                    <span class="footer__info-label">Instagram</span>
+                    <img class="footer__info-star" src="assets/icons/footer-star-label.svg" alt="" width="19" height="19">
+                </div>
+                <a class="footer__info-value" href="#">@worldpaintingart</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
