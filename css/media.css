@@ -1,0 +1,438 @@
+@media (max-width: 1919px) {
+    :root {
+        --container-padding: 33px;
+    }
+
+    .header {
+        padding-top: 20px;
+    }
+
+    .header__logo img {
+        width: 90px;
+        height: 42px;
+    }
+
+    .nav-list__link, .hero__side-nav-link {
+        font-size: 13px;
+    }
+
+    .nav-list {
+        gap: 35px;
+    }
+
+    .burger {
+        width: 30px;
+        height: 30px;
+    }
+
+    .burger img {
+        width: 14px;
+    }
+
+    /* hero */
+    .hero__side-nav {
+        gap: 30px;
+    }
+
+    .hero__painting img {
+        width: 582px;
+        height: auto;
+    }
+
+    .hero__painting {
+        width: auto;
+    }
+
+    .hero__signature {
+        width: 200px;
+        height: auto;
+    }
+
+    .hero__intro {
+        gap: 33px;
+    }
+
+    .hero__title, .hero__brand-by, .hero__brand-name {
+        font-size: 75px;
+    }
+
+    .hero__brand-by {
+        left: 140px;
+    }
+
+    .hero__bottom {
+        bottom: 48px;
+    }
+
+    /* collectibles */
+    .collectibles {
+        padding-top: 187px;
+        padding-bottom: 55px;
+    }
+
+    .collectibles__container {
+        --container-padding: 196px;
+        /* grid-template-columns: auto auto;
+        justify-content: space-between; */
+        column-gap: 195px;
+    }
+
+    /* Card shrinks to its image width; text fills that width instead of the grid cell
+    .collectible-card__title,
+    .collectible-card__desc,
+    .collectible-card__divider,
+    .collectible-card__row {
+        width: 0;
+        min-width: 100%;
+    } */
+
+    .collectible-card__title {
+        font-size: 26px;
+        margin-bottom: 15px;
+        max-width: 357px;
+    }
+
+    .collectible-card__desc {
+        font-size: 12px;
+        margin-bottom: 22px;
+    }
+
+    .collectible-card__divider {
+        margin-bottom: 22px;
+    }
+
+    .collectible-card__label {
+        font-size: 11px;
+        margin-bottom: 7px;
+    }
+
+    .collectible-card__price {
+        font-size: 26px;
+        margin-bottom: 37px;
+    }
+
+    .collectible-card__button {
+        font-size: 13px;
+        padding: 17px 12px 17px 36px;
+        gap: 36px;
+    }
+
+    .collectible-card__button svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .collectible-card__sign {
+        width: 43%;
+        height: auto;
+    }
+
+    .collectible-card__row {
+        margin-bottom: 50px;
+    }
+
+    .collectible-card__image {
+        width: auto;
+        height: 620px;
+    }
+
+    .collectible-card__sign--brody {
+        width: 167px;
+    }
+
+    .collectible-card__image--second {
+        height: 480px;
+    }
+
+    .collectible-card__image--third {
+        width: 470px;
+        height: auto;
+    }
+
+    /* painting */
+    .painting {
+    min-height: 900px;
+    padding-top: 142px;
+    padding-bottom: 127px;
+    }
+
+    .painting__top {
+        padding-top: 50px;
+    }
+
+    .painting__title {
+        font-size: 45px;
+        max-width: 580px;
+    }
+
+    .painting__logo img {
+        width: 90px;
+        height: 42px;
+    }
+
+    .painting__image img {
+        width: 612px;
+        height: auto;
+    }
+
+    .painting__signature {
+        width: 200px;
+        height: auto;
+    }
+
+    .painting__intro {
+        gap: 26px;
+    }
+
+    .painting__desc {
+        font-size: 13px;
+        max-width: 324px;
+    }
+
+    .painting__label {
+        font-size: 12px;
+    }
+
+    .painting__price {
+        padding-top: 16px;
+        margin-top: 16px;
+        font-size: 33px;
+    }
+
+    .painting__button {
+        margin-top: 22px;
+    }
+
+    .painting__bottom {
+        padding-bottom: 48px;
+    }
+
+    .painting__fenomeno {
+        padding-top: 190px;
+        padding-bottom: 110px;
+    }
+
+    .painting__fenomeno .painting__desc {
+        max-width: 350px;
+    }
+
+    .painting__fenomeno .painting__image img {
+        width: 700px;
+        height: auto;
+    }
+
+    .painting__morricone {
+        padding-top: 230px;
+        padding-bottom: 170px;
+    }
+
+    .painting__morricone .painting__image img {
+        width: 927px;
+        height: auto;
+    }
+
+    .painting__morricone .painting__signature {
+        width: 187px;
+    }
+
+    .painting__morricone .painting__desc {
+        max-width: 380px;
+    }
+
+    /* .everest */
+    .everest {
+        padding-top: 110px;
+        padding-bottom: 30px;
+    }
+
+    .everest__title {
+        font-size: 45px;
+        max-width: 520px;
+    }
+
+    .everest__intro {
+        gap: 30px;
+    }
+
+    .everest__desc {
+        font-size: 13px;
+        max-width: 234px;
+    }
+
+    .everest__info {
+        gap: 20px;
+    }
+
+    .everest__label {
+        font-size: 12px;
+    }
+
+    .everest__price-group {
+        gap: 7px;
+    }
+
+    .everest__price {
+        font-size: 26px;
+    }
+
+    .everest__image img {
+        height: 500px;
+        width: auto;
+    }
+
+    /* .product-slider */
+    .product-slider {
+        padding-top: 80px;
+        padding-bottom: 90px;
+    }
+
+    .product-slider__divider {
+        margin-bottom: 50px;
+    }
+
+    .product-card--wide {
+        width: 640px;
+    }
+
+    .product-card--narrow {
+        width: 450px;
+    }
+
+    .product-card__image {
+        margin-bottom: 37px;
+    }
+
+    .product-card__title {
+        line-height: 110%;
+        font-size: 26px;
+        max-width: 347px;
+        margin-bottom: 15px;
+    }
+
+    .product-card__desc {
+        font-size: 13px;
+        margin-bottom: 22px;
+    }
+
+    .product-card--wide .product-card__desc {
+        max-width: 563px;
+    }
+
+    .product-card__divider {
+        margin-bottom: 22px;
+    }
+
+    .product-card__label {
+        font-size: 12px;
+        margin-bottom: 7px;
+    }
+
+    .product-card__price {
+        font-size: 26px;
+    }
+
+    .product-slider__button {
+        font-size: 12px;
+        gap: 7px;
+    }
+
+    .product-slider__button svg {
+        width: 8px;
+        height: auto;
+    }
+
+    .product-slider__nav {
+        gap: 37px;
+    }
+
+    /* footer */
+    .footer {
+        margin: 0 14px 50px;
+        padding: 35px 25px;
+    }
+
+    .footer__nav-link {
+        font-size: 45px;
+    }
+
+    .footer__nav {
+        gap: 7px;
+    }
+
+    .footer__copyright {
+        font-size: 15px;
+    }
+
+    .footer__privacy {
+        font-size: 12px;
+    }
+
+    .footer__to-top {
+        width: 45px;
+        height: 45px;
+    }
+
+    .footer__to-top svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    .footer__decor {
+        width: 480px;
+        height: auto;
+        top: 55px;
+        right: 35px;
+    }
+
+    .footer__top-wrapper {
+        gap: 220px;
+    }
+
+    .footer__head {
+        margin-bottom: 70px;
+    }
+
+    .footer__divider {
+        margin-bottom: 55px;
+    }
+
+    .footer__request {
+        font-size: 18px;
+        gap: 8px;
+    }
+
+    .footer__request img {
+        width: 10px;
+        height: 10px;
+    }
+
+    .footer__dev img {
+        width: 108px;
+        height: auto;
+    }
+
+    .footer__info-label {
+        font-size: 15px;
+    }
+
+    .footer__info-head {
+        gap: 10px;
+    }
+
+    .footer__info-star {
+        width: 14px;
+        height: 14px;
+    }
+
+    .footer__info-value {
+        font-size: 26px;
+    }
+
+    .footer__info {
+        gap: 25px;
+    }
+
+    .footer__info-block {
+        gap: 7px;
+    }
+}

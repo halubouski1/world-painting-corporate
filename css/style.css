@@ -162,7 +162,7 @@ ul {
 
 .hero__side-nav {
     position: absolute;
-    top: 370px;
+    top: 32%;
     right: var(--container-padding);
     z-index: 2;
     display: flex;
@@ -196,7 +196,7 @@ ul {
 }
 
 .hero__signature {
-    width: 210px;
+    width: 260px;
     height: auto;
 }
 
@@ -274,7 +274,7 @@ ul {
 }
 
 .collectible-card__desc {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-weight: 400;
     font-size: 17px;
     line-height: 118%;

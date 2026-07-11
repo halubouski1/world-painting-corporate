@@ -35,11 +35,16 @@ if (typeof AOS !== 'undefined') {
 if (typeof Swiper !== 'undefined') {
   new Swiper('.product-slider__swiper', {
     slidesPerView: 'auto',
-    spaceBetween: 30,
+    spaceBetween: 22,
     navigation: {
       prevEl: '.product-slider__button--prev',
       nextEl: '.product-slider__button--next',
       disabledClass: 'is-disabled',
+    },
+    breakpoints: {
+      1920: {
+        spaceBetween: 30,
+      },
     },
   });
 }
