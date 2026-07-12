@@ -95,7 +95,12 @@ if (typeof Swiper !== 'undefined') {
     if (!swiperEl) return;
     new Swiper(swiperEl, {
       slidesPerView: 2,
-      spaceBetween: 23,
+      spaceBetween: 17,
+       breakpoints: {
+      1920: {
+        spaceBetween: 23,
+      },
+    },
       loop: true,
       navigation: {
         prevEl: slider.querySelector('.voices-slider__button--prev'),
@@ -111,13 +116,36 @@ if (typeof Swiper !== 'undefined') {
 if (typeof Swiper !== 'undefined' && document.querySelector('.queens-slider__swiper')) {
   new Swiper('.queens-slider__swiper', {
     slidesPerView: 3,
-    spaceBetween: 30,
+    spaceBetween: 20,
     loop: true,
     navigation: {
       prevEl: '.queens-slider__button--prev',
       nextEl: '.queens-slider__button--next',
     },
+    breakpoints: {
+      1920: {
+        spaceBetween: 30,
+      },
+    },
   });
+}
+
+// Keep the Queens nav buttons centred on the card image as it scales / re-wraps
+const queensSlider = document.querySelector('.queens-slider');
+if (queensSlider && 'ResizeObserver' in window) {
+  const refImage = queensSlider.querySelector('.voices-card__image');
+  const navButtons = queensSlider.querySelectorAll('.queens-slider__button');
+  if (refImage && navButtons.length) {
+    const centerNav = () => {
+      // image sits at the top of the slider → its centre is half its height
+      const center = refImage.offsetHeight / 2;
+      navButtons.forEach((btn) => {
+        btn.style.top = `${center}px`;
+      });
+    };
+    // fires on first observe and whenever the image is resized (window/scale)
+    new ResizeObserver(centerNav).observe(refImage);
+  }
 }
 
 // ========================================

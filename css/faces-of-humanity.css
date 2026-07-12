@@ -267,7 +267,6 @@
 /* Group 3: grid of three, then the scattered block */
 .artists__grid {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     gap: 30px;
     margin-bottom: 125px;
@@ -356,14 +355,8 @@
     margin-bottom: 225px;
 }
 
-/* Nav buttons centered on the image (not the whole card) */
-.queens-slider__button {
-    top: 0;
-    bottom: 125px; /* height of the name + description area below the image */
-    transform: none;
-    margin-block: auto;
-}
-
+/* Nav buttons centered on the image — `top` is set by JS to the real image
+   centre (stays correct while the image scales / the text re-wraps). */
 .queens-slider__button--prev {
     left: 15px;
 }
@@ -373,11 +366,11 @@
 }
 
 .queens-slider__button--prev:hover {
-    transform: translateX(-3px);
+    transform: translateY(-50%) translateX(-3px);
 }
 
 .queens-slider__button--next:hover {
-    transform: translateX(3px);
+    transform: translateY(-50%) translateX(3px);
 }
 
 /* ==========================================================================
