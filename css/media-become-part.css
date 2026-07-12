@@ -1,0 +1,121 @@
+@media (max-width: 1919px) {
+    /* hero */
+    .become__tagline {
+        font-size: 12px;
+        margin-bottom: 7px;
+    }
+
+    .become__title {
+        font-size: 75px;
+    }
+
+    .become__title-part {
+        margin-right: 130px;
+    }
+
+    .become__title-support {
+        margin-right: 157px;
+    }
+
+    .hero__become-button {
+        padding-left: 33px;
+        gap: 33px;
+    }
+
+    .hero__bottom {
+        bottom: 48px;
+    }
+
+    /* behind */
+    .behind {
+        padding: 120px 0 150px;
+    }
+
+    .behind__title {
+        font-size: 45px;
+    }
+
+    .behind__button {
+        width: 46px;
+        height: 46px;
+    }
+
+    .behind__button-icon {
+        width: 10px;
+        height: 10px;
+    }
+
+    .behind__nav {
+        gap: 7px;
+    }
+
+    .behind__top {
+        margin-bottom: 40px;
+    }
+
+    .behind-card {
+        width: 367px;
+    }
+
+    .behind-card__image {
+        margin-bottom: 38px;
+    }
+
+    .behind-card__name {
+        font-size: 18px;
+        max-width: 150px;
+    }
+
+    .behind-card__position {
+        font-size: 15px;
+        max-width: 180px;
+    }
+
+    /* brand */
+    .brand {
+        padding-bottom: 150px;
+    }
+
+    .brand__cards {
+        gap: 20px;
+    }
+
+    .brand-card {
+        min-height: 363px;
+        padding: 25px 25px 37px 37px;
+    }
+
+    .brand-card__number {
+        font-size: 13px;
+    }
+
+    .brand-card__name {
+        font-size: 22px;
+        padding-top: 37px;
+    }
+
+    .brand-card__logo {
+        height: 80px;
+        width: auto;
+    }
+}
+
+@media (max-width: 1270px) {
+    /* hero */
+    .become__title {
+        font-size: 60px;
+    }
+
+    .become__title-part {
+        margin-right: 100px;
+    }
+
+    .become__title-support {
+        margin-right: 127px;
+    }
+
+    /* brand */
+    .brand-card__name {
+        font-size: 18px;
+    }
+}

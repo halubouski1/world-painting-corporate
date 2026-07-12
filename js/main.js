@@ -149,6 +149,31 @@ if (queensSlider && 'ResizeObserver' in window) {
 }
 
 // ========================================
+// Behind slider (Swiper) — full-bleed
+// ========================================
+if (typeof Swiper !== 'undefined' && document.querySelector('.behind__swiper')) {
+  new Swiper('.behind__swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 23,
+    // first/last card aligned to the container edges
+    slidesOffsetBefore: 33,
+    slidesOffsetAfter: 33,
+    navigation: {
+      prevEl: '.behind__button--prev',
+      nextEl: '.behind__button--next',
+      disabledClass: 'is-disabled',
+    },
+    breakpoints: {
+      1920: {
+        slidesOffsetBefore: 45,
+        slidesOffsetAfter: 45,
+        spaceBetween: 30,
+      },
+    },
+  });
+}
+
+// ========================================
 // Hero scroll-down → next section
 // ========================================
 const scrollDown = document.querySelector('.hero__scrolldown');

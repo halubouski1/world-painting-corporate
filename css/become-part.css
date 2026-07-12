@@ -1,0 +1,218 @@
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+    background: url('../assets/img/become-part-bg.png') center / cover no-repeat;
+}
+
+/* top shading (bottom shading comes from the global .hero::after) */
+.hero::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100px;
+    rotate: 180deg;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+    pointer-events: none;
+}
+
+/* right shading */
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 500px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+    pointer-events: none;
+}
+
+.hero__bottom {
+    bottom: 65px;
+    align-items: flex-end;
+}
+
+/* --- bottom-left intro --- */
+.become__intro {
+    display: flex;
+    flex-direction: column;
+}
+
+.become__tagline {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.become__title {
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+.become__title-part {
+    margin-right: 173px;
+}
+
+.become__title-support {
+    margin-right: 210px;
+}
+
+.hero__become-button {
+    padding-left: 42px;
+    gap: 42px;
+}
+
+/* ==========================================================================
+   Behind (big slider)
+   ========================================================================== */
+.behind {
+    padding: 150px 0 200px;
+}
+
+.behind__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 55px;
+}
+
+.behind__title {
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 92%;
+    letter-spacing: -0.03em;
+    background: linear-gradient(123deg, #002944 0%, #4482a9 96.54%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- nav buttons --- */
+.behind__nav {
+    display: flex;
+    gap: 10px;
+}
+
+.behind__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: #17415e; /* active */
+    color: #fff; /* active arrow (currentColor) */
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.behind__button.is-disabled {
+    background: #fff; /* disabled */
+    color: #000; /* disabled arrow */
+    cursor: default;
+}
+
+/* Arrow drawn via mask so its colour follows the button state (white/black) */
+.behind__button-icon {
+    width: 13px;
+    height: 13px;
+    background-color: currentColor;
+    -webkit-mask: url('../assets/icons/slider-nav-left.svg') no-repeat center / contain;
+    mask: url('../assets/icons/slider-nav-left.svg') no-repeat center / contain;
+}
+
+.behind__button--next .behind__button-icon {
+    transform: rotate(180deg);
+}
+
+/* --- slider card --- */
+.behind-card {
+    width: 490px;
+}
+
+.behind-card__image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+    border-radius: 5px;
+}
+
+.behind-card__meta {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.behind-card__name {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 92%;
+    color: #17415e;
+    max-width: 170px;
+}
+
+.behind-card__position {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    text-align: right;
+    color: rgba(23, 65, 94, 0.35);
+    max-width: 220px;
+}
+
+/* ==========================================================================
+   Brand
+   ========================================================================== */
+.brand {
+    padding-bottom: 200px;
+}
+
+.brand__cards {
+    display: flex;
+    gap: 27px;
+}
+
+.brand-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 485px;
+    padding: 35px 35px 50px 50px;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.brand-card__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.brand-card__number {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 167%;
+    letter-spacing: -0.03em;
+    color: rgba(23, 65, 94, 0.55);
+}
+
+.brand-card__name {
+    padding-top: 50px;
+    border-top: 1px dashed rgba(23, 65, 94, 0.15);
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
