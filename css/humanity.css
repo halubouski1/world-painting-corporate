@@ -1,0 +1,417 @@
+/* header */
+.nav-list__link {
+    color: #002944;
+}
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+    background: url('../assets/img/humanity-bg.png') center / cover no-repeat;
+}
+
+.hero::after {
+    display: none;
+}
+
+.hero__humanity-title {
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 92%;
+    letter-spacing: -0.03em;
+    background: linear-gradient(123deg, #002944 0%, #4482a9 96.54%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 890px;
+}
+
+.hero__scrolldown {
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+    background: #fff;
+    width: 88px;
+    height: 88px;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.hero__scrolldown:hover {
+    transform: translateY(-4px);
+}
+
+.hero__bottom {
+    bottom: 10px;
+}
+
+/* ==========================================================================
+   Unite
+   ========================================================================== */
+.unite {
+    margin-top: 150px;
+    padding-bottom: 220px;
+    background: url('../assets/img/unite-bg.png') center top 100px / 100% auto no-repeat;
+}
+
+.unite__divider {
+    margin-bottom: 110px;
+    border-top: 1px dashed rgba(46, 46, 46, 0.25);
+}
+
+.unite__title {
+    max-width: 650px;
+    margin: 0 auto 55px;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 85%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    background: linear-gradient(123deg, #002944 0%, #4482a9 96.54%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.unite__cards {
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+    padding-right: 200px;
+}
+
+.unite__card {
+    max-width: 358px;
+    padding: 80px 30px 30px 30px;
+    border-radius: 13px;
+    background: #f6f6f6;
+}
+
+.unite__card--right {
+    align-self: flex-end;
+    margin-bottom: 267px;
+    padding-right: 83px;
+}
+
+.unite__card--left {
+    align-self: flex-start;
+}
+
+.unite__card-text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 141%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+.unite__card-text span {
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   History
+   ========================================================================== */
+.history {
+    position: relative;
+    padding-bottom: 140px;
+    overflow: hidden;
+}
+
+/* Two decorative textures behind the cards — one to the right, one to the left */
+.history::before,
+.history::after {
+    content: '';
+    position: absolute;
+    top: 190px;
+    z-index: 0;
+    width: 720px;
+    height: 760px;
+    background: url('../assets/img/history-bg.png') no-repeat center / cover;
+    pointer-events: none;
+}
+
+.history::before {
+    left: 0;
+    background-position: left center;
+    height: 660px;
+}
+
+.history::after {
+    top: 137px;
+    right: -309px;
+    background-position: right center;
+}
+
+.history .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Full-bleed slider (outside the container) — sits above the decorative textures */
+.history__swiper {
+    position: relative;
+    z-index: 1;
+}
+
+.history__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.history__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.history__title {
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 90%;
+    letter-spacing: -0.03em;
+    background: linear-gradient(123deg, #002944 0%, #4482a9 96.54%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.history__nav {
+    display: flex;
+    gap: 50px;
+}
+
+.history__note {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.history__note-text {
+    padding: 36px 40px 10px 10px;
+    border-radius: 5px;
+    background: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 144%;
+    letter-spacing: -0.03em;
+    color: rgba(23, 65, 94, 0.5);
+}
+
+/* Slide card */
+.history-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 505px;
+    height: 720px;
+    padding: 30px 30px 50px 42px;
+    border-radius: 13px;
+    overflow: hidden;
+    background: #f6f6f6;
+}
+
+.history-card__top {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.history-card__badge {
+    padding: 7px 10px;
+    border-radius: 3px;
+    background: #fff;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+.history-card-badge__wrapper {
+    display: flex;
+    gap: 5px;
+}
+
+.history-card__region {
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+/* Positioned absolutely inside the card — nudge per map with top / right / left */
+.history-card__image {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    z-index: 1;
+    width: auto;
+    max-width: 100%;
+    max-height: 420px;
+    transform: translateX(-50%);
+}
+
+.history-card--eurasia .history-card__image {
+    left: none;
+    right: 0;
+    transform: translateX(-48%);
+}
+
+.history-card__desc {
+    position: relative;
+    z-index: 2;
+    max-width: 376px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 129%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+/* Numbered pagination */
+.history__pagination {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin-top: 70px;
+}
+
+.history__page {
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: rgba(46, 46, 46, 0.5);
+}
+
+.history__page:hover,
+.history__page--active {
+    color: #2e2e2e;
+}
+
+/* ==========================================================================
+   Planet
+   ========================================================================== */
+.planet {
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 100px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.planet__video {
+    position: absolute;
+    scale: 1.2;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Darkening overlay over the video for text readability */
+.planet::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 38.48%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+}
+
+.planet__content {
+    position: relative;
+    z-index: 2;
+    /* container padding only on the left — the right stats reach the section edge */
+    padding-left: var(--container-padding);
+}
+
+.planet__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 590px;
+    padding-right: var(--container-padding);
+}
+
+.planet__title {
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 84%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    max-width: 670px;
+}
+
+.planet__coords {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 141%;
+    letter-spacing: -0.03em;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.45);
+    max-width: 140px;
+}
+
+.planet__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.planet__desc {
+    max-width: 697px;
+    font-weight: 300;
+    font-size: 35px;
+    line-height: 131%;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+.planet__desc span {
+    font-weight: 700;
+}
+
+.planet__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    /* content sits 245px from the section edge; the divider breaks out to the edge */
+    padding-right: 245px;
+}
+
+.planet__stat-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 141%;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.planet__stat-divider {
+    margin-right: -245px;
+    margin-bottom: 20px;
+    border-top: 1px dashed #fff;
+}
+
+.planet__stat-value {
+    display: block;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+/* footer */
+footer {
+    margin-top: 30px !important;
+}
