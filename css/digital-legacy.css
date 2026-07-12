@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Hero — Digital Legacy
+   (reuses the shared hero shadings from become-part.css: ::before, __overlay)
+   ========================================================================== */
+.hero {
+    background: url('../assets/img/digital-hero-bg.png') center / cover no-repeat;
+}
+
+/* top shading (bottom shading comes from the global .hero::after) */
+.hero::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100px;
+    rotate: 180deg;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+    pointer-events: none;
+}
+
+/* right shading */
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 500px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+    pointer-events: none;
+}
+
+.digital__title {
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+.digital__title-world {
+    margin-right: 150px;
+}
+
+/* --- bottom-right card --- */
+.digital-card {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 40px 20px 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(39px);
+    background: rgba(255, 255, 255, 0.02);
+    -webkit-backdrop-filter: blur(39px);
+}
+
+.digital-card__arrow {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    line-height: 0;
+    transition: transform 0.3s ease;
+}
+
+/* arrow flies up-right when the whole card is hovered */
+.digital-card:hover .digital-card__arrow {
+    transform: translate(4px, -4px);
+}
+
+.digital-card__image {
+    flex-shrink: 0;
+    border-radius: 6px;
+}
+
+.digital-card__text {
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 105%;
+    color: #fff;
+    max-width: 295px;
+}
+
+/* footer */
+.footer {
+    padding-top: 100px;
+}
