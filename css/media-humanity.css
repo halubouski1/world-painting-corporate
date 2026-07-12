@@ -190,3 +190,19 @@
         margin-top: 22px !important;
     }
 }
+
+@media (max-width: 1270px) {
+    /* planet */
+    .planet__stats {
+        padding-right: 100px;
+    }
+
+    .planet__stat-divider {
+        margin-right: -100px;
+    }
+
+    .planet__desc {
+        font-size: 22px;
+        max-width: 441px;
+    }
+}

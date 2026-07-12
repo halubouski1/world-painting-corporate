@@ -87,6 +87,40 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.history__swiper'))
 }
 
 // ========================================
+// Voices sliders (Swiper) — every .voices-slider instance
+// ========================================
+if (typeof Swiper !== 'undefined') {
+  document.querySelectorAll('.voices-slider').forEach((slider) => {
+    const swiperEl = slider.querySelector('.voices-slider__swiper');
+    if (!swiperEl) return;
+    new Swiper(swiperEl, {
+      slidesPerView: 2,
+      spaceBetween: 23,
+      loop: true,
+      navigation: {
+        prevEl: slider.querySelector('.voices-slider__button--prev'),
+        nextEl: slider.querySelector('.voices-slider__button--next'),
+      },
+    });
+  });
+}
+
+// ========================================
+// Queens slider (3 cards per view)
+// ========================================
+if (typeof Swiper !== 'undefined' && document.querySelector('.queens-slider__swiper')) {
+  new Swiper('.queens-slider__swiper', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+      prevEl: '.queens-slider__button--prev',
+      nextEl: '.queens-slider__button--next',
+    },
+  });
+}
+
+// ========================================
 // Hero scroll-down → next section
 // ========================================
 const scrollDown = document.querySelector('.hero__scrolldown');
