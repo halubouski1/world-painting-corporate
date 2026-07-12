@@ -1,0 +1,192 @@
+@media (max-width: 1919px) {
+
+    /* hero */
+    .hero__humanity-title {
+        font-size: 45px;
+        max-width: 650px;
+    }
+
+    .hero__scrolldown {
+        width: 66px;
+        height: 66px;
+    }
+
+    .hero__scrolldown img {
+        width: 14px;
+        height: auto;
+    }
+
+    /* unite */
+    .unite {
+        margin-top: 110px;
+        padding-bottom: 150px;
+        background-position: center top 50px;
+    }
+
+    .unite__divider {
+        margin-bottom: 80px;
+    }
+
+    .unite__title {
+        font-size: 45px;
+        max-width: 490px;
+        margin-bottom: 42px;
+    }
+
+    .unite__cards {
+        padding-left: 75px;
+        padding-right: 150px;
+    }
+
+    .unite__card--right {
+        margin-bottom: 200px;
+    }
+
+    .unite__card {
+        max-width: 269px;
+        padding: 60px 30px 20px 20px;
+        border-radius: 10px;
+    }
+
+    .unite__card-text {
+        font-size: 13px;
+    }
+
+    .unite__card--right {
+        padding-right: 72px;
+    }
+
+    /* history */
+    .history {
+        padding-bottom: 100px;
+    }
+
+    .history__title {
+        font-size: 45px;
+    }
+
+    .history__intro, .history__nav {
+        gap: 36px;
+    }
+
+    .history__note-text {
+        font-size: 12px;
+        padding: 27px 30px 7px 7px;
+    }
+
+    .history__note {
+        gap: 28px;
+    }
+
+    .history__note-decor {
+        height: 85px;
+        width: auto;
+    }
+
+    .history__top {
+        margin-bottom: 37px;
+    }
+
+    .history-card {
+        width: 378px;
+        height: 540px;
+        padding: 22px 22px 37px 32px;
+    }
+
+    .history-card__image {
+        max-width: 69%;
+        height: auto;
+    }
+
+    .history-card--eurasia .history-card__image {
+        max-width: 300px;
+        width: 300px;
+        height: auto;
+    }
+
+    .history-card__desc {
+        font-size: 12px;
+        max-width: 266px;
+    }
+    
+    .history-card__badge {
+        font-size: 9px;
+        padding: 6px 8px;
+    }
+
+    .history-card__region {
+        font-size: 11px;
+    }
+
+    .history::before {
+        height: 450px;
+    }
+
+    .history::after {
+        top: 100px;
+        right: -363px;
+        height: 560px;
+    }
+
+    .history__pagination {
+        margin-top: 52px;
+        gap: 30px;
+    }
+
+    .history__page {
+        font-size: 12px;
+    }
+
+    /* planet */
+    .planet {
+        padding-top: 54px;
+        padding-bottom: 80px;
+    }
+
+    .planet__title {
+        font-size: 75px;
+        max-width: 510px;
+    }
+
+    .planet__coords {
+        font-size: 13px;
+        max-width: 70px;
+    }
+
+    .planet__top {
+        margin-bottom: 440px;
+    }
+
+    .planet__desc {
+        font-size: 26px;
+        max-width: 525px;
+    }
+
+    .planet__stats {
+        padding-right: 185px;
+        gap: 36px;
+    }
+
+    .planet__stat-divider {
+        margin-right: -185px;
+        margin-bottom: 25px;
+    }
+
+    .planet__stat-label {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+    .planet__stat-value {
+        font-size: 75px;
+    }
+
+    .planet__video {
+        scale: 1.05;
+    }
+
+    /* footer */
+    .footer {
+        margin-top: 22px !important;
+    }
+}

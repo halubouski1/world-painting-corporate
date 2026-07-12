@@ -55,7 +55,7 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.product-slider__sw
 if (typeof Swiper !== 'undefined' && document.querySelector('.history__swiper')) {
   new Swiper('.history__swiper', {
     slidesPerView: 'auto',
-    spaceBetween: 30,
+    spaceBetween: 22,
     // align first/last card with the container edges (same as --container-padding)
     slidesOffsetBefore: 33,
     slidesOffsetAfter: 33,
@@ -63,6 +63,11 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.history__swiper'))
       prevEl: '.product-slider__button--prev',
       nextEl: '.product-slider__button--next',
       disabledClass: 'is-disabled',
+    },
+    breakpoints: {
+      1920: {
+        spaceBetween: 30,
+      },
     },
     pagination: {
       el: '.history__pagination',
@@ -122,7 +127,7 @@ if (counterEls.length && typeof countUp !== 'undefined' && countUp.CountUp) {
       if (!entry.isIntersecting) return;
       const el = entry.target;
       const counter = new countUp.CountUp(el, Number(el.dataset.count), {
-        duration: 5,
+        duration: 3,
         separator: ',',
         enableScrollSpy: false,
         startVal: 10000,
