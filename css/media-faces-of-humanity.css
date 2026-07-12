@@ -310,3 +310,28 @@
         margin-bottom: 75px;
     }
 }
+
+@media (max-width: 1430px)  {
+    .voices__bottom {
+        margin-top: 30px;
+    }
+
+    .voices-card--marek {
+        margin-left: auto;
+    }
+
+    .voices-card__desc br {
+        display: none;
+    }
+}
+
+@media (max-width: 1270px) {
+    .artists__quad, .champions__row-1, .champions__row-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .artists__right-row {
+        top: 20px;
+    }
+}
