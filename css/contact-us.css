@@ -1,0 +1,251 @@
+/* ==========================================================================
+   Hero — Contact Us
+   ========================================================================== */
+.hero {
+    background: url('../assets/img/contact-hero-bg.png') center / cover no-repeat;
+}
+
+/* top shading (bottom shading comes from the global .hero::after) */
+.hero::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100px;
+    rotate: 180deg;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+    pointer-events: none;
+}
+
+/* right shading */
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 500px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+    pointer-events: none;
+}
+
+/* stack title over the cards */
+.hero__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact__title {
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 80px;
+    line-height: 84%;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+/* --- cards --- */
+.contact__cards {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.contact-card {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 411px;
+    width: 100%;
+    height: 223px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(40px);
+    background: rgba(255, 255, 255, 0.02);
+    -webkit-backdrop-filter: blur(40px);
+}
+
+.contact-card__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.contact-card__label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-card__arrow {
+    flex-shrink: 0;
+    line-height: 0;
+    transition: transform 0.3s ease;
+}
+
+.contact-card__value {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 93%;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+/* arrow flies up-right when a linked card is hovered */
+a.contact-card:hover .contact-card__arrow {
+    transform: translate(4px, -4px);
+}
+
+/* ==========================================================================
+   Contact cards (video)
+   ========================================================================== */
+.contact-cards {
+    padding-top: 150px;
+    padding-bottom: 75px;
+}
+
+.contact-cards__list {
+    display: flex;
+    gap: 23px;
+}
+
+.contact-cards__card {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-cards__video {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.contact-cards__title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+.contact-cards__desc {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 136%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+/* ==========================================================================
+   Contact slider (video cards, full-bleed)
+   ========================================================================== */
+.contact-slider {
+    padding: 75px 0;
+}
+
+.contact-slider__inner {
+    position: relative;
+}
+
+.contact-slide {
+    width: 427px;
+}
+
+.contact-slide__video {
+    display: block;
+    width: 100%;
+    height: 687px;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+/* nav buttons — `top` set by JS to the video centre (not the whole card) */
+.slider__button {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translateY(-50%);
+    transition: transform 0.25s ease;
+}
+
+.contact-slider__button--prev {
+    left: 60px;
+}
+
+.contact-slider__button--next {
+    right: 60px;
+}
+
+.slider__button--prev:hover {
+    transform: translateY(-50%) translateX(-3px);
+}
+
+.slider__button--next:hover {
+    transform: translateY(-50%) translateX(3px);
+}
+
+/* ==========================================================================
+   Contact big slider (wide video cards, 2 per view, container-aligned)
+   ========================================================================== */
+.contact-big-slider {
+    padding: 75px 0;
+}
+
+.contact-big-slider__inner {
+    position: relative;
+}
+
+.contact-big-slide__video {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.contact-big-slider__button--prev {
+    left: 15px;
+}
+
+.contact-big-slider__button--next {
+    right: 15px;
+}
+
+/* ==========================================================================
+   Final cards (portrait video row, 4 up)
+   ========================================================================== */
+.final-cards {
+    padding: 75px 0 200px;
+}
+
+.final-cards__list {
+    display: flex;
+    gap: 40px;
+}
+
+.final-cards__card {
+    flex: 1;
+    min-width: 0;
+}
+
+.final-cards__video {
+    display: block;
+    width: 100%;
+    height: 687px;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}

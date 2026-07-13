@@ -174,6 +174,74 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.behind__swiper')) 
 }
 
 // ========================================
+// Contact slider (video cards) — nav centred on the video
+// ========================================
+if (typeof Swiper !== 'undefined' && document.querySelector('.contact-slider__swiper')) {
+  new Swiper('.contact-slider__swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    slidesOffsetBefore: 33,
+    slidesOffsetAfter: 33,
+    navigation: {
+      prevEl: '.contact-slider__button--prev',
+      nextEl: '.contact-slider__button--next',
+    },
+    breakpoints: {
+      1920: {
+        slidesOffsetBefore: 45,
+        slidesOffsetAfter: 45,
+        spaceBetween: 40,
+      },
+    },
+  });
+
+  const contactSlider = document.querySelector('.contact-slider');
+  const refVideo = contactSlider.querySelector('.contact-slide__video');
+  const navButtons = contactSlider.querySelectorAll('.contact-slider__button');
+  if ('ResizeObserver' in window && refVideo && navButtons.length) {
+    const centerNav = () => {
+      const center = refVideo.offsetHeight / 2;
+      navButtons.forEach((btn) => {
+        btn.style.top = `${center}px`;
+      });
+    };
+    new ResizeObserver(centerNav).observe(refVideo);
+  }
+}
+
+// ========================================
+// Contact big slider (wide video cards, 2 per view) — nav centred on the video
+// ========================================
+if (typeof Swiper !== 'undefined' && document.querySelector('.contact-big-slider__swiper')) {
+  const bigSlider = document.querySelector('.contact-big-slider');
+  new Swiper('.contact-big-slider__swiper', {
+    slidesPerView: 2,
+    spaceBetween: 17,
+    navigation: {
+      prevEl: bigSlider.querySelector('.contact-big-slider__button--prev'),
+      nextEl: bigSlider.querySelector('.contact-big-slider__button--next'),
+    },
+    breakpoints: {
+      1920: {
+        spaceBetween: 23,
+      },
+    },
+  });
+
+  const refVideo = bigSlider.querySelector('.contact-big-slide__video');
+  const navButtons = bigSlider.querySelectorAll('.contact-big-slider__button');
+  if ('ResizeObserver' in window && refVideo && navButtons.length) {
+    const centerNav = () => {
+      const center = refVideo.offsetHeight / 2;
+      navButtons.forEach((btn) => {
+        btn.style.top = `${center}px`;
+      });
+    };
+    new ResizeObserver(centerNav).observe(refVideo);
+  }
+}
+
+// ========================================
 // Hero scroll-down → next section
 // ========================================
 const scrollDown = document.querySelector('.hero__scrolldown');

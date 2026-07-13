@@ -1,0 +1,127 @@
+@media (max-width: 1919px) {
+    /* hero */
+    .contact__title {
+        font-size: 60px;
+        margin-bottom: 22px;
+    }
+
+    .contact-card {
+        max-width: 308px;
+        height: 167px;
+        padding: 22px;
+    }
+
+    .contact__cards {
+        gap: 9px;
+    }
+
+    .contact-card__label {
+        font-size: 10px;
+    }
+
+    .contact-card__value {
+        font-size: 22px;
+    }
+
+    .contact-card__arrow {
+        width: 16px;
+        height: 16px;
+    }
+    
+    /* .contact-cards  */
+    .contact-cards {
+        padding-top: 110px;
+        padding-bottom: 55px;
+    }
+
+    .contact-cards__list {
+        gap: 17px;
+    }
+
+    .contact-cards__video {
+        margin-bottom: 22px;
+    }
+
+    .contact-cards__title {
+        font-size: 22px;
+        margin-bottom: 7px;
+    }
+
+    .contact-cards__desc {
+        font-size: 13px;
+    }
+
+    /* .contact-slider */
+    .contact-slider {
+        padding: 55px 0;
+    }
+
+    .contact-slide__video {
+        height: 515px;
+        margin-bottom: 22px;
+    }
+
+    .contact-slide {
+        width: 320px;
+    }
+
+    .slider__button {
+        width: 46px;
+        height: 46px;
+    }
+
+    .slider__button img {
+        width: 10px;
+        height: 10px;
+    }
+
+    .contact-slider__button--prev {
+        left: 45px;
+    }
+
+    .contact-slider__button--next {
+        right: 45px;
+    }
+
+    /* .contact-big-slider */
+    .contact-big-slider {
+        padding: 55px 0;
+    }
+
+    .contact-big-slider__button--prev {
+        left: 11px;
+    }
+
+    .contact-big-slider__button--next {
+        right: 11px;
+    }
+
+    .contact-big-slide__video {
+        margin-bottom: 22px;
+    }
+
+    /* final-cards  */
+    .final-cards {
+        padding: 55px 0 150px;
+    }    
+
+    .final-cards__list {
+        gap: 30px;
+    }
+
+    .final-cards__video {
+        height: 515px;
+        margin-bottom: 22px;
+    }
+}
+
+@media (max-width: 1270px) {
+    .final-cards__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .final-cards__video {
+        height: 700px;
+    }
+}
