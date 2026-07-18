@@ -158,35 +158,68 @@
         <div class="history__pagination"></div>
 </section>
 
-<section class="planet">
-    <video class="planet__video" autoplay muted loop playsinline>
-        <source src="assets/vid/planet-bg.mp4" type="video/mp4">
-    </video>
+<div class="cross-slider">
+    <div class="cross-slider__pin">
+        <div class="cross-slider__track">
+            <section class="planet cross-slider__panel">
+                <video class="planet__video" autoplay muted loop playsinline>
+                    <source src="assets/vid/planet-bg.mp4" type="video/mp4">
+                </video>
 
-    <div class="planet__content">
-        <div class="planet__top" data-aos="fade-up">
-            <h2 class="planet__title">The Canvas as a Planet</h2>
-            <span class="planet__coords">43.7031° N, 5.4500° E</span>
-        </div>
+                <div class="planet__content">
+                    <div class="planet__top">
+                        <h2 class="planet__title">The Canvas as a Planet</h2>
+                        <span class="planet__coords">43.7031° N, 5.4500° E</span>
+                    </div>
 
-        <div class="planet__bottom">
-            <p class="planet__desc" data-aos="fade-up">At the heart of World Painting lies a physical canvas measuring <span>4 meters by 1.27 meters</span>. These dimensions are not accidental. They represent a scaled artistic interpretation of our planet Earth.</p>
+                    <div class="planet__bottom">
+                        <p class="planet__desc">At the heart of World Painting lies a physical canvas measuring <span>4 meters by 1.27 meters</span>. These dimensions are not accidental. They represent a scaled artistic interpretation of our planet Earth.</p>
 
-            <div class="planet__stats" data-aos="fade-left">
-                <div class="planet__stat">
-                    <span class="planet__stat-label">Earth's equatorial circumference:</span>
-                    <div class="planet__stat-divider"></div>
-                    <span class="planet__stat-value"><span class="planet__stat-number" data-count="40075">40,075</span> km</span>
+                        <div class="planet__stats">
+                            <div class="planet__stat">
+                                <span class="planet__stat-label">Earth's equatorial circumference:</span>
+                                <div class="planet__stat-divider"></div>
+                                <span class="planet__stat-value"><span class="planet__stat-number" data-count="40075">40,075</span> km</span>
+                            </div>
+                            <div class="planet__stat">
+                                <span class="planet__stat-label">Earth's equatorial diameter:</span>
+                                <div class="planet__stat-divider"></div>
+                                <span class="planet__stat-value"><span class="planet__stat-number" data-count="12756">12,756</span> km</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="planet__stat">
-                    <span class="planet__stat-label">Earth's equatorial diameter:</span>
-                    <div class="planet__stat-divider"></div>
-                    <span class="planet__stat-value"><span class="planet__stat-number" data-count="12756">12,756</span> km</span>
+            </section>
+
+            <section class="proportions cross-slider__panel">
+                <div class="proportions__content">
+                    <div class="proportions__top">
+                        <h2 class="proportions__title">Proportions</h2>
+                        <p class="proportions__desc">The proportion <b>4 : 1.27</b> reflects a reduced model of the Earth's true dimensions - transforming the canvas into a symbolic projection of the planet.</p>
+                    </div>
+
+                    <div class="proportions__cards">
+                        <article class="prop-card">
+                            <div class="prop-card__top">
+                                <span class="prop-card__line"></span>
+                                <span class="prop-card__num">001</span>
+                            </div>
+                            <p class="prop-card__text">Here, the canvas becomes more than an artistic surface. It becomes a metaphor for the world itself.</p>
+                        </article>
+
+                        <article class="prop-card">
+                            <div class="prop-card__top">
+                                <span class="prop-card__line"></span>
+                                <span class="prop-card__num">002</span>
+                            </div>
+                            <p class="prop-card__text">Every touch, every brushstroke is a human presence - a mark left by humanity on its shared home</p>
+                        </article>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
     </div>
-</section>
+</div>
 
 <footer class="footer">
     <img class="footer__decor" src="assets/img/footer-decor.png" alt="" width="639" height="355">

@@ -1,0 +1,193 @@
+/* ==========================================================================
+   News — responsive overrides
+   The headline SVG scales on its own (width: 100% / height: auto), and the
+   hero container padding is handled by media.css, so nothing is needed yet.
+   ========================================================================== */
+@media (max-width: 1919px) {
+   .news {
+    padding: 110px 0 150px;
+   }
+
+   .news__title {
+      font-size: 45px;
+   }
+
+   .news__filter {
+      gap: 20px;
+      padding: 6px 6px 6px 20px;
+      border: 1px solid #17415e;
+   }
+
+   .news__filter-icon {
+      width: 30px;
+      height: 30px;
+   }
+
+   .news__filter-label {
+      font-size: 11px;
+   }
+
+   .news__filter-icon img {
+      width: 10px;
+      height: 10px;
+   }
+
+   .news__top {
+      margin-bottom: 20px;
+   }
+
+   .news__grid {
+      column-gap: 12px;
+      row-gap: 70px;
+   }
+
+   .news-card:nth-child(1) {
+    margin-right: 5px;
+   }
+
+   .news-card:nth-child(2) {
+    margin-left: 5px;
+   }
+
+   .news-card:nth-child(-n+2) .news-card__media {
+      height: 500px;
+   }
+
+   .news-card__icon {
+      width: 35px;
+      height: 35px;
+      top: 11px;
+      right: 11px;
+   }
+
+   .news-card__icon img {
+      width: 15px;
+      height: 15px;
+   }
+
+   .news-card:nth-child(-n+2) .news-card__icon {
+      top: 20px;
+      right: 20px;
+   }
+
+   .news-card__date-text {
+      font-size: 12px;
+   }
+
+   .news-card__date {
+      gap: 7px;
+      bottom: 10px;
+      left: 10px;
+      padding: 6px 10px 6px 6px;
+   }
+
+   .news-card__date-dot {
+      width: 18px;
+      height: 18px;
+   }
+
+   .news-card:nth-child(-n+2) .news-card__title {
+      margin-top: 20px;
+      font-size: 22px;
+   }
+
+   .news-card {
+      border-radius: 15px;
+   }
+
+   .news-card__title {
+      font-size: 18px;
+      margin-top: 15px;
+      max-width: 311px;
+   }
+
+   .news__pagination {
+      margin-top: 52px;
+      gap: 30px;
+   }
+
+   .news__page {
+        font-size: 12px;
+   }
+
+   .news-card__image {
+    height: 290px;
+   }
+
+   /* newspapers */
+   .newspapers__inner {
+      padding-top: 45px;
+      padding-bottom: 45px;
+   }
+
+   .newspapers__bars {
+      gap: 15px;
+   }
+
+   .newspapers__bar {
+      height: 2px;
+   }
+
+   .newspapers__more {
+      margin-top: 390px;
+      font-size: 12px;
+      gap: 20px;
+      padding: 17px 26px 17px 24px;
+   }
+
+   .newspapers__more img {
+      width: 9px;
+      height: 9px;
+   }
+
+   .newspapers__foot {
+      margin-top: 310px;
+   }
+
+   .newspapers__title {
+      font-size: 60px;
+   }
+
+   .newspapers__discover {
+      font-size: 15px;
+      gap: 11px;
+   }
+
+   .newspapers__discover img {
+      width: 18px;
+      height: 18px;
+   }
+
+   .newspapers__foot-top {
+      margin-bottom: 10px;
+   }
+
+   .newspapers__line-cap {
+      width: 47px;
+      height: 4.5px;
+   }
+
+   /* footer */
+   .footer {
+      margin-top: 150px;
+   }
+}
+
+@media (max-width: 1270px) {
+   .news__grid {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .news-card:nth-child(-n+2) {
+    grid-column: span 1;
+   }
+
+   .news-card__title {
+      max-width: 100%;
+   }
+
+   .news-card:nth-child(-n+2) .news-card__media {
+      height: 290px;
+   }
+
+}

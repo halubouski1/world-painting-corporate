@@ -1,0 +1,718 @@
+/* ==========================================================================
+   Hero — Recognition & Achievements (video background)
+   ========================================================================== */
+.hero {
+    background: #0b1f33;
+}
+
+/* video background */
+.hero__video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero__bottom {
+    bottom: 45px;
+}
+
+/* full-cover darkening so all the text stays readable */
+.hero::after {
+    top: 0;
+    height: auto;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.35) 45%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+/* --- bottom: left title block + right two columns --- */
+.recognition__left {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.recognition__title {
+    max-width: 685px;
+    font-weight: 400;
+    font-size: 85px;
+    line-height: 93%;
+    color: #fff;
+}
+
+/* Guinness badge — positioned absolutely next to the first line */
+.recognition__badge {
+    position: absolute;
+    top: -13px;
+    left: 299px;
+}
+
+.recognition__right {
+    display: flex;
+    gap: 150px;
+}
+
+/* shared heading + description styles for both columns */
+.recognition__col-title {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 104%;
+    color: #fff;
+    max-width: 470px;
+}
+
+.recognition__col:last-child .recognition__col-title {
+    margin-bottom: 12px;
+}
+
+.recognition__col:last-child {
+    max-width: 365px;
+}
+
+.recognition__col-text {
+    max-width: 470px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 139%;
+    color: #fff;
+}
+
+/* ==========================================================================
+   Beyond Earth — scroll-driven rotating wheel
+   ========================================================================== */
+.beyond {
+    position: relative;
+    height: 320vh; /* scroll room: taller than the pinned screen */
+    background: #ececec;
+}
+
+.beyond__pin {
+    position: sticky;
+    top: 0;
+    height: 1240px;
+    overflow: hidden;
+}
+
+/* title (stays put while the wheel animates) */
+.beyond__inner {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    padding: 110px 45px 0 70px;
+    pointer-events: none;
+}
+
+.beyond__title {
+    font-weight: 500;
+    font-size: 60px;
+    letter-spacing: -0.03em;
+    background: linear-gradient(91.76deg, #002944 7.42%, #4482a9 67.25%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* stage holds the wheel + the centred content */
+.beyond__stage {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+/* --- rotating wheel (circle + star points) --- */
+.beyond__wheel {
+    position: absolute;
+    top: 230px;
+    left: 50%;
+    width: 1500px;
+    height: 1500px;
+    transform: translateX(-50%);
+}
+
+.beyond__circle {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* rotation set by JS */
+}
+
+/* the star's centre sits exactly on the circle line (left/top set by JS in %) */
+.beyond__point {
+    position: absolute;
+    line-height: 0;
+    transform: translate(-50%, -50%);
+}
+
+.beyond__point-star {
+    display: block;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+/* number badge (circle) sitting to the right of the star */
+.beyond__point-num {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(23, 65, 94, 0.3);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1;
+    color: #17415e;
+    opacity: 0.4;
+    transform: translateY(-50%);
+    transition: opacity 0.3s ease;
+}
+
+/* per-slide copy authored in the HTML; shown via the centred content on scroll */
+.beyond__point-desc {
+    display: none;
+}
+
+/* the point currently at the top is the active one */
+.beyond__point.is-active .beyond__point-star {
+    opacity: 1;
+}
+
+.beyond__point.is-active .beyond__point-num {
+    opacity: 0; /* its number is shown by the big ring badge instead */
+}
+
+/* --- centred content: number badge, description, image --- */
+.beyond__content {
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1085px;
+    max-width: 100%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.beyond__num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 137px; /* clears the active star sitting on the circle top */
+    border-radius: 50%;
+    border: 1px solid rgba(23, 65, 94, 0.3);
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: -0.03em;
+    color: #002944;
+    transition: opacity 0.35s ease;
+}
+
+.beyond__desc {
+    max-width: 410px;
+    margin-bottom: 76px;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 138%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #17415e;
+    transition: opacity 0.35s ease;
+}
+
+/* constant background video (does not change between slides) */
+.beyond__video {
+    display: block;
+    width: 1085px;
+    height: 611px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* only the number + description cross-fade; the video stays put */
+.beyond__content.is-changing .beyond__num,
+.beyond__content.is-changing .beyond__desc {
+    opacity: 0;
+}
+
+/* ==========================================================================
+   World Top — auto-rotating background + stories-style bars
+   ========================================================================== */
+.world-top {
+    position: relative;
+    height: 1230px;
+    overflow: hidden;
+}
+
+/* full-bleed background slider */
+.world-top__swiper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.world-top__slide {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* foreground content */
+.world-top__inner {
+    position: relative;
+    z-index: 1;
+    padding-top: 36px;
+}
+
+/* progress bars */
+.world-top__bars {
+    display: flex;
+    gap: 20px;
+}
+
+.world-top__bar {
+    position: relative;
+    flex: 1;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35);
+    overflow: hidden;
+}
+
+.world-top__bar-fill {
+    position: absolute;
+    inset: 0;
+    width: 0;
+    border-radius: inherit;
+    background: #fff;
+}
+
+/* heading (left) + two paragraphs (right) */
+.world-top__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 80px;
+}
+
+.world-top__title {
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 93%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    max-width: 650px;
+}
+
+.world-top__texts {
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+    max-width: 420px;
+    margin-right: 20px;
+}
+
+.world-top__text:first-child {
+    max-width: 355px;
+}
+
+.world-top__text {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 131%;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+/* ==========================================================================
+   Coin of Peace — static image + card slider
+   ========================================================================== */
+.peace {
+    padding: 150px 0 75px;
+    background: #ececec;
+}
+
+.peace__top {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.peace__title {
+    font-weight: 500;
+    font-size: 60px;
+    letter-spacing: -0.03em;
+    background: linear-gradient(123deg, #002944 0%, #4482a9 96.54%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 20px; 
+}
+
+/* --- slider: fixed image on the left, sliding cards on the right --- */
+/* full-bleed: out of the container so cards run to the right edge instead of being clipped */
+.peace__slider {
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+    padding-left: var(--container-padding);
+}
+
+.peace__swiper {
+    padding-right: var(--container-padding);
+}
+
+.peace__static {
+    flex-shrink: 0;
+    width: 767px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 13px;
+}
+
+.peace__swiper {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.peace__swiper .swiper-slide {
+    height: auto; /* stretch every card to the image height */
+}
+
+/* --- card --- */
+.peace-card {
+    box-sizing: border-box;
+    width: 505px;
+    display: flex;
+    flex-direction: column;
+    padding: 26px 26px 36px;
+    border-radius: 13px;
+    background: #f5f5f5;
+}
+
+.peace-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 36px;
+}
+
+.peace-card__tag {
+    padding: 6px 10px;
+    border-radius: 3px;
+    background: #fff;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: -0.03em;
+    color: #2e2e2e;
+    white-space: nowrap;
+}
+
+/* coin sits centred both ways; the paragraphs are pushed to the bottom */
+.peace-card__coin {
+    align-self: center;
+    width: 356px;
+    height: auto;
+    margin-bottom: auto;
+}
+
+.peace-card__texts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+.peace-card__text {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 118%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+    max-width: 406px;
+}
+
+/* ==========================================================================
+   The Stamp of Peace — row list + image cursor
+   ========================================================================== */
+.stamp {
+    padding: 75px 0 40px;
+    background: #ececec;
+}
+
+.stamp__title {
+    margin-bottom: 50px;
+    font-weight: 500;
+    font-size: 60px;
+    letter-spacing: -0.03em;
+    background: linear-gradient(91.76deg, #002944 7.42%, #4482a9 67.25%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* image that follows the cursor */
+.stamp__cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 425px;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    will-change: transform;
+}
+
+.stamp__cursor.is-visible {
+    opacity: 1;
+}
+
+/* rows container — full-bleed on the left, 37px inset on the right */
+.stamp__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 37px 0 0;
+    cursor: none; /* replaced by the stamp image only over the rows */
+}
+
+.stamp-row {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    height: 261px;
+    padding: 0 100px 40px 46px;
+    border-radius: 6px;
+    background: #f5f5f5;
+}
+
+.stamp-row__year {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: rgba(46, 46, 46, 0.25);
+}
+
+/* description — the only element with disabled/active states */
+.stamp-row__desc {
+    max-width: 750px;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: rgba(23, 65, 94, 0.25);
+    transition: color 0.3s ease;
+}
+
+.stamp-row:hover .stamp-row__desc {
+    color: #17415e; /* active */
+}
+
+.stamp-row__right {
+    display: flex;
+    align-items: center;
+    gap: 226px;
+}
+
+.stamp-row__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+    white-space: nowrap;
+}
+
+.stamp-row__square {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    background: #17415e;
+}
+
+.stamp-row__brand {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   For Peace — intro + full-bleed card slider
+   ========================================================================== */
+.for-peace {
+    padding: 110px 0 200px;
+    background-size: 1800px 1488px !important;
+    background: #ececec url('../assets/img/for-peace-bg.png') top center / 100% auto no-repeat;
+}
+
+/* top: label (left) + intro block (right) */
+.for-peace__top {
+    display: flex;
+    align-items: flex-start;
+    gap: 450px;
+}
+
+.for-peace__label {
+    flex-shrink: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+.for-peace__title {
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-size: 60px;
+    letter-spacing: -0.03em;
+    background: linear-gradient(123deg, #002944 0%, #4482a9 96.54%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.for-peace__texts {
+    display: flex;
+    gap: 60px;
+}
+
+.for-peace__text {
+    max-width: 360px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 133%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+.for-peace__text:first-child {
+    max-width: 317px;
+}
+
+.for-peace__nav {
+    margin-top: 50px;
+}
+
+/* --- full-bleed card slider --- */
+.for-peace__slider {
+    margin-top: 100px;
+}
+
+/* cards keep their own image height, top-aligned in the row */
+.for-peace__swiper .swiper-wrapper {
+    align-items: flex-start;
+}
+
+.for-peace-card {
+    position: relative;
+    width: 545px;
+    min-height: 400px;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.for-peace-card__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    object-fit: cover;
+}
+
+/* top + bottom darkening for text readability */
+.for-peace-card::before,
+.for-peace-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.for-peace-card::before {
+    top: 0;
+    height: 130px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.for-peace-card::after {
+    bottom: 0;
+    height: 300px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.for-peace-card__tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    padding: 8px 10px;
+    border-radius: 6px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.15);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: -0.03em;
+    color: #fff;
+    white-space: nowrap;
+}
+
+/* paragraphs pinned to the bottom */
+.for-peace-card__texts {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 30px;
+    padding: 0 30px 40px;
+    pointer-events: none;
+}
+
+.for-peace-card__text {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 117%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    max-width: 400px;
+}
+
+.for-peace-card__text b {
+    font-weight: 700;
+}

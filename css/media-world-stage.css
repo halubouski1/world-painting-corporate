@@ -1,0 +1,40 @@
+@media (max-width: 1919px) {
+    .hero__bottom {
+        bottom: 30px;
+    }
+
+    .world-stage__title {
+        font-size: 90px;
+        margin-bottom: 32px;
+    }
+
+    .world-stage__desc {
+        margin-bottom: 186px;
+        font-size: 17px;
+    }
+
+    .world-stage__logo {
+        width: 230px;
+        height: 127px;
+        border-radius: 3px;
+    }
+
+    .world-stage__logo img {
+        max-height: 45%;
+        object-fit: contain;
+    }
+
+    .world-stage__logos {
+        margin-bottom: 44px;
+        width: calc(100% - 160px);
+    }
+
+    .world-stage__bar {
+        height: 2px;
+    }
+
+    .world-stage__bars {
+        gap: 15px;
+    }
+
+}

@@ -978,3 +978,214 @@ a.footer__info-value:focus-visible {
 .footer__request:focus-visible img {
     transform: translate(3px, -3px);
 }
+
+/* ==========================================================================
+   Buy / contact modal
+   ========================================================================== */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 15, 15, 0.55);
+    cursor: pointer;
+}
+
+.modal__dialog {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    width: min(1660px, 100%);
+    height: min(840px, 100%);
+    padding: 0 63px 50px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: url('../assets/img/contact-modal-bg.png') center / cover no-repeat;
+    transform: scale(0.98);
+    transition: transform 0.3s ease;
+}
+
+.modal.is-open .modal__dialog {
+    transform: scale(1);
+}
+
+.modal__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 2;
+    line-height: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.modal__close:hover {
+    transform: rotate(90deg);
+}
+
+/* right-hand content column */
+.modal__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 370px;
+    max-width: 370px;
+    padding-top: 190px;
+}
+
+.modal__title {
+    max-width: 370px;
+    margin-bottom: 45px;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 90%;
+    letter-spacing: -0.03em;
+    background: linear-gradient(99.02deg, #17415e 25.77%, #3088c4 74.23%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.modal__input {
+    width: 100%;
+    background: #f6f6f6;
+    height: 65px;
+    border-radius: 2px;
+    padding: 0px 30px;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    color: #17415e;
+}
+
+.modal__input::placeholder {
+    color: rgba(23, 65, 94, 0.5);
+}
+
+.modal__submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 30px;
+    height: 65px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(92.45deg, #17415e 2.05%, #3088c4 117.29%);
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: filter 0.25s ease;
+}
+
+.modal__submit:hover {
+    filter: brightness(1.08);
+}
+
+.modal__policy {
+    max-width: 226px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 133%;
+    display: block;
+    letter-spacing: -0.03em;
+    color: rgba(23, 65, 94, 0.3);
+}
+
+.modal__policy a {
+    color: #17415e;
+}
+
+/* --- bottom: social links --- */
+.modal__social-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.modal__social {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 400;
+    font-size: 25px;
+    color: #17415e;
+    transition: opacity 0.25s ease;
+}
+
+.modal__social:hover {
+    opacity: 0.7;
+}
+
+/* ==========================================================================
+   Phone field — intl-tel-input (country box + 12px gap to the number)
+   ========================================================================== */
+.modal__form .iti {
+    display: block;
+    width: 100%;
+}
+
+/* static country flag (no dropdown) shown as its own rounded box */
+.modal__form .iti__flag-container {
+    pointer-events: none;
+    left: 30px;
+}
+
+.iti__selected-flag {
+    padding: 0;
+}
+
+.modal__form .iti__arrow {
+    display: none; /* no dropdown → no arrow */
+}
+
+/* the typed number sits ~12px past the flag box */
+.modal__form .modal__input--phone {
+    padding-left: 62px;
+}
+
+/* placeholder-style hint shown right after the prefilled "+1" */
+.modal__phone {
+    position: relative;
+}
+
+.modal__phone-hint {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-58%);
+    /* left is set by JS to sit exactly after "+1 " */
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    color: rgba(23, 65, 94, 0.5);
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}

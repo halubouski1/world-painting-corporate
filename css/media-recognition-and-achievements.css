@@ -1,0 +1,318 @@
+@media (max-width: 1919px) {
+    .hero__bottom {
+        bottom: 30px;
+    }
+
+    .recognition__title {
+        font-size: 63px;
+        max-width: 520px;
+    }
+
+    .recognition__badge {
+        width: 66px;
+        height: 66px;
+        left: 217px;
+    }
+
+    .recognition__col-title {
+        font-size: 33px;
+        max-width: 350px;
+        margin-bottom: 14px;
+    }
+
+    .recognition__right {
+        gap: 106px;
+    }
+
+    .recognition__col-text {
+        font-size: 13px;
+        max-width: 350px;
+    }
+
+    .recognition__col:last-child {
+        max-width: 260px;
+    }
+
+    /* beyond */
+    .beyond__inner {
+        padding: 80px 45px 0 53px;
+    }
+
+    .beyond__title {
+        font-size: 45px;
+    }
+
+    .beyond__content {
+        top: 80px;
+    }
+
+    .beyond__num {
+        width: 54px;
+        height: 54px;
+        font-size: 18px;
+        margin-bottom: 100px;
+    }
+
+    .beyond__wheel {
+        top: 177px;
+        height: 1200px;
+    }
+
+    .beyond__desc {
+        font-size: 15px;
+        max-width: 308px;
+        margin-bottom: 56px;
+    }
+
+    .beyond__point {
+        width: 18px;
+        height: 18px;
+    }
+
+    .beyond__video {
+        width: 813px;
+        height: 458px;
+    }
+
+    .beyond__pin {
+        height: 900px;
+    }
+
+    /* .world-top */
+    .world-top__inner {
+        padding-top: 27px;
+    }
+
+    .world-top__bar {
+        height: 2px;
+    }
+
+    .world-top__bars {
+        gap: 15px;
+    }
+
+    .world-top__row {
+        margin-top: 60px;
+    }
+
+    .world-top__title {
+        font-size: 75px;
+        max-width: 470px;
+    }
+
+    .world-top__text {
+        font-size: 18px;
+        max-width: 298px;
+    }
+
+    .world-top__text:first-child {
+        max-width: 256px;
+    }
+
+    .world-top__texts {
+        margin-right: 10px;
+        gap: 40px;
+    }
+
+    .world-top {
+        height: 920px;
+    }
+
+    /* .peace */
+    .peace {
+        padding: 110px 0 55px;
+    }
+
+    .peace__title {
+        font-size: 45px;
+        padding-bottom: 15px;
+    }
+
+    .peace__top {
+        margin-bottom: 37px;
+    }
+
+    .peace__static {
+        width: 575px;
+    }
+
+    .peace__slider {
+        gap: 22px;
+    }
+
+    .peace-card {
+        padding: 20px 20px 27px;
+        width: 378px;
+    }
+
+    .peace-card__tags {
+        gap: 7px;
+        margin-bottom: 27px;
+    }
+
+    .peace-card__tag {
+        font-size: 10px;
+        padding: 5px 7.5px;
+    }
+
+    .peace-card__coin {
+        width: 267px;
+    }
+
+    .peace-card__text {
+        font-size: 12px;
+    }
+
+    .peace-card__texts {
+        gap: 15px;
+        padding-left: 10px;
+    }
+
+    /* stamp */
+    .stamp {
+        padding: 55px 0 30px;
+        background: #ececec;
+    }
+
+    .stamp__title {
+        font-size: 45px;
+        margin-bottom: 36px;
+    }
+
+    .stamp-row {
+        height: 195px;
+        padding: 0 75px 30px 34px;
+    }
+
+    .stamp-row__year {
+        font-size: 12px;
+        top: 22px;
+        right: 22px;
+    }
+
+    .stamp-row__desc {
+        font-size: 26px;
+    }
+
+    .stamp-row__tag {
+        font-size: 12px;
+        gap: 8px;
+    }
+
+    .stamp-row__square {
+        width: 10px;
+        height: 10px;
+    }
+
+    .stamp-row__brand {
+        font-size: 12px;
+    }
+
+    .stamp__rows {
+        gap: 8px;
+        padding-right: 27px;
+    }
+
+    .stamp__cursor {
+        width: 318px;
+    }
+
+    /* for-peace */
+    .for-peace {
+        background-size: 1360px 1115px !important;
+        padding: 82px 0 150px;
+    }
+
+    .for-peace__label {
+        font-size: 12px;
+    }
+
+    .for-peace__top {
+        gap: 330px;
+    }
+
+    .for-peace__title {
+        font-size: 45px;
+        margin-bottom: 30px;
+    }
+
+    .for-peace__text {
+        font-size: 11px;
+        max-width: 263px;
+    }
+
+    .for-peace__text:first-child {
+        max-width: 233px;
+    }
+
+    .for-peace__texts {
+        gap: 45px;
+    }
+
+    .for-peace__nav {
+        margin-top: 37px;
+    }
+
+    .for-peace__slider {
+        margin-top: 75px;
+    }
+
+    .for-peace-card {
+        width: 408px;
+        min-height: 347px;
+        border-radius: 8px;
+    }
+
+    .for-peace-card__tag {
+        top: 10px;
+        left: 10px;
+        font-size: 10px;
+        padding: 5px 7px;
+        border-radius: 2px;
+    }
+
+    .for-peace-card__texts {
+        gap: 22px;
+        padding: 0 22px 28px;
+    }
+
+    .for-peace-card__text {
+        font-size: 14px;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 1430px) {
+    .recognition__col-title {
+        font-size: 28px;
+        max-width: 298px;
+    }
+
+    .recognition__title {
+        font-size: 45px;
+        max-width: 388px;
+    }
+
+    .recognition__badge {
+        left: 149px;
+        top: -27px;
+    }
+
+    .recognition__col-text {
+        font-size: 13px;
+        max-width: 281px;
+    }
+
+    .recognition__right {
+        gap: 70px;
+    }
+
+    .recognition__col:last-child {
+        max-width: 208px;
+    }
+
+    /* .stamp */
+    .stamp-row__right {
+        gap: 150px;
+    }
+}

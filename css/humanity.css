@@ -411,6 +411,137 @@
     color: #fff;
 }
 
+/* ==========================================================================
+   Cross-slider — horizontal panel transition (planet ↔ proportions)
+   ========================================================================== */
+.cross-slider {
+    position: relative;
+    height: 200vh; /* scroll room for the horizontal slide */
+}
+
+.cross-slider__pin {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.cross-slider__track {
+    display: flex;
+    width: 200vw;
+    height: 100%;
+    will-change: transform;
+}
+
+.cross-slider__panel {
+    flex: 0 0 100vw;
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* planet now fills the panel; distribute top/bottom instead of the fixed margin */
+.cross-slider .planet {
+    height: 100%;
+}
+
+.cross-slider .planet__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.cross-slider .planet__top {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Proportions panel
+   ========================================================================== */
+.proportions {
+    position: relative;
+    background: url('../assets/img/modal-bg.png') center / cover no-repeat;
+}
+
+.proportions__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 60px 55px;
+}
+
+.proportions__title {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 111%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+.proportions__desc {
+    max-width: 440px;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 142%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+.proportions__desc b {
+    font-weight: 700;
+}
+
+.proportions__cards {
+    display: flex;
+    gap: 30px;
+}
+
+.prop-card {
+    box-sizing: border-box;
+    width: 386px;
+    padding: 23px 34px 34px 34px;
+    border-radius: 1px;
+    background: rgba(46, 46, 46, 0.02);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+}
+
+.prop-card:first-child .prop-card__text {
+    max-width: 293px;
+}
+
+.prop-card__top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.prop-card__line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.prop-card__num {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 141%;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+.prop-card__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 141%;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
 /* footer */
 footer {
     margin-top: 30px !important;

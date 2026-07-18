@@ -1,0 +1,432 @@
+/* ==========================================================================
+   Hero — News
+   (bottom shading comes from the global .hero::after)
+   ========================================================================== */
+.hero {
+    background: url('../assets/img/news.png') center / cover no-repeat;
+}
+
+/* top shading */
+.hero::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100px;
+    rotate: 180deg;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+    pointer-events: none;
+}
+
+/* right shading */
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 500px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+    pointer-events: none;
+}
+
+/* headline SVG — spans the full container width and scales down proportionally */
+.news__hero-text {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero__bottom {
+    left: 10px;
+    right: 10px;
+    bottom: 20px;
+}
+
+/* ==========================================================================
+   Publications in the media
+   ========================================================================== */
+.news {
+    padding: 150px 0 200px;
+}
+
+/* --- top bar: title + recency filter --- */
+.news__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.news__title {
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 92%;
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+    background: linear-gradient(91.76deg, #002944 7.46%, #4482a9 67.26%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.news__filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 27px;
+    padding: 8px 8px 8px 30px;
+    border: 1px solid #17415e;
+    border-radius: 999px;
+    background: transparent;
+    color: #17415e;
+    transition: border-color 0.25s ease;
+}
+
+.news__filter:hover {
+    border-color: rgba(23, 65, 94, 0.55);
+}
+
+.news__filter-label {
+    font-weight: 500;
+    font-size: 15px;
+    color: #17415e;
+}
+
+/* clicks always land on the button, never on a child that may be mid-rotation */
+.news__filter > * {
+    pointer-events: none;
+}
+
+.news__filter-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #17415e;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* arrow flips when sorted oldest-first */
+.news__filter.is-asc .news__filter-icon {
+    transform: rotate(180deg);
+}
+
+/* --- grid: 2 big cards, then rows of 4 --- */
+.news__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 15px;
+    row-gap: 95px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* keep 30px between the two featured cards while the small cards sit 15px apart */
+.news-card:nth-child(1) {
+    margin-right: 7.5px;
+}
+
+.news-card:nth-child(2) {
+    margin-left: 7.5px;
+}
+
+/* faded state while cards are being reordered */
+.news__grid.is-sorting {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.news-card {
+    grid-column: span 1;
+}
+
+/* first two are the big featured cards */
+.news-card:nth-child(-n+2) {
+    grid-column: span 2;
+}
+
+.news-card__media {
+    position: relative;
+    display: block;
+    line-height: 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.news-card__image {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    height: 386px;
+}
+
+.news-card:nth-child(-n+2) .news-card__media {
+    height: 660px;
+}
+
+.news-card:nth-child(-n+2) .news-card__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* top-right arrow icon in a circle */
+.news-card__icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.news-card__icon img {
+    transition: transform 0.3s ease;
+}
+
+.news-card__media:hover .news-card__icon img {
+    transform: translate(3px, -3px);
+}
+
+.news-card:nth-child(-n+2) .news-card__icon {
+    top: 30px;
+    right: 30px;
+}
+
+/* date badge: dot + text */
+.news-card__date {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(38px);
+    -webkit-backdrop-filter: blur(38px);
+    border-radius: 22px;
+    padding: 7px 14px 7px 7px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.news-card__date-dot {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ffd900;
+}
+
+.news-card__date-text {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+/* title under the image */
+.news-card__title {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 116%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+    max-width: 433px;
+}
+
+.news-card:nth-child(-n+2) .news-card__title {
+    margin-top: 35px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 133%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+    max-width: 100%;
+}
+
+/* --- pagination (same look as the history slider) --- */
+.news__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin-top: 70px;
+}
+
+.news__page {
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: rgba(46, 46, 46, 0.5);
+    transition: color 0.2s ease;
+}
+
+.news__page:hover,
+.news__page--active {
+    color: #2e2e2e;
+}
+
+/* ==========================================================================
+   Publication in newspapers (auto-rotating background)
+   ========================================================================== */
+.newspapers {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+/* full-bleed background slider */
+.newspapers__swiper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.newspapers__slide {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* foreground content */
+.newspapers__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* --- progress bars (stories style) --- */
+.newspapers__bars {
+    display: flex;
+    gap: 20px;
+}
+
+.newspapers__bar {
+    position: relative;
+    flex: 1;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35);
+    overflow: hidden;
+}
+
+.newspapers__bar-fill {
+    position: absolute;
+    inset: 0;
+    width: 0;
+    border-radius: inherit;
+    background: #fff;
+}
+
+/* --- "View more" pill --- */
+.newspapers__more {
+    align-self: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 26px;
+    margin-top: 520px;
+    padding: 23px 35px 23px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    backdrop-filter: blur(36px);
+    background: rgba(255, 255, 255, 0.02);
+    -webkit-backdrop-filter: blur(36px);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #fff;
+    transition: background 0.25s ease;
+}
+
+.newspapers__more:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.newspapers__more img {
+    flex-shrink: 0;
+}
+
+/* --- footer block: heading + discover + line --- */
+.newspapers__foot {
+    margin-top: 420px;
+}
+
+.newspapers__foot-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+
+.newspapers__title {
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 116%;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+.newspapers__discover {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 340%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    transition: opacity 0.25s ease;
+}
+
+.newspapers__discover:hover {
+    opacity: 0.75;
+}
+
+.newspapers__discover img {
+    flex-shrink: 0;
+}
+
+/* --- full-width line with a rounded white cap at the end --- */
+.newspapers__line {
+    position: relative;
+    height: 6px;
+}
+
+.newspapers__line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: #fff;
+}
+
+.newspapers__line-cap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 63px;
+    height: 6px;
+    background: #fff;
+}
+
+/* footer */
+.footer {
+    margin-top: 200px;
+}

@@ -435,6 +435,92 @@
     .footer__info-block {
         gap: 7px;
     }
+
+
+    /* modal */
+        .modal__dialog {
+        width: min(1245px, 100%);
+        height: min(630px, 100%);
+        padding: 0 57px 35px 0;
+    }
+
+    .modal__close {
+        top: 17px;
+        right: 17px;
+    }
+
+    .modal__close img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .modal__wrapper {
+        width: 278px;
+        padding-top: 143px;
+    }
+
+    .modal__title {
+        font-size: 37px;
+        margin-bottom: 33px;
+        max-width: 270px;
+    }
+
+    .modal__input {
+        height: 48px;
+        padding: 0px 20px;
+        font-size: 13px;
+    }
+
+    .modal__phone-hint {
+        font-size: 13px;
+        left: 62px;
+    }
+
+    .iti__flag.iti__us {
+        height: 8px;
+        width: 12px;
+    }
+
+    .modal__form .modal__input--phone {
+        padding-left: 44px;
+    }
+
+    .modal__form .iti__flag-container {
+        left: 22px;
+    }
+
+    .modal__form {
+        gap: 8px;
+    }
+
+    .modal__submit {
+        height: 48px;
+        font-size: 13px;
+        padding: 0 20px;
+    }
+
+    .modal__form {
+        margin-bottom: 22px;
+    }
+
+    .modal__policy {
+        font-size: 11px;
+        max-width: 200px;
+    }
+
+    .modal__social {
+        font-size: 18px;
+        gap: 10px;
+    }
+
+    .modal__social img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .modal__social-list {
+        gap: 30px;
+    }
 }
 
 @media (max-width: 1430px) {
@@ -493,5 +579,10 @@
 
     .painting__fenomeno .painting__image img {
         width: 500px;
+    }
+
+    /* modal */
+    .modal__dialog {
+        background-position-x: right;
     }
 }
