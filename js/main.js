@@ -36,13 +36,19 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.product-slider__sw
   new Swiper('.product-slider__swiper', {
     slidesPerView: 'auto',
     spaceBetween: 22,
+    enabled: false, // disabled on mobile → cards stack (see media.css ≤1024)
     navigation: {
       prevEl: '.product-slider__button--prev',
       nextEl: '.product-slider__button--next',
       disabledClass: 'is-disabled',
     },
     breakpoints: {
+      1025: {
+        enabled: true,
+        spaceBetween: 22,
+      },
       1920: {
+        enabled: true,
         spaceBetween: 30,
       },
     },
@@ -608,6 +614,37 @@ if (buyModal) {
       toggleHint();
     }
   }
+}
+
+// ========================================
+// Burger menu — off-canvas panel
+// ========================================
+const burgerMenu = document.querySelector('#main-menu');
+const burgerButton = document.querySelector('.burger');
+if (burgerMenu && burgerButton) {
+  const openMenu = () => {
+    burgerMenu.classList.add('is-open');
+    burgerMenu.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (lenis) lenis.stop();
+  };
+  const closeMenu = () => {
+    burgerMenu.classList.remove('is-open');
+    burgerMenu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lenis) lenis.start();
+  };
+
+  burgerButton.addEventListener('click', openMenu);
+  burgerMenu.querySelectorAll('[data-menu-close]').forEach((el) => {
+    el.addEventListener('click', closeMenu);
+  });
+  burgerMenu.querySelectorAll('.menu__link').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && burgerMenu.classList.contains('is-open')) closeMenu();
+  });
 }
 
 // ========================================

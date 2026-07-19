@@ -146,6 +146,114 @@ ul {
 }
 
 /* ==========================================================================
+   Burger menu (off-canvas, slides in from the left)
+   ========================================================================== */
+.menu {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    visibility: hidden;
+    pointer-events: none;
+    transition: visibility 0s linear 0.5s; /* stay visible until the panel slides out */
+}
+
+.menu.is-open {
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s; /* show immediately on open */
+}
+
+.menu__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 15, 15, 0.4);
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.4s ease;
+}
+
+.menu.is-open .menu__overlay {
+    opacity: 1;
+}
+
+.menu__panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: min(406px, 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 20px 48px 25px;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #ffffff 0%, #e7e7e7 100%);
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.menu.is-open .menu__panel {
+    transform: translateX(0);
+}
+
+.menu__top {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.menu__logo {
+    display: none;
+    line-height: 0;
+}
+
+.menu__close {
+    line-height: 0;
+    transition: transform 0.25s ease;
+}
+
+.menu__close:hover {
+    transform: rotate(90deg);
+}
+
+.menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-top: 70px;
+}
+
+.menu__link {
+    font-weight: 500;
+    font-size: 31px;
+    color: #17415e;
+    transition: opacity 0.2s ease;
+}
+
+.menu__link:hover {
+    opacity: 0.6;
+}
+
+.menu__social {
+    display: flex;
+    gap: 43px;
+}
+
+.menu__social-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 400;
+    font-size: 22px;
+    color: #17415e;
+    transition: opacity 0.2s ease;
+}
+
+.menu__social-link:hover {
+    opacity: 0.6;
+}
+
+/* ==========================================================================
    Hero
    ========================================================================== */
 .hero {
@@ -225,6 +333,10 @@ ul {
     letter-spacing: -0.03em;
     color: #fff;
     max-width: 400px;
+}
+
+.hero__mob {
+    display: none;
 }
 
 .hero__brand {
@@ -432,7 +544,7 @@ ul {
 }
 
 .painting__title {
-    max-width: 765px;
+    max-width: 830px;
     font-weight: 400;
     font-size: 60px;
     line-height: 100%;
@@ -661,6 +773,8 @@ ul {
 
 .product-card__image {
     margin-bottom: 50px;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .product-card__image img {
@@ -715,6 +829,11 @@ ul {
     line-height: 100%;
     letter-spacing: -0.03em;
     color: #2e2e2e;
+}
+
+/* buy button only appears in the stacked mobile layout (≤1024) */
+.product-card__button {
+    display: none;
 }
 
 /* ==========================================================================
@@ -781,6 +900,10 @@ ul {
     display: flex;
     align-items: center;
     gap: 23px;
+}
+
+.footer__mob-meta {
+    display: none;
 }
 
 .footer__copyright {
@@ -987,8 +1110,8 @@ a.footer__info-value:focus-visible {
     inset: 0;
     z-index: 1000;
     display: flex;
-    align-items: center;
     justify-content: center;
+    overflow-y: auto; /* scroll the whole modal when it's taller than the screen */
     padding: 20px;
     opacity: 0;
     visibility: hidden;
@@ -1001,7 +1124,7 @@ a.footer__info-value:focus-visible {
 }
 
 .modal__overlay {
-    position: absolute;
+    position: fixed;
     inset: 0;
     background: rgba(15, 15, 15, 0.55);
     cursor: pointer;
@@ -1013,7 +1136,8 @@ a.footer__info-value:focus-visible {
     display: flex;
     justify-content: flex-end;
     width: min(1660px, 100%);
-    height: min(840px, 100%);
+    min-height: min(840px, 100%); /* grows with content (never clips) → modal scrolls */
+    margin: auto; /* centred when it fits; top + scroll when it doesn't */
     padding: 0 63px 50px 0;
     border-radius: 8px;
     overflow: hidden;
