@@ -863,6 +863,16 @@
         justify-content: space-between;
     }
 
+    /* keep content above the ::before/::after gradients (Safari display:contents fix) */
+    .painting__top,
+    .painting__desc,
+    .painting__signature,
+    .painting__image,
+    .painting__buy {
+        position: relative;
+        z-index: 2;
+    }
+
     /* --- everest → vertical stack: title, image, desc, divider, buy row --- */
     .everest {
         padding-top: 43px;
@@ -925,6 +935,17 @@
         grid-area: 5 / 2 / 6 / 3;
         align-self: center;
         text-align: right;
+    }
+
+    /* keep content above the ::after gradient (Safari display:contents fix) */
+    .everest__title,
+    .everest__image,
+    .everest__desc,
+    .everest__divider,
+    .everest__button,
+    .everest__price-group {
+        position: relative;
+        z-index: 2;
     }
 
     /* --- product-slider → stacked cards (no slider) --- */
