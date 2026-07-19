@@ -38,6 +38,46 @@
     </div>
 </header>
 
+<div class="menu" id="main-menu" aria-hidden="true" data-lenis-prevent>
+    <div class="menu__overlay" data-menu-close></div>
+
+    <aside class="menu__panel">
+        <div class="menu__main">
+            <div class="menu__top">
+                <a href="/" class="menu__logo" aria-label="World Painting">
+                    <img src="assets/img/logo-dark.svg" alt="World Painting" width="100" height="45">
+                </a>
+                <button class="menu__close" type="button" data-menu-close aria-label="Close menu">
+                    <img src="assets/icons/close.svg" alt="" width="34" height="34">
+                </button>
+            </div>
+
+            <ul class="menu__list">
+                <li><a href="/" class="menu__link">Home</a></li>
+                <li><a href="digital-legacy.html" class="menu__link">Digital Legacy</a></li>
+                <li><a href="world-stage.html" class="menu__link">On the World Stage</a></li>
+                <li><a href="#" class="menu__link">Team</a></li>
+                <li><a href="contact-us.html" class="menu__link">Contact Us</a></li>
+                <li><a href="news.html" class="menu__link">Voices of the World</a></li>
+                <li><a href="recognition-and-achievements.html" class="menu__link">Achievements</a></li>
+                <li><a href="index.html" class="menu__link">Art Collectibles</a></li>
+                <li><a href="humanity.html" class="menu__link">Faces of Humanity</a></li>
+            </ul>
+        </div>
+
+        <div class="menu__social">
+            <a href="https://wa.me/971509587009" class="menu__social-link" target="_blank" rel="noopener">
+                <span>whatsapp</span>
+                <img src="assets/icons/menu-social-icon.svg" alt="" width="21" height="21">
+            </a>
+            <a href="https://instagram.com/worldpaintingart" class="menu__social-link" target="_blank" rel="noopener">
+                <span>Instagram</span>
+                <img src="assets/icons/menu-social-icon.svg" alt="" width="21" height="21">
+            </a>
+        </div>
+    </aside>
+</div>
+
 <section class="hero">
     <div class="hero__overlay"></div>
 
@@ -52,7 +92,9 @@
 
     <div class="hero__bottom">
         <h1 class="digital__title">
-            <span class="digital__title-world">World</span>Painting<br>
+            <div class="digital__title-line">
+                <span class="digital__title-world">World</span><span>Painting</span><br>
+            </div>
             Digital Legacy
         </h1>
 
@@ -131,7 +173,56 @@
             </div>
         </div>
     </div>
+    <div class="footer__mob-meta">
+            <span class="footer__copyright">© 2025</span>
+            <a href="#" class="footer__privacy">Privacy Policy</a>
+    </div>
 </footer>
+
+<div class="modal" id="buy-modal" aria-hidden="true" data-lenis-prevent>
+    <div class="modal__overlay" data-modal-close></div>
+
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="Contact us">
+        <button class="modal__close" type="button" data-modal-close aria-label="Close">
+            <img src="assets/icons/close.svg" alt="" width="34" height="34">
+        </button>
+
+        <div class="modal__wrapper">
+            <div class="modal__top">
+                <h2 class="modal__title">Every country. One canvas.</h2>
+
+                <div class="modal__form">
+                    <div class="modal__phone">
+                        <input id="modal-phone" class="modal__input modal__input--phone" type="tel">
+                        <span class="modal__phone-hint" id="modal-phone-hint">(000)-000-00-00</span>
+                    </div>
+                    <input class="modal__input" type="email" placeholder="Enter your Email">
+                    <button class="modal__submit" type="submit">
+                        <span>Contact Us</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M13.3346 2.66663V7.33329C13.3346 8.04054 13.0537 8.71881 12.5536 9.21891C12.0535 9.71901 11.3752 9.99996 10.668 9.99996H2.66797" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M6.0013 6.66663L2.66797 9.99996L6.0013 13.3333" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <span class="modal__policy">By clicking the button, you agree to the <a href="#">Privacy Policy</a></span>
+            </div>
+
+            <div class="modal__social-list">
+                <a href="https://instagram.com/worldpaintingart" class="modal__social" target="_blank" rel="noopener">
+                    <span>Instagram</span>
+                    <img src="assets/icons/social-arrow.svg" alt="" width="21" height="21">
+                </a>
+                <a href="https://wa.me/971509587009" class="modal__social" target="_blank" rel="noopener">
+                    <span>whatsapp</span>
+                    <img src="assets/icons/social-arrow.svg" alt="" width="21" height="21">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
