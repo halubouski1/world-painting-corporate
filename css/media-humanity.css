@@ -238,3 +238,303 @@
         max-width: 441px;
     }
 }
+
+@media (max-width: 1024px) {
+    .hero__scrolldown {
+        display: none;
+    }
+
+    .hero {
+        padding-bottom: 40px;
+        min-height: 0;
+    }
+
+    /* planet */
+    .planet__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .planet__stats {
+        width: 100%;
+    }
+
+    .planet__title {
+        font-size: 63px;
+        max-width: 400px;
+    }
+
+    /* unite */
+    .unite {
+        background-position: center center;
+    }
+}
+
+@media (max-width: 800px) {
+    .proportions__cards {
+        display: none;
+    }
+
+    .proportions__top {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .proportions__desc {
+        color: #fff;
+    }
+}
+
+@media (max-width: 570px) {
+    .hero {
+        background: url(../assets/img/humanity-mob-bg.png) center / cover no-repeat;
+        padding-bottom: 43px;
+        padding-top: 0px;
+        border-bottom: 1px dashed rgba(46, 46, 46, 0.25);
+        max-height: 870px;
+    }
+
+    .hero__humanity-title {
+        font-size: 35px;
+        max-width: 320px;
+        line-height: 94%;
+    }
+
+    /* unite */
+    .unite__divider {
+        display: none;
+    }
+
+    .unite {
+        margin-top: 120px;
+        background: url(../assets/img/unite-mob-bg.png) center top 90px / 100% auto no-repeat;
+        padding-bottom: 430px;
+        background-size: 100% 100%;
+    }
+
+    .unite__title {
+        font-size: 30px;
+        line-height: 103%;
+        max-width: 320px;
+        margin-bottom: 527px;
+    }
+
+    .unite__cards {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .unite__card {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 10px;
+        padding: 37px 10px 37px 30px;
+    }
+
+    .unite__card-text {
+        font-size: 16px;
+        line-height: 141%;
+    }
+
+    .unite__card--right {
+        padding-right: 37px;
+        margin-bottom: 335px;
+    }
+
+    /* history */
+    .history {
+        padding-top: 100px;
+        padding-bottom: 90px;
+    }
+
+    .history__top {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .history__note-text {
+        font-size: 14px;
+        line-height: 136%;
+        padding: 20px 37px 17px 24px;
+    }
+
+    .history__note {
+        gap: 0px;
+        position: relative;
+    }
+
+    .history__note-decor {
+        position: absolute;
+        top: -98px;
+        right: -71px;
+        height: auto;
+        width: 80px;
+    }
+
+    .history::after {
+        top: 93px;
+        right: -578px;
+        width: 1066px;
+        height: 600px;
+    }
+
+    .history::before {
+        display: none;
+    }
+
+    .history__nav {
+        display: none;
+    }
+
+    .history__title {
+        font-size: 60px;
+        line-height: 95%;
+    }
+
+    /* --- history slider → plain vertical deck --- */
+    .history__pagination {
+        display: none;
+    }
+
+    /* full-bleed swiper: pad to the container edges (14px) */
+    .history__swiper {
+        padding: 0 14px;
+    }
+
+    .history__swiper .swiper-wrapper {
+        flex-direction: column;
+        gap: 15px;
+        transform: none !important;
+        height: auto !important;
+    }
+
+    .history-card {
+        width: 100% !important;
+        height: auto;
+        margin: 0 !important;
+        border-radius: 8px;
+        padding: 20px 20px 20px 12px;
+    }
+
+    .history-card__badge {
+        font-size: 10px;
+        padding: 5px 17px;
+    }
+
+    .history-card__region {
+        font-size: 10px;
+    }
+
+    /* card order: date/region row → description → map image */
+    .history-card__desc {
+        order: 2;
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 143%;
+        margin-top: 42px;
+        margin-left: 10px;
+    }
+
+    .history-card__image,
+    .history-card--eurasia .history-card__image {
+        order: 3;
+        position: static;
+        left: auto;
+        right: auto;
+        width: auto;
+        max-width: 80%;
+        max-height: none;
+        height: auto;
+        margin: 50px auto 0;
+        transform: none;
+    }
+
+    .history-card--eurasia .history-card__image {
+        max-width: 100% !important;
+        position: relative;
+        right: -20px;
+        top: 0;
+    }
+
+    /* planet */
+    .planet {
+        padding-top: 35px;
+        padding-bottom: 55px;
+        min-height: 650px;
+    }
+
+    .planet__title {
+        font-size: 35px;
+        line-height: 97%;
+        max-width: 210px;
+    }
+
+    .planet__coords {
+        font-size: 12px;
+        line-height: 141%;
+    }
+
+    .planet__desc {
+        font-size: 20px;
+        line-height: 131%;
+        max-width: 320px;
+    } 
+
+    .planet__stat-label {
+        font-size: 18px;
+        margin-bottom: 8px;
+        max-width: 100%;
+    }
+
+    .planet__stats {
+        padding-right: 0;
+        gap: 33px;
+    }
+
+    .planet__stat-value {
+        font-size: 50px;
+    } 
+
+    .planet__stat-divider {
+        margin-bottom: 20px;
+    }
+
+    .planet::after {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 38.48%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    /* proportions */
+    .proportions__content {
+        padding: 60px 0px 0px 33px;
+    }
+
+    .proportions__title {
+        font-size: 50px;
+        line-height: 111%;
+        margin-bottom: 0;
+    }
+
+    .proportions__top {
+        justify-content: flex-start;
+        gap: 13px;
+    }
+
+    .proportions__desc {
+        font-size: 14px;
+        line-height: 142%;
+        color: #17415e;
+        max-width: 280px;
+    }
+
+    .proportions {
+        background: url(../assets/img/proportions-mob-modal-bg.png) center / cover no-repeat;
+    }
+
+    /* footer */
+    .footer {
+        margin-top: 0 !important;
+    }
+}

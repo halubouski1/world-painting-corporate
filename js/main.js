@@ -65,15 +65,11 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.history__swiper'))
     // align first/last card with the container edges (same as --container-padding)
     slidesOffsetBefore: 33,
     slidesOffsetAfter: 33,
+    enabled: false, // <=570: plain vertical deck (re-enabled from 571 up, see CSS)
     navigation: {
       prevEl: '.product-slider__button--prev',
       nextEl: '.product-slider__button--next',
       disabledClass: 'is-disabled',
-    },
-    breakpoints: {
-      1920: {
-        spaceBetween: 30,
-      },
     },
     pagination: {
       el: '.history__pagination',
@@ -84,9 +80,17 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.history__swiper'))
         '<button type="button" class="' + className + '">' + (index + 1) + '</button>',
     },
     breakpoints: {
+      571: {
+        enabled: true,
+        slidesOffsetBefore: 33,
+        slidesOffsetAfter: 33,
+        spaceBetween: 22,
+      },
       1920: {
+        enabled: true,
         slidesOffsetBefore: 45,
         slidesOffsetAfter: 45,
+        spaceBetween: 30,
       },
     },
   });
