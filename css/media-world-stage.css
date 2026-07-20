@@ -36,5 +36,70 @@
     .world-stage__bars {
         gap: 15px;
     }
+}
 
+@media (max-width: 1024px) {
+    .hero::after {
+        display: block;
+    }
+
+    .world-stage__title {
+        font-size: 70px;
+        margin-bottom: 24px;
+    }
+
+    .world-stage__bars {
+        display: none;
+    }
+
+    .world-stage__logos {
+        margin-bottom: 0px;
+        width: calc(100% - 40px);
+    }
+} 
+
+@media (max-width: 570px) {
+    .hero {
+        padding-bottom: 20px;
+    }
+
+    .world-stage__title {
+        margin-left: -14px;
+        margin-right: -14px;
+        width: calc(100% + 28px);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 80%;
+        margin-bottom: 21px;
+    }
+
+    .world-stage__desc {
+        font-size: 14px;
+        line-height: 160%;
+        border: none;
+        padding-top: 0;
+        max-width: 273px;
+        margin-bottom: 196px;
+    }
+
+    .world-stage__logos {
+        width: calc(100% + 28px);
+        margin-left: -14px;
+        margin-right: -14px;
+    }
+
+    .world-stage__logo {
+        width: 188px;
+        height: 103px;
+        border-radius: 8px;
+    }
+
+    .world-stage__logo img {
+        max-width: 170px;
+        max-height: 47%;
+    }
+
+    .footer {
+        margin-top: 0px;
+    }
 }

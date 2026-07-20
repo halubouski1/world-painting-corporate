@@ -394,7 +394,7 @@ if (typeof Swiper !== 'undefined') {
 if (typeof Swiper !== 'undefined' && document.querySelector('.world-stage__logos')) {
   new Swiper('.world-stage__logos', {
     slidesPerView: 'auto',
-    spaceBetween: 15,
+    spaceBetween: 12,
     loop: true,
     allowTouchMove: false,
     speed: 4000,
@@ -402,6 +402,9 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.world-stage__logos
     breakpoints: {
       1920: {
         spaceBetween: 20,
+      },
+      1919: {
+        spaceBetween: 15,
       },
     },
   });
