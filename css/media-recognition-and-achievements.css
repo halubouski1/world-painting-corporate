@@ -316,3 +316,500 @@
         gap: 150px;
     }
 }
+
+@media (max-width: 1024px) {
+    .recognition__col:first-child {
+        display: none;
+    }
+
+    .hero {
+        padding-bottom: 40px;
+    }
+
+    .recognition__right {
+        align-self: end;
+    }
+
+    .hero::after {
+        display: block;
+        top: 0;
+        height: auto;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.35) 45%, rgba(0, 0, 0, 0.5) 100%) !important;
+    }
+
+    .hero__bottom {
+        gap: 20px;
+    }
+
+    /* .beyond__video */
+    .beyond__video {
+        width: 95%;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .beyond__content {
+        top: 150px;
+    }
+
+    .beyond__wheel {
+        top: 230px;
+        height: 1200px;
+    }
+
+    /* world-top__bars */
+    .world-top__bars {
+        display: none;
+    }
+
+    .world-top__row {
+        margin-top: 0px;
+        gap: 30px;
+        flex-direction: column;
+    }
+
+    .world-top__title {
+        font-weight: 400;
+        font-size: 20px;
+        max-width: 100%;
+        line-height: 269%;
+        letter-spacing: -0.03em;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .world-top {
+        height: 1000px;
+    }
+
+    .world-top__texts {
+        flex-direction: row;
+        max-width: 100%;
+    }
+
+    .world-top__text {
+        max-width: 329px;
+    }
+
+        /* --- peace: slider off → 2 cards / static / 2 cards, stacked --- */
+    .peace .product-slider__nav {
+        display: none;
+    }
+
+    .peace__slider {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 17px;
+        padding-left: var(--container-padding);
+        padding-right: var(--container-padding);
+    }
+
+    /* flatten the swiper so the 4 cards become siblings of the static image */
+    .peace__swiper,
+    .peace__swiper .swiper-wrapper {
+        display: contents;
+    }
+
+    .peace__static {
+        order: 2; /* sits between card 2 and card 3 */
+        width: 100%;
+        height: auto;
+    }
+
+    .peace-card {
+        width: 100% !important;
+    }
+
+    .peace-card:nth-child(1),
+    .peace-card:nth-child(2) {
+        order: 1; /* above the static image */
+    }
+
+    .peace-card:nth-child(3),
+    .peace-card:nth-child(4) {
+        order: 3; /* below the static image */
+    }
+
+    .peace-card__coin {
+        margin-bottom: 50px;
+    }
+
+    .peace-card__text {
+        max-width: 100%;
+    }
+
+    /* stamp */
+    .stamp__rows {
+        padding-right: var(--container-padding);
+        padding-left: var(--container-padding);
+    }
+
+    .stamp-row__year {
+        position: static;
+    }
+
+    .stamp-row {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        background: none;
+        height: auto;
+        gap: 25px;
+        padding: 72px 0 46px 0;
+        border-bottom: 1px dashed #17415e;
+    }
+
+    .stamp-row:first-child {
+        padding-top: 0;
+    }
+
+    .stamp-row__brand {
+        display: none;
+    }
+
+    /* scroll-driven fill (replaces hover): faded by default, lit as each row
+       is scrolled past — tag (square + number + label) and text together */
+    .stamp {
+        position: relative;
+    }
+
+    .stamp-row__desc,
+    .stamp-row__tag {
+        color: rgba(23, 65, 94, 0.25);
+        transition: color 0.35s ease;
+    }
+
+    .stamp-row__square {
+        background: rgba(23, 65, 94, 0.25);
+        transition: background 0.35s ease;
+    }
+
+    .stamp-row.is-active .stamp-row__desc,
+    .stamp-row.is-active .stamp-row__tag {
+        color: #17415e;
+    }
+
+    .stamp-row.is-active .stamp-row__square {
+        background: #17415e;
+    }
+
+    /* the stamp image rides the fill frontier: on the side, centred on the
+       dashed row border, gently rotated, fading in on scroll (top set in JS) */
+    .stamp__cursor {
+        position: absolute;
+        top: 0;
+        left: auto;
+        right: 20px;
+        width: 200px;
+        transform: translateY(-50%) rotate(7deg) scale(0.85);
+        transition: top 1s ease, opacity 1s ease, transform 1s ease;
+    }
+
+    .stamp__cursor.is-visible {
+        transform: translateY(-50%) rotate(-8deg) scale(1);
+    }
+
+    /* for-peace */
+    .for-peace {
+        background-image: none !important;
+        padding: 82px 0 50px;
+    }
+
+    .for-peace__label {
+        display: none;
+    }
+
+    .for-peace__text {
+        font-size: 13px;
+    }
+
+    .product-slider__nav {
+        display: flex;
+    }
+}
+
+@media (max-width: 570px) {
+    .hero__bottom {
+        height: 100%;
+    }
+
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 29px;
+    }
+
+    .recognition__title {
+        font-weight: 300;
+        max-width: 344px;
+        margin-bottom: 20px;
+    }
+
+    .recognition__badge {
+        position: static;
+        width: 88px;
+        height: 88px;
+    }
+
+    .recognition__right {
+        align-self: start;
+    }
+
+    .recognition__col {
+        max-width: 100% !important;
+    }
+
+    .recognition__col-title {
+        font-size: 42px;
+        line-height: 100%;
+        max-width: 308px;
+        font-weight: 300;
+        margin-bottom: 23px !important;
+    }
+
+    .recognition__col-text {
+        font-size: 14px;
+        line-height: 179%;
+        max-width: 314px;
+    }
+
+    /* beyond */
+    .beyond__inner {
+        padding: 90px 0px 0 0px;
+    }
+
+    .beyond__title {
+        font-size: 45px;
+        line-height: 111%;
+        text-align: center;
+    }
+
+    .beyond__content {
+        top: 190px;
+    }
+
+    .beyond__wheel {
+        top: 290px;
+        height: 1200px;
+    }
+
+    .beyond__num {
+        width: 72px;
+        height: 72px;
+        font-size: 25px;
+        margin-bottom: 100px;
+    }
+
+    .beyond__desc {
+        margin-bottom: 34px;
+        font-size: 16px;
+        line-height: 138%;
+        max-width: 321px;
+    }
+
+    .beyond__video {
+        height: 300px;
+    }
+
+    .beyond__pin {
+        height: 850px;
+    }
+
+    /* world-top */
+    .world-top {
+        height: 960px;
+    }
+
+    .world-top__inner {
+        padding-top: 30px;
+    }
+
+    .world-top__row {
+        gap: 17px;
+    }
+
+    .world-top__texts {
+        flex-direction: column;
+    }
+
+    .world-top__text {
+        font-size: 18px;
+        line-height: 131%;
+        max-width: 324px;
+    }
+
+    .world-top__text:first-child {
+        max-width: 290px;
+    }
+
+    .world-top__title {
+        font-size: 16px;
+    }
+
+    .world-top__slide--first {
+        background-image: url('../assets/img/world-top-mob.png') !important;
+    }
+
+    .world-top__slide--second {
+        background-image: url('../assets/img/world-top-mob.png') !important;
+    }
+
+    /* .peace */
+    .peace {
+        padding-top: 80px;
+    }
+
+    .peace__title {
+        font-size: 40px;
+        line-height: 125%;
+    }
+
+    .peace__top {
+        margin-bottom: 30px;
+    }
+
+    .peace-card {
+        border-radius: 7px;
+        padding: 20px 20px 44px 16px;
+        min-height: 533px;
+    }
+
+    .peace-card__tag {
+        font-size: 11px;
+        padding: 3px 6px;
+        border-radius: 3px;
+    }
+
+    .peace-card__tags {
+        gap: 5px;
+        margin-bottom: 54px;
+    }
+
+    .peace-card__coin {
+        width: 227px;
+        margin-bottom: 50px;
+    }
+
+    .peace-card__texts {
+        gap: 26px;
+        padding-left: 12px;
+    }
+
+    .peace-card__text {
+        font-size: 13px;
+        line-height: 123%;
+        max-width: 262px;
+    }
+
+    /* .stamp */
+    .stamp {
+        padding-top: 35px;
+    }
+
+    .stamp__title {
+        font-size: 45px;
+        margin-bottom: 70px;
+        max-width: 217px;
+    }
+
+    .stamp-row__tag {
+        font-size: 16px;
+        gap: 10px;
+    }
+
+    .stamp-row__square {
+        width: 12px;
+        height: 12px;
+    }
+
+    .stamp-row__desc {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 120%;
+        letter-spacing: -0.03em;
+    }
+
+    .stamp-row__year {
+        font-size: 16px;
+    }
+
+    .stamp__cursor {
+        width: 171px;
+    }
+
+    /* .for-peace */
+    .for-peace {
+        padding-top: 55px;
+    }
+
+    .for-peace__title {
+        font-size: 45px;
+        margin-bottom: 45px;
+        max-width: 300px;
+        line-height: 91%;
+    }
+
+    .for-peace__texts {
+        flex-direction: column;
+        gap: 45px;
+    }
+
+    .for-peace__text {
+        font-size: 15px;
+        line-height: 133%;
+        max-width: 319px !important;
+    }
+
+    .for-peace__nav {
+        margin-top: 73px;
+        justify-content: space-between;
+    }
+
+    .for-peace__slider {
+        margin-top: 30px;
+    }
+
+    .for-peace__intro {
+        width: 100%;
+    }
+
+    .product-slider__button {
+        font-size: 16px;
+        gap: 10px;
+    }
+
+    .product-slider__button svg {
+        width: 12px;
+        height: auto;
+    }
+
+    /* one card per view — fills the container (14px offset each side) */
+    .for-peace-card {
+        width: calc(100vw - 28px);
+        min-height: 640px;
+    }
+
+    /* fill the card (sized by its min-height): absolute so % height resolves */
+    .for-peace-card__image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .for-peace-card__tag {
+        font-size: 13px;
+        top: 15px;
+        left: 15px;
+        padding: 7px 10px;
+        border-radius: 3px;
+    }
+
+    .for-peace-card__texts {
+        gap: 30px;
+        padding: 0 20px 26px 20px;
+    }
+
+    .for-peace-card__text {
+        font-size: 14px;
+        line-height: 150%;
+    }
+}

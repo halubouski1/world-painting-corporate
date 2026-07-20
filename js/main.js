@@ -446,13 +446,19 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.peace__swiper')) {
   new Swiper('.peace__swiper', {
     slidesPerView: 'auto',
     spaceBetween: 22,
+    enabled: false, // <=1024: cards stack above/below the static image (see CSS)
     navigation: {
       prevEl: peace.querySelector('.product-slider__button--prev'),
       nextEl: peace.querySelector('.product-slider__button--next'),
       disabledClass: 'is-disabled',
     },
     breakpoints: {
+      1025: {
+        enabled: true,
+        spaceBetween: 22,
+      },
       1920: {
+        enabled: true,
         spaceBetween: 30,
       },
     },
@@ -465,10 +471,10 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.peace__swiper')) {
 if (typeof Swiper !== 'undefined' && document.querySelector('.for-peace__swiper')) {
   const forPeace = document.querySelector('.for-peace');
   new Swiper('.for-peace__swiper', {
-    slidesPerView: 'auto',
+    slidesPerView: 'auto', // <=570: one card fills the container (width set in CSS)
     spaceBetween: 15,
-    slidesOffsetBefore: 33,
-    slidesOffsetAfter: 33,
+    slidesOffsetBefore: 14,
+    slidesOffsetAfter: 14,
     navigation: {
       prevEl: forPeace.querySelector('.product-slider__button--prev'),
       nextEl: forPeace.querySelector('.product-slider__button--next'),
@@ -480,6 +486,11 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.for-peace__swiper'
         slidesOffsetAfter: 45,
         spaceBetween: 20,
       },
+      1024: {
+        slidesOffsetBefore: 33,
+        slidesOffsetAfter: 33,
+        spaceBetween: 15,
+      },
     },
   });
 }
@@ -487,18 +498,86 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.for-peace__swiper'
 // ========================================
 // Stamp of Peace — image that follows the cursor over the rows
 // ========================================
+const stampSection = document.querySelector('.stamp');
 const stampRows = document.querySelector('.stamp__rows');
 const stampCursor = document.querySelector('.stamp__cursor');
-if (stampRows && stampCursor) {
+if (stampSection && stampRows && stampCursor) {
+  const rows = Array.from(stampRows.querySelectorAll('.stamp-row'));
+  const mq = window.matchMedia('(max-width: 1024px)');
+
+  // --- desktop: the image follows the cursor over the rows ---
   const moveStampCursor = (e) => {
     stampCursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
   };
-  stampRows.addEventListener('mouseenter', (e) => {
+  const onEnter = (e) => {
     moveStampCursor(e); // place it under the cursor first, then reveal — no jump
     stampCursor.classList.add('is-visible');
-  });
-  stampRows.addEventListener('mouseleave', () => stampCursor.classList.remove('is-visible'));
-  stampRows.addEventListener('mousemove', moveStampCursor);
+  };
+  const onLeave = () => stampCursor.classList.remove('is-visible');
+
+  // --- mobile: rows fill with colour on scroll; image rides the active frontier ---
+  let ticking = false;
+  const updateScroll = () => {
+    ticking = false;
+    const line = window.innerHeight * 0.65; // rows light up as their centre passes this line
+    let frontier = null;
+    rows.forEach((row) => {
+      const rect = row.getBoundingClientRect();
+      const active = rect.top + rect.height / 2 <= line;
+      row.classList.toggle('is-active', active);
+      if (active) frontier = row;
+    });
+    if (frontier) {
+      // park the image on the bottom border of the last lit row, on the side
+      stampCursor.style.top = `${frontier.offsetTop + frontier.offsetHeight}px`;
+      stampCursor.classList.add('is-visible');
+    } else {
+      stampCursor.classList.remove('is-visible');
+    }
+  };
+  const onScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(updateScroll);
+      ticking = true;
+    }
+  };
+
+  const enableDesktop = () => {
+    stampRows.addEventListener('mouseenter', onEnter);
+    stampRows.addEventListener('mouseleave', onLeave);
+    stampRows.addEventListener('mousemove', moveStampCursor);
+  };
+  const disableDesktop = () => {
+    stampRows.removeEventListener('mouseenter', onEnter);
+    stampRows.removeEventListener('mouseleave', onLeave);
+    stampRows.removeEventListener('mousemove', moveStampCursor);
+    stampCursor.style.transform = ''; // hand the transform back to CSS
+    stampCursor.classList.remove('is-visible');
+  };
+  const enableMobile = () => {
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    updateScroll();
+  };
+  const disableMobile = () => {
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('resize', onScroll);
+    rows.forEach((r) => r.classList.remove('is-active'));
+    stampCursor.classList.remove('is-visible');
+    stampCursor.style.top = '';
+  };
+
+  const setMode = (mobile) => {
+    if (mobile) {
+      disableDesktop();
+      enableMobile();
+    } else {
+      disableMobile();
+      enableDesktop();
+    }
+  };
+  setMode(mq.matches);
+  mq.addEventListener('change', (e) => setMode(e.matches));
 }
 
 // ========================================
