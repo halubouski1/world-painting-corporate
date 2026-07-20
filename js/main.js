@@ -160,10 +160,10 @@ if (queensSlider && 'ResizeObserver' in window) {
 if (typeof Swiper !== 'undefined' && document.querySelector('.behind__swiper')) {
   new Swiper('.behind__swiper', {
     slidesPerView: 'auto',
-    spaceBetween: 23,
+    spaceBetween: 19,
     // first/last card aligned to the container edges
-    slidesOffsetBefore: 33,
-    slidesOffsetAfter: 33,
+    slidesOffsetBefore: 14,
+    slidesOffsetAfter: 14,
     navigation: {
       prevEl: '.behind__button--prev',
       nextEl: '.behind__button--next',
@@ -174,6 +174,11 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.behind__swiper')) 
         slidesOffsetBefore: 45,
         slidesOffsetAfter: 45,
         spaceBetween: 30,
+      },
+      1919: {
+        slidesOffsetBefore: 33,
+        slidesOffsetAfter: 33,
+        spaceBetween: 23,
       },
     },
   });

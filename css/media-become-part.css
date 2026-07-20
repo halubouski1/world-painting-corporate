@@ -119,3 +119,169 @@
         font-size: 18px;
     }
 }
+
+@media (max-width: 1024px) {
+    /* hero */
+    .hero {
+        padding-bottom: 40px;
+    }
+
+    .hero__bottom {
+        gap: 30px;
+    }
+
+    .become__intro {
+        align-self: flex-start;
+    }
+
+    .become__title {
+        font-size: 50px;
+    }
+
+    .become__title-part {
+        margin-right: 50px;
+    }
+
+    .become__title-support {
+        margin-right: 77px;
+    }
+
+    /* brand */
+    .brand-card {
+        min-width: 306px;
+    }
+
+    .brand__cards {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 570px) {
+    .hero {
+        padding-bottom: 100px;
+        padding-top: 166px;
+    }
+
+    .become__intro {
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .hero__bottom {
+        height: 100%;
+    }
+
+    .become__tagline {
+        margin: 0;
+        font-size: 14px;
+        line-height: 143%;
+        max-width: 162px;
+    }
+
+    .become__title {
+        display: flex;
+        flex-direction: column;
+        font-size: 100px;
+        line-height: 100%;
+        letter-spacing: -0.03em;
+        font-weight: 300;
+    }
+
+    .become__title-part {
+        margin: 0;
+        font-size: 25px;
+        line-height: 100%;
+        letter-spacing: -0.03em;
+    }
+
+    .become__title-support {
+        margin-right: 6px;
+    }
+
+    .become__title-line {
+        font-size: 25px;
+        line-height: 100%;
+        letter-spacing: -0.03em;
+    }
+
+    .hero__become-button {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* behind */
+    .behind {
+        padding: 45px 0 70px;
+    }
+
+    .behind__top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 60px;
+        margin-bottom: 60px;
+    }
+
+    .behind__title {
+        font-size: 35px;
+        line-height: 100%;
+        max-width: 292px;
+    }
+
+    .behind__nav {
+        align-self: flex-end;
+    }
+
+    .behind-card {
+        width: 271px;
+    } 
+
+    .behind-card__image {
+        margin-bottom: 15px;
+    }
+
+    .behind-card__name {
+        font-size: 20px;
+        line-height: 100%;
+        max-width: 150px;
+    }
+
+    .behind-card__meta {
+        gap: 15px;
+        align-items: flex-end;
+    }
+
+    .behind-card__position {
+        font-size: 12px;
+        max-width: 180px;
+    }
+
+    /* brand */
+    .brand {
+        padding-bottom: 100px;
+    }
+
+    .brand__cards {
+        gap: 16px;
+    }
+
+    .brand-card {
+        min-height: 280px;
+        padding: 15px 15px 55px 15px;
+    }
+
+    .brand-card__logo {
+        height: 64px;
+        width: auto;
+    }
+
+    .brand-card__number {
+        font-size: 12px;
+    }
+
+    .brand-card__name {
+        font-size: 22px;
+        line-height: 136%;
+        padding-top: 34px;
+        padding-left: 7px;
+    }
+}
