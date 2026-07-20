@@ -190,12 +190,13 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.behind__swiper')) 
 if (typeof Swiper !== 'undefined' && document.querySelector('.contact-slider__swiper')) {
   new Swiper('.contact-slider__swiper', {
     slidesPerView: 'auto',
-    spaceBetween: 30,
-    slidesOffsetBefore: 33,
-    slidesOffsetAfter: 33,
+    spaceBetween: 18,
+    slidesOffsetBefore: 14,
+    slidesOffsetAfter: 14,
     navigation: {
       prevEl: '.contact-slider__button--prev',
       nextEl: '.contact-slider__button--next',
+      disabledClass: 'is-disabled',
     },
     breakpoints: {
       1920: {
@@ -203,6 +204,11 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.contact-slider__sw
         slidesOffsetAfter: 45,
         spaceBetween: 40,
       },
+      1024: {
+        slidesOffsetBefore: 33,
+        slidesOffsetAfter: 33,
+        spaceBetween: 30,
+      }
     },
   });
 
@@ -226,16 +232,20 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.contact-slider__sw
 if (typeof Swiper !== 'undefined' && document.querySelector('.contact-big-slider__swiper')) {
   const bigSlider = document.querySelector('.contact-big-slider');
   new Swiper('.contact-big-slider__swiper', {
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 17,
     navigation: {
       prevEl: bigSlider.querySelector('.contact-big-slider__button--prev'),
       nextEl: bigSlider.querySelector('.contact-big-slider__button--next'),
+      disabledClass: 'is-disabled',
     },
     breakpoints: {
       1920: {
         spaceBetween: 23,
       },
+      1024: {
+        slidesPerView: 2,
+      }
     },
   });
 
@@ -243,9 +253,18 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.contact-big-slider
   const navButtons = bigSlider.querySelectorAll('.contact-big-slider__button');
   if ('ResizeObserver' in window && refVideo && navButtons.length) {
     const centerNav = () => {
-      const center = refVideo.offsetHeight / 2;
+      let top;
+      if (window.matchMedia('(max-width: 570px)').matches) {
+        // mobile: drop the arrows onto the title row, bottom-right (like the small slider)
+        const mb = parseFloat(getComputedStyle(refVideo).marginBottom) || 0;
+        const title = bigSlider.querySelector('.contact-cards__title');
+        const titleH = title ? title.offsetHeight : 0;
+        top = refVideo.offsetHeight + mb + titleH / 2;
+      } else {
+        top = refVideo.offsetHeight / 2;
+      }
       navButtons.forEach((btn) => {
-        btn.style.top = `${center}px`;
+        btn.style.top = `${top}px`;
       });
     };
     new ResizeObserver(centerNav).observe(refVideo);
