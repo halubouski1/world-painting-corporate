@@ -104,11 +104,15 @@ if (typeof Swiper !== 'undefined') {
     const swiperEl = slider.querySelector('.voices-slider__swiper');
     if (!swiperEl) return;
     new Swiper(swiperEl, {
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 17,
        breakpoints: {
       1920: {
         spaceBetween: 23,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 17,
       },
     },
       loop: true,
@@ -125,7 +129,7 @@ if (typeof Swiper !== 'undefined') {
 // ========================================
 if (typeof Swiper !== 'undefined' && document.querySelector('.queens-slider__swiper')) {
   new Swiper('.queens-slider__swiper', {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
     navigation: {
@@ -135,6 +139,10 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.queens-slider__swi
     breakpoints: {
       1920: {
         spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 20,
       },
     },
   });
