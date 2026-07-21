@@ -518,6 +518,10 @@
         gap: 56px;
     }
 
+    .voices-card, .artists-card {
+        width: 100%;
+    }
+
     .voices-card--karipbek {
         margin-left: 0px;
     }
