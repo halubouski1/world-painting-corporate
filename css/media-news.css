@@ -189,5 +189,297 @@
    .news-card:nth-child(-n+2) .news-card__media {
       height: 290px;
    }
+}
 
+@media (max-width: 1024px) {
+   .hero {
+      padding-bottom: 40px;
+   }
+
+   .hero__bottom {
+      position: absolute;
+      width: auto;
+   }
+
+   /* --- news: two featured stacked (gap 47) + the rest built into a slider (JS) --- */
+   .news__grid {
+      display: flex;
+      flex-direction: column;
+      gap: 47px;
+   }
+
+   .news-card:nth-child(1),
+   .news-card:nth-child(2) {
+      margin: 0;
+   }
+
+   .news-card:nth-child(-n+2) .news-card__media {
+      height: 500px;
+   }
+
+   /* slider block sits below the featured pair */
+   .news__slider {
+      margin-top: 47px;
+   }
+
+    .news__title {
+      max-width: 257px;
+    }
+
+   /* nav buttons on top, right-aligned */
+   .news__slider-nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 5px;
+      margin-bottom: 17px;
+   }
+
+   /* active: navy button + white arrow; disabled: white button + navy arrow
+      (same states as the other slider buttons — become-part / contact) */
+   .news__slider-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #17415e;
+      border: 1px solid #17415e;
+      transition: background 0.2s ease, border-color 0.2s ease;
+   }
+
+   .news__slider-button img {
+      filter: brightness(0) invert(1);
+   }
+
+   .news__slider-button.is-disabled {
+      background: #fff;
+      border-color: #fff;
+   }
+
+   .news__slider-button.is-disabled img {
+      filter: none;
+   }
+
+   /* full-bleed so the peeking slide runs to the screen edge, not the
+      container padding (first slide is offset back in via JS slidesOffsetBefore) */
+   .news__swiper {
+      margin-left: calc(-1 * var(--container-padding));
+      margin-right: calc(-1 * var(--container-padding));
+      overflow: hidden;
+   }
+
+   /* every slide is the small variant — cancel the featured (nth-child ≤2) styling */
+   .news__swiper .news-card {
+      width: 400px;
+      margin: 0;
+      border-radius: 15px;
+   }
+
+   .news__swiper .news-card__media,
+   .news__swiper .news-card:nth-child(-n+2) .news-card__media {
+      height: 285px;
+   }
+
+   .news__swiper .news-card__image,
+   .news__swiper .news-card:nth-child(-n+2) .news-card__image {
+      position: static;
+      inset: auto;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+
+   .news__swiper .news-card__icon,
+   .news__swiper .news-card:nth-child(-n+2) .news-card__icon {
+      top: 11px;
+      right: 11px;
+   }
+
+   .news__swiper .news-card__title,
+   .news__swiper .news-card:nth-child(-n+2) .news-card__title {
+      margin-top: 15px;
+      font-size: 18px;
+      max-width: 100%;
+   }
+
+   /* newspapers */
+   .newspapers {
+      height: 800px;
+   }
+
+   .newspapers__inner {
+      height: 100%;
+      justify-content: end;
+   }
+
+   .newspapers__bars {
+      display: none;
+   }
+
+   .newspapers__more {
+      display: none;
+   }
+
+   .newspapers__discover {
+      flex-shrink: 0;
+   }
+}
+
+@media (max-width: 570px) {
+   .news {
+      padding: 80px 0 160px;
+   }
+
+   .news__title {
+      font-size: 27px;
+      max-width: 171px;
+   }
+
+   .hero {
+      background-position: center left -320px;
+   }
+
+   .hero__overlay {
+      display: none;
+   }
+
+   /* news */
+   .news__top {
+      gap: 10px;
+      margin-bottom: 35px;
+   }
+
+   .news__filter-label {
+      font-size: 15px;
+   }
+
+   .news__filter {
+      gap: 15px;
+   }
+
+   .news__filter-icon {
+      width: 32px;
+      height: 32px;
+   }
+
+   .news-card:nth-child(-n+2) .news-card__media {
+      height: 270px;
+   }
+
+   .news-card__media {
+      border-radius: 7px;
+   }
+
+   .news-card:nth-child(-n+2) .news-card__title {
+      margin-top: 18px;
+      font-size: 20px;
+      max-width: 274px;
+   }
+
+   .news-card:nth-child(-n+2) .news-card__icon {
+      top: 10px;
+      right: 10px;
+   }
+
+   .news-card__icon {
+      width: 27px;
+      height: 27px;
+   }
+
+   .news-card__icon img {
+      width: 12px;
+      height: 12px;
+   }
+
+   .news-card__date {
+      gap: 9px;
+      bottom: 8px;
+      left: 8px;
+      padding: 5px 13px 5px 5px;
+      border-radius: 22px;
+   }
+
+   .news-card__date-dot {
+      width: 16px;
+      height: 16px;
+   }
+
+   .news__slider-button {
+      width: 35px;
+      height: 35px;
+   }
+
+   .news__slider-button img {
+      width: 8px;
+      height: 8px;
+   }
+
+   .news__swiper .news-card {
+      width: 258px;
+   }
+
+   .news__swiper .news-card__media, .news__swiper .news-card:nth-child(-n+2) .news-card__media {
+      height: 230px;
+   }
+
+   .news__swiper .news-card__title, .news__swiper .news-card:nth-child(-n+2) .news-card__title {
+      margin-top: 11px;
+      font-size: 20px;
+      line-height: 120%;
+      max-width: 230px;
+   }
+
+   .news__pagination {
+      margin-top: 30px;
+      gap: 20px;
+   }
+
+   /* newspapers */
+   .newspapers {
+      height: 772px;
+   }
+
+   .newspapers__inner {
+      padding-bottom: 24px;
+   }
+
+   .newspapers__title {
+      font-size: 35px;
+      line-height: 86%;
+      font-weight: 300;
+   }
+
+   .newspapers__discover {
+      display: none;
+   }
+
+   .newspapers__discover-mob {
+      display: flex;
+      font-size: 18px;
+      font-weight: 300;
+      gap: 7px;
+      justify-content: end;
+      margin-top: 20px;
+      align-items: center;
+   }
+
+   .newspapers__discover-mob img {
+      width: 18px;
+      height: 18px;
+   }
+
+   .newspapers__line-cap {
+      top: 1px;
+   }
+
+   .newspapers__line {
+      margin-left: -14px;
+      width: calc(100% + 14px);
+   }
+
+   /* footer */
+   .footer {
+      margin-top: 25px;
+   }
 }

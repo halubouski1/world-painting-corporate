@@ -51,7 +51,10 @@
     </ul>
 
     <div class="hero__bottom">
-        <img class="news__hero-text" src="assets/icons/news-hero-text.svg" alt="Voices of the World">
+        <picture class="news__hero-text">
+            <source media="(max-width: 570px)" srcset="assets/img/news-hero-mob-text.svg">
+            <img class="news__hero-text" src="assets/icons/news-hero-text.svg" alt="Voices of the World">
+        </picture>
     </div>
 </section>
 
@@ -239,6 +242,10 @@
             <div class="newspapers__line">
                 <span class="newspapers__line-cap"></span>
             </div>
+            <a class="newspapers__discover-mob" href="#">
+                    <span>Discover more</span>
+                    <img src="assets/icons/discover-more.svg" alt="" width="25" height="25">
+                </a>
         </div>
     </div>
 </section>

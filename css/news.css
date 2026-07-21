@@ -297,6 +297,10 @@
     background-repeat: no-repeat;
 }
 
+.newspapers__discover-mob {
+    display: none;
+}
+
 /* foreground content */
 .newspapers__inner {
     position: relative;

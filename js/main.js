@@ -310,11 +310,77 @@ if (newsSection && newsGrid) {
     });
   };
 
+  // --- mobile (<=1024): first two cards stay stacked, the rest become a slider ---
+  const newsMQ = window.matchMedia('(max-width: 1024px)');
+  let newsSwiper = null;
+
+  const clearMobileSlider = () => {
+    if (newsSwiper) { newsSwiper.destroy(true, false); newsSwiper = null; }
+    const existing = newsSection.querySelector('.news__slider');
+    if (existing) existing.remove();
+    // strip Swiper leftovers so the cards render cleanly wherever they land next
+    allCards.forEach((c) => {
+      c.classList.remove('swiper-slide');
+      c.style.width = '';
+      c.style.marginRight = '';
+      c.style.marginLeft = '';
+    });
+  };
+
+  const buildMobileSlider = () => {
+    clearMobileSlider();
+    if (!newsMQ.matches || typeof Swiper === 'undefined') return;
+    const cards = Array.from(newsGrid.children);
+    if (cards.length <= 2) return; // only the featured pair — nothing to slide
+    const rest = cards.slice(2);
+
+    const slider = document.createElement('div');
+    slider.className = 'news__slider';
+    slider.innerHTML =
+      '<div class="news__slider-nav">' +
+        '<button class="news__slider-button news__slider-button--prev" type="button" aria-label="Previous slide">' +
+          '<img src="assets/icons/slider-nav-left.svg" alt="" width="12" height="12">' +
+        '</button>' +
+        '<button class="news__slider-button news__slider-button--next" type="button" aria-label="Next slide">' +
+          '<img src="assets/icons/slider-nav-right.svg" alt="" width="12" height="12">' +
+        '</button>' +
+      '</div>' +
+      '<div class="swiper news__swiper"><div class="swiper-wrapper"></div></div>';
+
+    const swWrapper = slider.querySelector('.swiper-wrapper');
+    rest.forEach((card) => {
+      card.classList.add('swiper-slide');
+      swWrapper.appendChild(card);
+    });
+    newsGrid.after(slider);
+
+    // the swiper is full-bleed (negative margins in CSS); offset the first/last
+    // slide by the container padding so the deck lines up with the cards above
+    const container = newsSection.querySelector('.container');
+    const pad = container ? parseFloat(getComputedStyle(container).paddingLeft) || 0 : 0;
+
+    newsSwiper = new Swiper(slider.querySelector('.news__swiper'), {
+      slidesPerView: 'auto',
+      spaceBetween: 10,
+      slidesOffsetBefore: pad,
+      slidesOffsetAfter: pad,
+      navigation: {
+        prevEl: slider.querySelector('.news__slider-button--prev'),
+        nextEl: slider.querySelector('.news__slider-button--next'),
+        disabledClass: 'is-disabled',
+      },
+    });
+  };
+
   const renderGrid = () => {
     const start = (currentPage - 1) * PAGE_SIZE;
     const pageCards = orderedCards().slice(start, start + PAGE_SIZE);
     newsGrid.replaceChildren(...pageCards);
+    buildMobileSlider();
   };
+
+  // rebuild the layout when crossing the 1024 breakpoint
+  newsMQ.addEventListener('change', () => renderGrid());
 
   const renderPagination = () => {
     if (!newsPagination) return;
