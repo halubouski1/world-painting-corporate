@@ -189,8 +189,13 @@
 }
 
 .voices-slide img {
+    display: block;
     width: 100%;
     height: auto;
+    /* force one ratio for every slide so heights match regardless of the
+       actual file size (some sources are full-size, some are 1×1 placeholders) */
+    aspect-ratio: 904 / 608;
+    object-fit: cover;
     border-radius: 5px;
 }
 
