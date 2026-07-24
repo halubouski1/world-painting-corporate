@@ -124,6 +124,10 @@
     .final-cards__video {
         height: 700px;
     }
+
+    .contact-card__value {
+        font-size: 19px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -156,6 +160,7 @@
 @media (max-width: 570px) {
     .hero {
         padding-bottom: 27px;
+        min-height: 870px;
     }
 
     .contact__cards {
@@ -167,6 +172,7 @@
         max-width: 100%;
         padding: 25px;
         padding-bottom: 32px;
+        min-height: 155px;
     }
 
     .contact__title {
@@ -183,7 +189,7 @@
     }
 
     .contact-card__value {
-        font-size: 26px;
+        font-size: 24px;
         line-height: 104%;
     }
 

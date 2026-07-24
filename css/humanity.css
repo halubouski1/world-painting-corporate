@@ -16,7 +16,7 @@
 .hero__humanity-title {
     font-weight: 500;
     font-size: 60px;
-    line-height: 92%;
+    line-height: 100%;
     letter-spacing: -0.03em;
     background: linear-gradient(123deg, #002944 0%, #4482a9 96.54%);
     background-clip: text;

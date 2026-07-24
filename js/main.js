@@ -884,3 +884,10 @@ if (counterEls.length && typeof countUp !== 'undefined' && countUp.CountUp) {
 
   counterEls.forEach((el) => counterObserver.observe(el));
 }
+
+// ========================================
+// Footer copyright — keep the year current automatically
+// ========================================
+document.querySelectorAll('.footer__copyright').forEach((el) => {
+  el.textContent = `© ${new Date().getFullYear()}`;
+});

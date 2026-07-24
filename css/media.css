@@ -12,8 +12,12 @@
         height: 42px;
     }
 
-    .nav-list__link, .hero__side-nav-link {
+    .hero__side-nav-link {
         font-size: 13px;
+    }
+
+    .nav-list__link {
+        font-size: 17px;
     }
 
     .nav-list {
@@ -561,7 +565,7 @@
 @media (max-width: 1430px) {
     /* header */
     .nav-list__link {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     /* hero */
