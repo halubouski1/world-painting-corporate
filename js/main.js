@@ -570,7 +570,7 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.for-peace__swiper'
 }
 
 // ========================================
-// Stamp of Peace — image that follows the cursor over the rows
+// Stamp of Peace — image rides the scroll frontier (mobile ≤1024 only)
 // ========================================
 const stampSection = document.querySelector('.stamp');
 const stampRows = document.querySelector('.stamp__rows');
@@ -579,17 +579,7 @@ if (stampSection && stampRows && stampCursor) {
   const rows = Array.from(stampRows.querySelectorAll('.stamp-row'));
   const mq = window.matchMedia('(max-width: 1024px)');
 
-  // --- desktop: the image follows the cursor over the rows ---
-  const moveStampCursor = (e) => {
-    stampCursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
-  };
-  const onEnter = (e) => {
-    moveStampCursor(e); // place it under the cursor first, then reveal — no jump
-    stampCursor.classList.add('is-visible');
-  };
-  const onLeave = () => stampCursor.classList.remove('is-visible');
-
-  // --- mobile: rows fill with colour on scroll; image rides the active frontier ---
+  // rows fill with colour on scroll; the image rides the last lit row's border
   let ticking = false;
   const updateScroll = () => {
     ticking = false;
@@ -616,18 +606,6 @@ if (stampSection && stampRows && stampCursor) {
     }
   };
 
-  const enableDesktop = () => {
-    stampRows.addEventListener('mouseenter', onEnter);
-    stampRows.addEventListener('mouseleave', onLeave);
-    stampRows.addEventListener('mousemove', moveStampCursor);
-  };
-  const disableDesktop = () => {
-    stampRows.removeEventListener('mouseenter', onEnter);
-    stampRows.removeEventListener('mouseleave', onLeave);
-    stampRows.removeEventListener('mousemove', moveStampCursor);
-    stampCursor.style.transform = ''; // hand the transform back to CSS
-    stampCursor.classList.remove('is-visible');
-  };
   const enableMobile = () => {
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
@@ -641,15 +619,8 @@ if (stampSection && stampRows && stampCursor) {
     stampCursor.style.top = '';
   };
 
-  const setMode = (mobile) => {
-    if (mobile) {
-      disableDesktop();
-      enableMobile();
-    } else {
-      disableMobile();
-      enableDesktop();
-    }
-  };
+  // the image + scroll-fill only run at ≤1024; desktop has no cursor image
+  const setMode = (mobile) => (mobile ? enableMobile() : disableMobile());
   setMode(mq.matches);
   mq.addEventListener('change', (e) => setMode(e.matches));
 }
@@ -669,6 +640,23 @@ if (beyond) {
 
   let activeIndex = -1;
   let swapTimer = null;
+
+  // reserve the tallest copy's height so the video below never jumps when the
+  // text swaps between descriptions of different line counts (re-run on resize
+  // since wrapping — and the reserved height — changes with width/font-size)
+  const reserveDescHeight = () => {
+    const current = descEl.innerHTML;
+    descEl.style.minHeight = '0px';
+    let maxH = 0;
+    points.forEach((p) => {
+      descEl.innerHTML = p.querySelector('.beyond__point-desc').innerHTML;
+      maxH = Math.max(maxH, descEl.offsetHeight);
+    });
+    descEl.style.minHeight = `${maxH}px`;
+    descEl.innerHTML = current;
+  };
+  reserveDescHeight();
+  window.addEventListener('resize', reserveDescHeight);
 
   // place each star point on the circle perimeter for a given rotation
   const positionPoints = (rot) => {
@@ -754,8 +742,12 @@ if (buyModal) {
     if (lenis) lenis.start();
   };
 
-  document.querySelectorAll('.collectible-card__button').forEach((btn) => {
-    btn.addEventListener('click', openModal);
+  // "Buy now" cards + the footer "Submit a request" link both open the modal
+  document.querySelectorAll('.collectible-card__button, .footer__request').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
   });
   buyModal.querySelectorAll('[data-modal-close]').forEach((el) => {
     el.addEventListener('click', closeModal);

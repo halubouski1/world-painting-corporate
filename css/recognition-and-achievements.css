@@ -227,6 +227,11 @@
     text-align: center;
     color: #17415e;
     transition: opacity 0.35s ease;
+    /* height is reserved for the tallest copy in JS so the video below never
+       jumps; centre the shorter lines within that reserved space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* constant background video (does not change between slides) */
@@ -466,6 +471,7 @@
 
 /* image that follows the cursor */
 .stamp__cursor {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -489,7 +495,6 @@
     flex-direction: column;
     gap: 10px;
     padding: 0 37px 0 0;
-    cursor: none; /* replaced by the stamp image only over the rows */
 }
 
 .stamp-row {

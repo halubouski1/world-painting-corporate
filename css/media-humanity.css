@@ -3,7 +3,7 @@
     /* hero */
     .hero__humanity-title {
         font-size: 45px;
-        max-width: 650px;
+        max-width: 730px;
     }
 
     .hero__scrolldown {
@@ -105,8 +105,8 @@
     }
 
     .history-card__desc {
-        font-size: 12px;
-        max-width: 266px;
+        font-size: 14px;
+        max-width: 310px;
     }
     
     .history-card__badge {

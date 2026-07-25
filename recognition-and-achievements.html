@@ -12,6 +12,7 @@
       <link rel="stylesheet" href="css/media-recognition-and-achievements.css">
       <script>document.documentElement.style.setProperty("--fixed-vh", window.innerHeight + "px");</script>
       <title>World Painting — Recognition and Achievements</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 </head>
 <body>
 
@@ -23,12 +24,12 @@
 
         <nav class="header__nav">
             <ul class="nav-list">
-                <li class="nav-list__item"><a href="#" class="nav-list__link">Faces of Humanity &amp; Influence</a></li>
-                <li class="nav-list__item"><a href="#" class="nav-list__link">Recognition and Achievements</a></li>
-                <li class="nav-list__item"><a href="#" class="nav-list__link">The Coin of Peace</a></li>
-                <li class="nav-list__item"><a href="#" class="nav-list__link">The Collection</a></li>
-                <li class="nav-list__item"><a href="#" class="nav-list__link">Beyond Earth</a></li>
-                <li class="nav-list__item"><a href="#" class="nav-list__link">Contact</a></li>
+                <li class="nav-list__item"><a href="faces-of-humanity.html" class="nav-list__link">Faces of Humanity &amp; Influence</a></li>
+                <li class="nav-list__item"><a href="recognition-and-achievements.html" class="nav-list__link">Recognition and Achievements</a></li>
+                <li class="nav-list__item"><a href="recognition-and-achievements.html#coin-of-peace" class="nav-list__link">The Coin of Peace</a></li>
+                <li class="nav-list__item"><a href="humanity.html" class="nav-list__link">The Collection</a></li>
+                <li class="nav-list__item"><a href="recognition-and-achievements.html#beyond" class="nav-list__link">Beyond Earth</a></li>
+                <li class="nav-list__item"><a href="contact-us.html" class="nav-list__link">Contact</a></li>
             </ul>
         </nav>
 
@@ -103,7 +104,7 @@
     </div>
 </section>
 
-<section class="beyond" data-aos="fade-up">
+<section class="beyond" id="beyond" data-aos="fade-up">
     <div class="beyond__pin">
         <div class="beyond__stage">
             <div class="beyond__wheel">
@@ -117,22 +118,29 @@
                 <span class="beyond__point" data-index="1">
                     <img class="beyond__point-star" src="assets/icons/star.svg" alt="" width="22" height="21">
                     <span class="beyond__point-num">02</span>
-                    <span class="beyond__point-desc">World Painting transcended the boundaries of our planet and became a symbol of humanity not only on Earth, but in space.</span>
+                    <span class="beyond__point-desc">A digital copy of the World Painting was sent
+                    to the International Space Station.</span>
                 </span>
                 <span class="beyond__point" data-index="2">
                     <img class="beyond__point-star" src="assets/icons/star.svg" alt="" width="22" height="21">
                     <span class="beyond__point-num">03</span>
-                    <span class="beyond__point-desc">World Painting transcended the boundaries of our planet and became a symbol of humanity not only on Earth, but in space.</span>
+                    <span class="beyond__point-desc">There, in orbit around the Earth,
+                    it was printed on a mission timeline -
+                    a working document used by astronauts,
+                    becoming part of everyday life aboard the station.
+                    </span>
                 </span>
                 <span class="beyond__point" data-index="3">
                     <img class="beyond__point-star" src="assets/icons/star.svg" alt="" width="22" height="21">
                     <span class="beyond__point-num">04</span>
-                    <span class="beyond__point-desc">World Painting transcended the boundaries of our planet and became a symbol of humanity not only on Earth, but in space.</span>
+                    <span class="beyond__point-desc">The painting was printed by Russian cosmonaut
+                        Anton Shkaplerov, after which a message to all humanity was sent from orbit.</span>
                 </span>
                 <span class="beyond__point" data-index="4">
                     <img class="beyond__point-star" src="assets/icons/star.svg" alt="" width="22" height="21">
                     <span class="beyond__point-num">05</span>
-                    <span class="beyond__point-desc">World Painting transcended the boundaries of our planet and became a symbol of humanity not only on Earth, but in space.</span>
+                    <span class="beyond__point-desc">In that moment, the World Painting gained a new meaning.
+                    It moved beyond Earth and became a symbol of the unity of humanity in the universe.</span>
                 </span>
             </div>
 
@@ -176,7 +184,7 @@
     </div>
 </section>
 
-<section class="peace" data-aos="fade-up">
+<section class="peace" id="coin-of-peace" data-aos="fade-up">
     <div class="container">
         <div class="peace__top">
             <h2 class="peace__title">The Coin of Peace</h2>
@@ -413,10 +421,10 @@
     <div class="footer__head">
         <div class="footer__top">
             <ul class="footer__nav">
-                <li><a href="#" class="footer__nav-link">properties</a></li>
-                <li><a href="#" class="footer__nav-link">services</a></li>
-                <li><a href="#" class="footer__nav-link">contact</a></li>
-                <li><a href="#" class="footer__nav-link">team</a></li>
+                <li><a href="/" class="footer__nav-link">home</a></li>
+                <li><a href="humanity.html" class="footer__nav-link">art collectibles</a></li>
+                <li><a href="faces-of-humanity.html" class="footer__nav-link">faces of humanity</a></li>
+                <li><a href="contact-us.html" class="footer__nav-link">contact</a></li>
             </ul>
 
             <div class="footer__top-wrapper">
@@ -437,11 +445,11 @@
 
     <div class="footer__bottom">
         <div class="footer__contact">
-            <a href="#" class="footer__request">
+            <button type="button" class="footer__request">
                 <span>Submit a request</span>
                 <img src="assets/icons/footer-submit-arrow.svg" alt="" width="15" height="14">
-            </a>
-            <a href="#" class="footer__dev">
+            </button>
+            <a href="https://fernandes-media.com" class="footer__dev" target="_blank" rel="noopener">
                 <img src="assets/icons/dev-logo.svg" alt="Fernandes Media — Website development" width="144" height="58">
             </a>
         </div>
@@ -460,7 +468,7 @@
                     <span class="footer__info-label">phone (WhatsApp)</span>
                     <img class="footer__info-star" src="assets/icons/footer-star-label.svg" alt="" width="19" height="19">
                 </div>
-                <a class="footer__info-value" href="tel:+971509587009">+971 50 958 70 09</a>
+                <a class="footer__info-value" href="https://wa.me/971509587009" target="_blank" rel="noopener">+971 50 958 70 09</a>
             </div>
 
             <div class="footer__info-block">
@@ -468,7 +476,7 @@
                     <span class="footer__info-label">Instagram</span>
                     <img class="footer__info-star" src="assets/icons/footer-star-label.svg" alt="" width="19" height="19">
                 </div>
-                <a class="footer__info-value" href="#">@worldpaintingart</a>
+                <a class="footer__info-value" href="https://instagram.com/worldpaintingart" target="_blank" rel="noopener">@worldpaintingart</a>
             </div>
         </div>
     </div>
@@ -531,6 +539,7 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

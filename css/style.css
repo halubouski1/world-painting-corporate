@@ -1328,7 +1328,7 @@ a.footer__info-value:focus-visible {
 }
 
 .iti__selected-flag {
-    padding: 0;
+    padding: 0 !important;
 }
 
 .modal__form .iti__arrow {
