@@ -891,3 +891,23 @@ if (counterEls.length && typeof countUp !== 'undefined' && countUp.CountUp) {
 document.querySelectorAll('.footer__copyright').forEach((el) => {
   el.textContent = `© ${new Date().getFullYear()}`;
 });
+
+// ========================================
+// Modal file upload — reflect the chosen file name
+// ========================================
+document.querySelectorAll('.modal__file-input').forEach((input) => {
+  input.addEventListener('change', () => {
+    const label = input.closest('.modal__file');
+    if (!label) return;
+    const text = label.querySelector('.modal__file-text');
+    if (input.files && input.files.length) {
+      text.textContent = input.files.length === 1
+        ? input.files[0].name
+        : `${input.files.length} files selected`;
+      label.classList.add('has-file');
+    } else {
+      text.textContent = 'Attach a file';
+      label.classList.remove('has-file');
+    }
+  });
+});

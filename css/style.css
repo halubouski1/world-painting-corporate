@@ -395,7 +395,7 @@ ul {
     max-width: 450px;
     font-weight: 400;
     font-size: 35px;
-    line-height: 100%;
+    line-height: 110%;
     letter-spacing: -0.03em;
     background: linear-gradient(123deg, #002944 0%, #4482a9 96.54%);
     background-clip: text;
@@ -441,6 +441,10 @@ ul {
     line-height: 100%;
     letter-spacing: -0.03em;
     color: #2e2e2e;
+}
+
+.sold {
+    text-decoration: line-through;
 }
 
 .collectible-card__button {
@@ -829,11 +833,7 @@ ul {
     line-height: 100%;
     letter-spacing: -0.03em;
     color: #2e2e2e;
-}
-
-/* buy button only appears in the stacked mobile layout (≤1024) */
-.product-card__button {
-    display: none;
+    margin-bottom: 30px;
 }
 
 /* ==========================================================================
@@ -1173,7 +1173,8 @@ a.footer__info-value:focus-visible {
     justify-content: space-between;
     width: 370px;
     max-width: 370px;
-    padding-top: 190px;
+    padding-top: 100px;
+    gap: 50px;
 }
 
 .modal__title {
@@ -1211,6 +1212,49 @@ a.footer__info-value:focus-visible {
 
 .modal__input::placeholder {
     color: rgba(23, 65, 94, 0.5);
+}
+
+/* file upload — hidden native input + clickable filled row */
+.modal__file {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 65px;
+    padding: 0 30px;
+    border-radius: 2px;
+    letter-spacing: -0.02em;
+    background: #f6f6f6;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    color: rgba(23, 65, 94, 0.5);
+    transition: color 0.2s ease;
+}
+
+.modal__file:hover,
+.modal__file.has-file {
+    color: #17415e;
+}
+
+.modal__file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal__file-icon {
+    flex-shrink: 0;
+}
+
+.modal__file-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .modal__submit {
