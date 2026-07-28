@@ -18,9 +18,9 @@
 
     /* unite */
     .unite {
-        margin-top: 110px;
-        padding-bottom: 150px;
-        background-position: center top 50px;
+        margin-top: 150px;
+        padding-bottom: 400px;
+        background: url(../assets/img/unite-bg.png) center top 50px / 100% auto no-repeat;
     }
 
     .unite__divider {
@@ -52,8 +52,12 @@
         font-size: 13px;
     }
 
+    .unite__card-title {
+        font-size: 30px;
+    }
+
     .unite__card--right {
-        padding-right: 72px;
+        max-width: 310px;
     }
 
     /* history */
@@ -223,6 +227,15 @@
     }
 }
 
+@media (max-width: 1600px) {
+    /* unite */
+    .unite {
+        margin-top: 100px;
+    padding-bottom: 300px;
+    background: url(../assets/img/unite-bg.png) center top 50px / 100% auto no-repeat;
+    }
+}
+
 @media (max-width: 1270px) {
     /* planet */
     .planet__stats {
@@ -236,6 +249,15 @@
     .planet__desc {
         font-size: 22px;
         max-width: 441px;
+    }
+
+    .unite  {
+        padding-bottom: 100px;
+    }
+
+    .unite__cards {
+        padding-left: 75px;
+        padding-right: 0px;
     }
 }
 
@@ -311,7 +333,7 @@
     .unite {
         margin-top: 120px;
         background: url(../assets/img/unite-mob-bg.png) center top 90px / 100% auto no-repeat;
-        padding-bottom: 430px;
+        padding-bottom: 630px;
         background-size: 100% 100%;
     }
 
@@ -319,7 +341,7 @@
         font-size: 30px;
         line-height: 103%;
         max-width: 320px;
-        margin-bottom: 527px;
+        margin-bottom: 450px;
     }
 
     .unite__cards {
@@ -340,8 +362,15 @@
     }
 
     .unite__card--right {
+        padding-top: 0px;
         padding-right: 37px;
         margin-bottom: 335px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .unite__card-title {
+        text-align: center;
     }
 
     /* history */

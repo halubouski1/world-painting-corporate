@@ -570,16 +570,27 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.for-peace__swiper'
 }
 
 // ========================================
-// Stamp of Peace — image rides the scroll frontier (mobile ≤1024 only)
+// Stamp of Peace — image follows the cursor (desktop) / rides scroll (≤1024)
+// runs independently for every .stamp section on the page
 // ========================================
-const stampSection = document.querySelector('.stamp');
-const stampRows = document.querySelector('.stamp__rows');
-const stampCursor = document.querySelector('.stamp__cursor');
-if (stampSection && stampRows && stampCursor) {
+document.querySelectorAll('.stamp').forEach((stampSection) => {
+  const stampRows = stampSection.querySelector('.stamp__rows');
+  const stampCursor = stampSection.querySelector('.stamp__cursor');
+  if (!stampRows || !stampCursor) return;
   const rows = Array.from(stampRows.querySelectorAll('.stamp-row'));
   const mq = window.matchMedia('(max-width: 1024px)');
 
-  // rows fill with colour on scroll; the image rides the last lit row's border
+  // --- desktop: the image follows the cursor over the rows ---
+  const moveStampCursor = (e) => {
+    stampCursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+  };
+  const onEnter = (e) => {
+    moveStampCursor(e); // place it under the cursor first, then reveal — no jump
+    stampCursor.classList.add('is-visible');
+  };
+  const onLeave = () => stampCursor.classList.remove('is-visible');
+
+  // --- mobile: rows fill with colour on scroll; image rides the active frontier ---
   let ticking = false;
   const updateScroll = () => {
     ticking = false;
@@ -606,6 +617,18 @@ if (stampSection && stampRows && stampCursor) {
     }
   };
 
+  const enableDesktop = () => {
+    stampRows.addEventListener('mouseenter', onEnter);
+    stampRows.addEventListener('mouseleave', onLeave);
+    stampRows.addEventListener('mousemove', moveStampCursor);
+  };
+  const disableDesktop = () => {
+    stampRows.removeEventListener('mouseenter', onEnter);
+    stampRows.removeEventListener('mouseleave', onLeave);
+    stampRows.removeEventListener('mousemove', moveStampCursor);
+    stampCursor.style.transform = ''; // hand the transform back to CSS
+    stampCursor.classList.remove('is-visible');
+  };
   const enableMobile = () => {
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
@@ -619,11 +642,18 @@ if (stampSection && stampRows && stampCursor) {
     stampCursor.style.top = '';
   };
 
-  // the image + scroll-fill only run at ≤1024; desktop has no cursor image
-  const setMode = (mobile) => (mobile ? enableMobile() : disableMobile());
+  const setMode = (mobile) => {
+    if (mobile) {
+      disableDesktop();
+      enableMobile();
+    } else {
+      disableMobile();
+      enableDesktop();
+    }
+  };
   setMode(mq.matches);
   mq.addEventListener('change', (e) => setMode(e.matches));
-}
+});
 
 // ========================================
 // Beyond Earth — scroll-driven rotating wheel
@@ -903,3 +933,61 @@ document.querySelectorAll('.modal__file-input').forEach((input) => {
     }
   });
 });
+
+// ========================================
+// Hero painting — magnifying-glass loupe over the hero background (Humanity page)
+// ========================================
+const humanityHero = document.querySelector('.hero__humanity-title')?.closest('.hero');
+if (humanityHero) {
+  const bg = getComputedStyle(humanityHero).backgroundImage;
+  const match = bg && bg.match(/url\(["']?(.*?)["']?\)/);
+  if (match && match[1]) {
+    const ZOOM = 2; // magnification factor
+    const src = match[1];
+    const lens = document.createElement('div');
+    lens.className = 'hero__lens';
+    lens.style.backgroundImage = `url("${src}")`;
+    humanityHero.appendChild(lens);
+
+    // natural size of the painting — needed to mirror the hero's `cover` sizing
+    let iw = 0, ih = 0;
+    const probe = new Image();
+    probe.onload = () => { iw = probe.naturalWidth; ih = probe.naturalHeight; };
+    probe.src = src;
+
+    // the framed painting occupies this fractional region of the source image
+    // (rest of the image is the white gallery / pedestal — no zoom there)
+    const PAINT = { x0: 0.135, x1: 0.868, y0: 0.175, y1: 0.58 };
+
+    const onMove = (e) => {
+      if (!iw || !ih) return;
+      const hr = humanityHero.getBoundingClientRect();
+      const cx = e.clientX - hr.left;
+      const cy = e.clientY - hr.top;
+      // replicate background-size: cover (centred)
+      const s = Math.max(hr.width / iw, hr.height / ih);
+      const dw = iw * s;
+      const dh = ih * s;
+      const ox = (hr.width - dw) / 2; // background offset (centred)
+      const oy = (hr.height - dh) / 2;
+      // only magnify while the cursor is actually over the painting
+      if (
+        cx < ox + PAINT.x0 * dw || cx > ox + PAINT.x1 * dw ||
+        cy < oy + PAINT.y0 * dh || cy > oy + PAINT.y1 * dh
+      ) {
+        lens.classList.remove('is-visible');
+        return;
+      }
+      const L = lens.offsetWidth;
+      lens.style.backgroundSize = `${dw * ZOOM}px ${dh * ZOOM}px`;
+      lens.style.backgroundPosition =
+        `${L / 2 - (cx - ox) * ZOOM}px ${L / 2 - (cy - oy) * ZOOM}px`;
+      lens.style.left = `${cx - L / 2}px`;
+      lens.style.top = `${cy - L / 2}px`;
+      lens.classList.add('is-visible');
+    };
+
+    humanityHero.addEventListener('mousemove', onMove);
+    humanityHero.addEventListener('mouseleave', () => lens.classList.remove('is-visible'));
+  }
+}

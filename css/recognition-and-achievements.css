@@ -574,7 +574,7 @@
    For Peace — intro + full-bleed card slider
    ========================================================================== */
 .for-peace {
-    padding: 110px 0 200px;
+    padding: 50px 0 200px;
     background-size: 1800px 1488px !important;
     background: #ececec url('../assets/img/for-peace-bg.png') top center / 100% auto no-repeat;
 }
@@ -583,6 +583,7 @@
 .for-peace__top {
     display: flex;
     align-items: flex-start;
+    justify-content: flex-end;
     gap: 450px;
 }
 
@@ -630,7 +631,7 @@
 
 /* --- full-bleed card slider --- */
 .for-peace__slider {
-    margin-top: 100px;
+    margin-top: 35px;
 }
 
 /* cards keep their own image height, top-aligned in the row */
