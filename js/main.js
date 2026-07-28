@@ -129,8 +129,8 @@ if (typeof Swiper !== 'undefined') {
 // ========================================
 if (typeof Swiper !== 'undefined' && document.querySelector('.queens-slider__swiper')) {
   new Swiper('.queens-slider__swiper', {
-    slidesPerView: 1,
-    spaceBetween: 20,
+    slidesPerView: 3,
+    spaceBetween: 30,
     loop: true,
     navigation: {
       prevEl: '.queens-slider__button--prev',
@@ -142,6 +142,10 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.queens-slider__swi
       },
       1024: {
         slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1: {
+        slidesPerView: 1,
         spaceBetween: 20,
       },
     },
@@ -252,7 +256,7 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.contact-big-slider
       disabledClass: 'is-disabled',
     },
     breakpoints: {
-      1920: {
+      1921: {
         spaceBetween: 23,
       },
       1024: {

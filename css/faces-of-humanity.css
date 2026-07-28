@@ -119,7 +119,7 @@
 
 .voices__title {
     max-width: 750px;
-    line-height: 95%;
+    line-height: 110%;
 }
 
 /* Scattered wrapper — pulled up to overlap the top row */
@@ -237,7 +237,7 @@
     max-width: 750px;
     margin-left: 105px;
     margin-bottom: 100px;
-    line-height: 92%;
+    line-height: 110%;
 }
 
 /* Group 1: two left cards + one right, space-between */
@@ -405,6 +405,15 @@
     align-items: flex-start;
     justify-content: flex-end;
     gap: 45px;
+    margin-bottom: 250px;
+}
+
+.borders__row-2 {
+    margin-bottom: 100px;
+}
+
+.borders__row-2--left {
+    justify-content: flex-start;
     margin-bottom: 250px;
 }
 

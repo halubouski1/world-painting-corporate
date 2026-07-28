@@ -287,6 +287,10 @@
 
     .borders__row-2 {
         gap: 34px;
+        margin-bottom: 75px;
+    }
+
+    .borders__row-2--left {
         margin-bottom: 190px;
     }
 
@@ -547,6 +551,7 @@
         width: 100%;
         height: 100%; /* fill the 340px slide; object-fit crops instead of stretching */
         object-fit: cover;
+        border-radius: 0px;
     }
 
     /* artists */
