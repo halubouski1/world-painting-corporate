@@ -90,7 +90,7 @@
 .beyond__pin {
     position: sticky;
     top: 0;
-    height: 1240px;
+    height: 1300px;
     overflow: hidden;
 }
 
@@ -347,15 +347,8 @@
     background: #ececec;
 }
 
-.peace__top {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 50px;
-}
-
 .peace__title {
+    margin-bottom: 40px;
     font-weight: 500;
     font-size: 60px;
     letter-spacing: -0.03em;
@@ -363,44 +356,59 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    padding-bottom: 20px; 
 }
 
-/* --- slider: fixed image on the left, sliding cards on the right --- */
-/* full-bleed: out of the container so cards run to the right edge instead of being clipped */
-.peace__slider {
-    display: flex;
-    align-items: stretch;
-    gap: 30px;
-    padding-left: var(--container-padding);
-}
-
-.peace__swiper {
-    padding-right: var(--container-padding);
-}
-
-.peace__static {
-    flex-shrink: 0;
-    width: 767px;
-    height: auto;
-    object-fit: cover;
+/* full-width intro video */
+.peace__video {
+    display: block;
+    width: 100%;
+    height: 900px;
+    margin-bottom: 60px;
     border-radius: 13px;
+    object-fit: cover;
 }
 
-.peace__swiper {
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
+/* bottom row: story text on the left, two coins pushed to the right */
+.peace__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
 }
 
-.peace__swiper .swiper-slide {
-    height: auto; /* stretch every card to the image height */
+.peace__texts {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 400px;
 }
 
-/* --- card --- */
+.peace-left {
+    align-items: center;
+    width: 100%;
+    gap: 60px;
+    display: flex;
+}
+
+.peace__text {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 129%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+.peace__coins {
+    flex-shrink: 0;
+    display: flex;
+    gap: 30px;
+}
+
+/* --- coin card (tags + coin) --- */
 .peace-card {
     box-sizing: border-box;
-    width: 505px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     padding: 26px 26px 36px;
@@ -426,32 +434,165 @@
     white-space: nowrap;
 }
 
-/* coin sits centred both ways; the paragraphs are pushed to the bottom */
 .peace-card__coin {
     align-self: center;
     width: 356px;
+    max-width: 100%;
     height: auto;
-    margin-bottom: auto;
-}
-
-.peace-card__texts {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-left: 20px;
-}
-
-.peace-card__text {
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 118%;
-    letter-spacing: -0.03em;
-    color: #17415e;
-    max-width: 406px;
+    margin-top: auto;
 }
 
 /* ==========================================================================
-   The Stamp of Peace — row list + image cursor
+   The Stamp of Peace — text (left) + white spec card (right)
+   ========================================================================== */
+.postage {
+    padding: 75px 0;
+    background: #ececec;
+}
+
+.postage__container {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.postage__left {
+    max-width: 700px;
+}
+
+.postage__title {
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-size: 60px;
+    letter-spacing: -0.03em;
+    background: linear-gradient(123deg, #002944 0%, #4482a9 96.54%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.postage__texts {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.postage__text {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 138%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+/* right: white card with specs on top + the stamp image */
+.postage__card {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 700px;
+    max-width: 100%;
+    padding: 30px;
+    border-radius: 16px;
+    background: #fff;
+}
+
+.postage__specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.postage__spec {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1px solid rgba(23, 65, 94, 0.12);
+}
+
+.postage__spec-label {
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: -0.03em;
+    color: rgba(23, 65, 94, 0.5);
+}
+
+.postage__spec-value {
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+.postage__stamp {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ==========================================================================
+   Sport and Art for Peace — text (left) + belt image (right)
+   ========================================================================== */
+.belt {
+    padding: 75px 0;
+    background: #ececec;
+}
+
+.belt__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.belt__left {
+    flex-shrink: 0;
+    max-width: 636px;
+}
+
+.belt__title {
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #002944;
+}
+
+.belt__texts {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.belt__text {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 138%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+.belt__media {
+    flex: 1;
+    min-width: 0;
+    max-width: 1000px;
+}
+
+.belt__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+/* ==========================================================================
+   The Stamp of Peace — row list + image cursor (legacy, no longer used)
    ========================================================================== */
 .stamp {
     padding: 75px 0 40px;
@@ -721,4 +862,155 @@
 
 .for-peace-card__text b {
     font-weight: 700;
+}
+
+/* ==========================================================================
+   Contact cards (video)
+   ========================================================================== */
+.contact-cards {
+    padding-top: 0px;
+    padding-bottom: 75px;
+}
+
+.contact-cards__list {
+    display: flex;
+    gap: 23px;
+}
+
+.contact-cards__card {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-cards__video {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.contact-cards__title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+.contact-cards__desc {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 136%;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+/* ==========================================================================
+   Contact slider (video cards, full-bleed)
+   ========================================================================== */
+.contact-slider {
+    padding: 75px 0;
+}
+
+.contact-slider__inner {
+    position: relative;
+}
+
+.contact-slide {
+    width: 427px;
+}
+
+.contact-slide__video {
+    display: block;
+    width: 100%;
+    height: 687px;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+/* nav buttons — `top` set by JS to the video centre (not the whole card) */
+.slider__button {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translateY(-50%);
+    transition: transform 0.25s ease;
+}
+
+.contact-slider__button--prev {
+    left: 60px;
+}
+
+.contact-slider__button--next {
+    right: 60px;
+}
+
+.slider__button--prev:hover {
+    transform: translateY(-50%) translateX(-3px);
+}
+
+.slider__button--next:hover {
+    transform: translateY(-50%) translateX(3px);
+}
+
+/* ==========================================================================
+   Contact big slider (wide video cards, 2 per view, container-aligned)
+   ========================================================================== */
+.contact-big-slider {
+    padding: 75px 0;
+    padding-bottom: 150px;
+}
+
+.contact-big-slider__inner {
+    position: relative;
+}
+
+.contact-big-slide__video {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.contact-big-slider__button--prev {
+    left: 15px;
+}
+
+.contact-big-slider__button--next {
+    right: 15px;
+}
+
+/* ==========================================================================
+   Final cards (portrait video row, 4 up)
+   ========================================================================== */
+.final-cards {
+    padding: 75px 0 200px;
+}
+
+.final-cards__list {
+    display: flex;
+    gap: 40px;
+}
+
+.final-cards__card {
+    flex: 1;
+    min-width: 0;
+}
+
+.final-cards__video {
+    display: block;
+    width: 100%;
+    height: 687px;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border-radius: 5px;
 }

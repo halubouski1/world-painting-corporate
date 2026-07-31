@@ -75,7 +75,7 @@
     }
 
     .beyond__pin {
-        height: 900px;
+        height: 1000px;
     }
 
     /* .world-top */
@@ -123,6 +123,22 @@
         padding: 110px 0 55px;
     }
 
+    .peace__text {
+        font-size: 15px;
+    }
+
+    .peace__texts {
+        max-width: 300px;
+    }
+
+    .peace-left {
+        gap: 20px;
+    }
+
+    .peace__video {
+        height: 700px;
+    }
+
     .peace__title {
         font-size: 45px;
         padding-bottom: 15px;
@@ -142,7 +158,7 @@
 
     .peace-card {
         padding: 20px 20px 27px;
-        width: 378px;
+        width: 300px;
     }
 
     .peace-card__tags {
@@ -166,6 +182,51 @@
     .peace-card__texts {
         gap: 15px;
         padding-left: 10px;
+    }
+
+    /* postage (new Stamp of Peace) */
+    .postage__title {
+        font-size: 45px;
+        margin-bottom: 30px;
+    }
+
+    .postage__text {
+        font-size: 15px;
+    }
+
+    .postage__left {
+        max-width: 620px;
+    }
+
+    .postage__card {
+        width: 560px;
+        padding: 24px;
+    }
+
+    .postage__spec {
+        padding: 12px 14px;
+    }
+
+    .postage__spec-value {
+        font-size: 13px;
+    }
+
+    /* belt (Sport and Art for Peace) */
+    .belt__title {
+        font-size: 45px;
+        margin-bottom: 30px;
+    }
+
+    .belt__text {
+        font-size: 15px;
+    }
+
+    .belt__left {
+        max-width: 530px;
+    }
+
+    .belt__container {
+        gap: 50px;
     }
 
     /* stamp */
@@ -281,6 +342,93 @@
         font-size: 14px;
         max-width: 300px;
     }
+
+    /* .contact-cards  */
+    .contact-cards {
+        padding-top: 0px;
+        padding-bottom: 55px;
+    }
+
+    .contact-cards__list {
+        gap: 17px;
+    }
+
+    .contact-cards__video {
+        margin-bottom: 22px;
+    }
+
+    .contact-cards__title {
+        font-size: 22px;
+        margin-bottom: 7px;
+    }
+
+    .contact-cards__desc {
+        font-size: 13px;
+    }
+
+    /* .contact-slider */
+    .contact-slider {
+        padding: 55px 0;
+    }
+
+    .contact-slide__video {
+        height: 515px;
+        margin-bottom: 22px;
+    }
+
+    .contact-slide {
+        width: 320px;
+    }
+
+    .slider__button {
+        width: 46px;
+        height: 46px;
+    }
+
+    .slider__button img {
+        width: 10px;
+        height: 10px;
+    }
+
+    .contact-slider__button--prev {
+        left: 45px;
+    }
+
+    .contact-slider__button--next {
+        right: 45px;
+    }
+
+    /* .contact-big-slider */
+    .contact-big-slider {
+        padding: 55px 0;
+        padding-bottom: 100px;
+    }
+
+    .contact-big-slider__button--prev {
+        left: 11px;
+    }
+
+    .contact-big-slider__button--next {
+        right: 11px;
+    }
+
+    .contact-big-slide__video {
+        margin-bottom: 22px;
+    }
+
+    /* final-cards  */
+    .final-cards {
+        padding: 55px 0 150px;
+    }    
+
+    .final-cards__list {
+        gap: 30px;
+    }
+
+    .final-cards__video {
+        height: 515px;
+        margin-bottom: 22px;
+    }
 }
 
 @media (max-width: 1430px) {
@@ -315,6 +463,23 @@
     /* .stamp */
     .stamp-row__right {
         gap: 150px;
+    }
+}
+
+@media (max-width: 1370px) {
+    .peace__bottom {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .peace-left {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1270px) {
+    .contact-card__value {
+        font-size: 19px;
     }
 }
 
@@ -391,51 +556,61 @@
         max-width: 329px;
     }
 
-        /* --- peace: slider off → 2 cards / static / 2 cards, stacked --- */
-    .peace .product-slider__nav {
-        display: none;
-    }
-
-    .peace__slider {
+    /* --- peace: text stacks above the two coin cards --- */
+    .peace__bottom {
         flex-direction: column;
-        align-items: stretch;
-        gap: 17px;
-        padding-left: var(--container-padding);
-        padding-right: var(--container-padding);
+        gap: 40px;
     }
 
-    /* flatten the swiper so the 4 cards become siblings of the static image */
-    .peace__swiper,
-    .peace__swiper .swiper-wrapper {
-        display: contents;
+    .peace-left {
+        flex-direction: column;
     }
 
-    .peace__static {
-        order: 2; /* sits between card 2 and card 3 */
-        width: 100%;
-        height: auto;
+    .peace__video {
+        height: 500px;
+    }
+
+    .peace__texts {
+        max-width: 100%;
+    }
+
+    .peace__coins {
+        gap: 20px;
     }
 
     .peace-card {
-        width: 100% !important;
+        flex: 1;
+        min-width: 0;
+        width: auto;
     }
 
-    .peace-card:nth-child(1),
-    .peace-card:nth-child(2) {
-        order: 1; /* above the static image */
+    /* postage → stack: text above the card */
+    .postage__container {
+        flex-direction: column;
+        gap: 40px;
     }
 
-    .peace-card:nth-child(3),
-    .peace-card:nth-child(4) {
-        order: 3; /* below the static image */
-    }
-
-    .peace-card__coin {
-        margin-bottom: 50px;
-    }
-
-    .peace-card__text {
+    .postage__left {
         max-width: 100%;
+    }
+
+    .postage__card {
+        width: 100%;
+    }
+
+    /* belt → stack: text above the image */
+    .belt__container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .belt__left {
+        max-width: 100%;
+    }
+
+    .belt__media {
+        max-width: 100%;
+        width: 100%;
     }
 
     /* stamp */
@@ -525,6 +700,17 @@
     .product-slider__nav {
         display: flex;
     }
+
+    /* .contact-cards */
+    .contact-cards__list {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* final-cards */
+    .final-cards__list {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 570px) {
@@ -610,7 +796,7 @@
     }
 
     .beyond__pin {
-        height: 850px;
+        height: 900px;
     }
 
     /* world-top */
@@ -662,14 +848,16 @@
         line-height: 125%;
     }
 
-    .peace__top {
-        margin-bottom: 30px;
+    /* two coins stack full-width on phones */
+    .peace__coins {
+        flex-direction: column;
+        gap: 17px;
     }
 
     .peace-card {
         border-radius: 7px;
         padding: 20px 20px 44px 16px;
-        min-height: 533px;
+        min-height: auto;
     }
 
     .peace-card__tag {
@@ -697,6 +885,51 @@
         font-size: 13px;
         line-height: 123%;
         max-width: 262px;
+    }
+
+    /* postage (Stamp of Peace) */
+    .postage__title {
+        font-size: 40px;
+        margin-bottom: 24px;
+    }
+
+    .postage__text {
+        font-size: 16px;
+    }
+
+    .postage__card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .postage__specs {
+        gap: 8px;
+    }
+
+    .postage__spec {
+        flex: 1;
+        min-width: 0;
+        padding: 10px 12px;
+    }
+
+    .postage {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    /* belt (Sport and Art for Peace) */
+    .belt__title {
+        font-size: 40px;
+        margin-bottom: 24px;
+    }
+
+    .belt {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .belt__text {
+        font-size: 16px;
     }
 
     /* .stamp */
@@ -763,7 +996,7 @@
     }
 
     .for-peace__nav {
-        margin-top: 73px;
+        margin-top: 0px;
         justify-content: space-between;
     }
 
@@ -816,5 +1049,144 @@
     .for-peace-card__text {
         font-size: 14px;
         line-height: 150%;
+    }
+
+        /* .contact-cards */
+    .contact-cards {
+        padding-top: 45px;
+        padding-bottom: 22px;
+    }
+
+    .contact-cards__video {
+        margin-bottom: 25px;
+        min-height: 272px;
+        object-fit: cover;
+    }
+
+    .contact-cards__title {
+        font-size: 25px;
+        margin-bottom: 8px;
+    }
+
+    .contact-cards__desc {
+        font-size: 14px;
+    }
+
+    .contact-cards__list {
+        gap: 43px;
+    }
+
+    /* .contact-slider */
+    .contact-slider {
+        padding: 22px 0;
+    }
+
+    /* 1 slide per view — card fills the container (offset is 33 each side) */
+    .contact-slide {
+        width: calc(100vw - 28px);
+    }
+
+    /* arrows move to the title row, bottom-right, and stay put (override the JS top) */
+    .contact-slider__button {
+        top: 566px !important; /* video 515 + margin 22 + half of the title row */
+        background: #17415e; /* active */
+        transition: background 0.25s ease;
+    }
+
+    /* active → white arrow; disabled → white button + navy arrow (like become-part) */
+    .contact-slider__button img {
+        filter: brightness(0) invert(1);
+    }
+
+    .contact-slider__button.is-disabled {
+        background: #fff;
+    }
+
+    .contact-slider__button.is-disabled img {
+        filter: none;
+    }
+
+    .contact-slider__button--prev {
+        left: auto;
+        right: 68px;
+    }
+
+    .contact-slider__button--next {
+        right: 16px;
+    }
+
+    .contact-slide__video {
+        margin-bottom: 35px;
+    }
+
+    .contact-slider .contact-cards__title {
+        max-width: 200px;
+    }
+
+    .contact-slider .contact-cards__desc {
+        max-width: 145px;
+    }
+
+    /* .contact-big-slider — active/disabled states (like become-part) */
+    .contact-big-slider__button {
+        background: #17415e; /* active */
+        transition: background 0.25s ease;
+    }
+
+    .contact-big-slider__button img {
+        filter: brightness(0) invert(1); /* white arrow (active) */
+    }
+
+    .contact-big-slider__button.is-disabled {
+        background: #fff;
+    }
+
+    .contact-big-slider__button.is-disabled img {
+        filter: none; /* navy arrow (disabled) */
+    }
+
+    /* same placement as the small slider: bottom-right on the title row
+       (top is set in JS since the big video is height:auto).
+       inner sits inside .container (14px pad), so +2/+54 == the slider's 16/68 */
+    .contact-big-slider__button--prev {
+        left: auto;
+        right: 54px;
+    }
+
+    .contact-big-slider__button--next {
+        right: 2px;
+    }
+
+    .contact-big-slider .contact-cards__title {
+        max-width: 200px;
+    }
+
+    .contact-big-slider .contact-cards__desc {
+        max-width: 145px;
+    }
+
+    .contact-big-slide__video {
+        min-height: 272px;
+        object-fit: cover;
+        margin-bottom: 35px;
+    }
+
+    .contact-big-slider {
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    /* final-cards */
+    .final-cards {
+        padding: 60px 0 70px;
+    }
+
+    .final-cards__video {
+        height: 524px;
+        margin-bottom: 35px;
+    }
+
+    .final-cards__list {
+        gap: 75px;
     }
 }

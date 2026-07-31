@@ -744,13 +744,22 @@ const crossSlider = document.querySelector('.cross-slider');
 if (crossSlider) {
   const track = crossSlider.querySelector('.cross-slider__track');
   const panelCount = track.children.length;
+  const DWELL = 0.35; // scroll fraction each panel holds before it slides on
+  const easeInOut = (x) => (x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2);
   const updateCrossSlider = () => {
     const total = crossSlider.offsetHeight - window.innerHeight;
     const progress = total > 0
       ? Math.min(1, Math.max(0, -crossSlider.getBoundingClientRect().top / total))
       : 0;
+    // map scroll → panel index, but let each panel dwell before it slides on,
+    // so it doesn't start moving the instant you scroll (a pause between slides)
+    const transitions = panelCount - 1;
+    const raw = progress * transitions;
+    const seg = Math.min(transitions - 1, Math.floor(raw));
+    const local = raw - seg; // 0..1 within the current transition
+    const move = local <= DWELL ? 0 : easeInOut((local - DWELL) / (1 - DWELL));
     // slide the track left so the next panel comes in from the right
-    track.style.transform = `translate3d(-${progress * (panelCount - 1) * 100}vw, 0, 0)`;
+    track.style.transform = `translate3d(-${(seg + move) * 100}vw, 0, 0)`;
   };
   updateCrossSlider();
   window.addEventListener('scroll', updateCrossSlider, { passive: true });
@@ -995,3 +1004,18 @@ if (humanityHero) {
     humanityHero.addEventListener('mouseleave', () => lens.classList.remove('is-visible'));
   }
 }
+
+// ========================================
+// Smooth scroll for in-page anchor links (uses Lenis when present)
+// ========================================
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (e) => {
+    const hash = link.getAttribute('href');
+    if (!hash || hash.length < 2) return; // ignore a bare "#"
+    const target = document.querySelector(hash);
+    if (!target) return;
+    e.preventDefault();
+    if (lenis) lenis.scrollTo(target, { offset: -40 });
+    else target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
