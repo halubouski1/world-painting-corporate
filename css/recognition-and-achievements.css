@@ -371,7 +371,7 @@
 /* bottom row: story text on the left, two coins pushed to the right */
 .peace__bottom {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     gap: 60px;
 }
@@ -381,7 +381,7 @@
     display: flex;
     flex-direction: column;
     gap: 28px;
-    max-width: 400px;
+    max-width: 100%;
 }
 
 .peace-left {
@@ -443,43 +443,47 @@
 }
 
 /* ==========================================================================
-   The Stamp of Peace — text (left) + white spec card (right)
+   The Stamp of Peace — text + specs (left) / stamp image (right)
    ========================================================================== */
-.postage {
+.stamp {
     padding: 75px 0;
     background: #ececec;
 }
 
-.postage__container {
+.stamp__container {
     display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    gap: 60px;
+    align-items: stretch;
+    gap: 185px;
 }
 
-.postage__left {
-    max-width: 700px;
+.stamp__left {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 788px;
 }
 
-.postage__title {
+.stamp__title {
     margin-bottom: 40px;
     font-weight: 500;
     font-size: 60px;
+    line-height: 100%;
     letter-spacing: -0.03em;
-    background: linear-gradient(123deg, #002944 0%, #4482a9 96.54%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #002944;
 }
 
-.postage__texts {
+.stamp__title span {
+    color: #4482a9;
+}
+
+.stamp__texts {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 40px;
+    margin-bottom: 100px;
 }
 
-.postage__text {
+.stamp__text {
     font-weight: 500;
     font-size: 18px;
     line-height: 138%;
@@ -487,56 +491,53 @@
     color: #17415e;
 }
 
-/* right: white card with specs on top + the stamp image */
-.postage__card {
-    flex-shrink: 0;
-    box-sizing: border-box;
-    width: 700px;
-    max-width: 100%;
-    padding: 30px;
-    border-radius: 16px;
-    background: #fff;
-}
-
-.postage__specs {
+/* three spec boxes at the bottom of the left column */
+.stamp__specs {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 30px;
+    gap: 26px;
 }
 
-.postage__spec {
+.stamp__spec {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 14px 18px;
-    border-radius: 8px;
-    border: 1px solid rgba(23, 65, 94, 0.12);
+    border-radius: 4px;
+    padding: 15px 22px;
+    background: #fff;
+    min-width: 160px;
 }
 
-.postage__spec-label {
+.stamp__spec-label {
+    margin-bottom: 4px;
     font-weight: 400;
-    font-size: 11px;
+    font-size: 16px;
     letter-spacing: -0.03em;
-    color: rgba(23, 65, 94, 0.5);
+    color: rgba(46, 46, 46, 0.25);
 }
 
-.postage__spec-value {
-    font-weight: 500;
-    font-size: 15px;
+.stamp__spec-value {
+    font-weight: 400;
+    font-size: 20px;
     letter-spacing: -0.03em;
     color: #17415e;
 }
 
-.postage__stamp {
-    display: block;
+/* right: stamp image stretched to the full column height */
+.stamp__media {
+    display: flex;
+    align-items: end;
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    justify-content: end;
+}
+
+.stamp__image {
+    display: block;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
 }
 
 /* ==========================================================================
-   Sport and Art for Peace — text (left) + belt image (right)
+   The World Painting Peace Belt — text (left) / cards + belt image (right)
    ========================================================================== */
 .belt {
     padding: 75px 0;
@@ -546,28 +547,38 @@
 .belt__container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 70px;
+    gap: 110px;
 }
 
+/* left: intro text + a column of the three cards beside it */
 .belt__left {
-    flex-shrink: 0;
-    max-width: 636px;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.belt__intro {
+    flex: 1;
+    min-width: 0;
+    max-width: 800px;
 }
 
 .belt__title {
-    margin-bottom: 40px;
+    margin-bottom: 44px;
     font-weight: 500;
     font-size: 60px;
     line-height: 100%;
     letter-spacing: -0.03em;
     color: #002944;
+    max-width: 600px;
 }
 
 .belt__texts {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 40px;
 }
 
 .belt__text {
@@ -578,137 +589,52 @@
     color: #17415e;
 }
 
+.belt__cards {
+    flex-shrink: 0;
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.belt__card {
+    padding: 16px 18px;
+    border-radius: 8px;
+    background: #fff;
+    min-width: 240px;
+}
+
+.belt__card-label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.03em;
+    color: rgba(46, 46, 46, 0.25);
+}
+
+.belt__card-value {
+    display: block;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -0.03em;
+    color: #17415e;
+}
+
+/* right: belt image at its natural height (no longer stretched full-height) */
 .belt__media {
-    flex: 1;
-    min-width: 0;
-    max-width: 1000px;
+    flex-shrink: 0;
+    width: 860px;
+    max-width: 45%;
+    border-radius: 16px;
+    overflow: hidden;
 }
 
 .belt__image {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 16px;
-}
-
-/* ==========================================================================
-   The Stamp of Peace — row list + image cursor (legacy, no longer used)
-   ========================================================================== */
-.stamp {
-    padding: 75px 0 40px;
-    background: #ececec;
-}
-
-.stamp__title {
-    margin-bottom: 50px;
-    font-weight: 500;
-    font-size: 60px;
-    letter-spacing: -0.03em;
-    background: linear-gradient(91.76deg, #002944 7.42%, #4482a9 67.25%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* image that follows the cursor */
-.stamp__cursor {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    width: 425px;
-    height: auto;
-    border-radius: 10px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-    will-change: transform;
-}
-
-.stamp__cursor.is-visible {
-    opacity: 1;
-}
-
-/* rows container — full-bleed on the left, 37px inset on the right */
-.stamp__rows {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 0 37px 0 0;
-}
-
-.stamp-row {
-    position: relative;
-    box-sizing: border-box;
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    height: 261px;
-    padding: 0 100px 40px 46px;
-    border-radius: 6px;
-    background: #f5f5f5;
-}
-
-.stamp-row__year {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: -0.03em;
-    color: rgba(46, 46, 46, 0.25);
-}
-
-/* description — the only element with disabled/active states */
-.stamp-row__desc {
-    max-width: 750px;
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 100%;
-    letter-spacing: -0.03em;
-    color: rgba(23, 65, 94, 0.25);
-    transition: color 0.3s ease;
-}
-
-.stamp-row:hover .stamp-row__desc {
-    color: #17415e; /* active */
-}
-
-.stamp-row__right {
-    display: flex;
-    align-items: center;
-    gap: 226px;
-}
-
-.stamp-row__tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: -0.03em;
-    color: #17415e;
-    white-space: nowrap;
-}
-
-.stamp-row__square {
-    flex-shrink: 0;
-    width: 12px;
-    height: 12px;
-    border-radius: 2px;
-    background: #17415e;
-}
-
-.stamp-row__brand {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: -0.03em;
-    color: #17415e;
-    white-space: nowrap;
+    object-fit: cover;
 }
 
 /* ==========================================================================
