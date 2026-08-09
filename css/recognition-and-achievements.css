@@ -452,6 +452,7 @@
 
 .stamp__container {
     display: flex;
+    flex-direction: row-reverse;
     align-items: stretch;
     gap: 185px;
 }
@@ -526,7 +527,7 @@
     display: flex;
     align-items: end;
     width: 100%;
-    justify-content: end;
+    justify-content: start;
 }
 
 .stamp__image {
@@ -550,19 +551,17 @@
     gap: 110px;
 }
 
-/* left: intro text + a column of the three cards beside it */
+/* left: intro text on top, three cards in a row below */
 .belt__left {
     flex: 1;
     min-width: 0;
     display: flex;
-    align-items: flex-start;
-    gap: 40px;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .belt__intro {
-    flex: 1;
-    min-width: 0;
-    max-width: 800px;
+    max-width: 792px;
 }
 
 .belt__title {
@@ -572,7 +571,10 @@
     line-height: 100%;
     letter-spacing: -0.03em;
     color: #002944;
-    max-width: 600px;
+}
+
+.belt__title span {
+    color: #4482a9;
 }
 
 .belt__texts {
@@ -590,18 +592,17 @@
 }
 
 .belt__cards {
-    flex-shrink: 0;
-    width: 210px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 25px;
 }
 
 .belt__card {
+    flex: 1;
+    min-width: 180px;
     padding: 16px 18px;
     border-radius: 8px;
     background: #fff;
-    min-width: 240px;
 }
 
 .belt__card-label {
@@ -621,11 +622,16 @@
     color: #17415e;
 }
 
-/* right: belt image at its natural height (no longer stretched full-height) */
+/* right: big belt image on top, three thumbnails in a row below */
+.belt__right {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .belt__media {
-    flex-shrink: 0;
-    width: 860px;
-    max-width: 45%;
     border-radius: 16px;
     overflow: hidden;
 }
@@ -634,6 +640,20 @@
     display: block;
     width: 100%;
     height: auto;
+    object-fit: cover;
+}
+
+.belt__gallery {
+    display: flex;
+    gap: 20px;
+}
+
+.belt__thumb {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
     object-fit: cover;
 }
 
@@ -796,6 +816,10 @@
 .contact-cards {
     padding-top: 0px;
     padding-bottom: 75px;
+}
+
+.contact-cards__video--scale {
+    zoom: 1.06;
 }
 
 .contact-cards__list {

@@ -234,16 +234,16 @@
         max-width: 400px;
     }
 
+    .belt__intro {
+    max-width: 592px;
+    }
+
     .belt__texts {
-        gap: 30px;
+        gap: 20px;
     }
 
     .belt__text {
-        font-size: 15px;
-    }
-
-    .belt__left {
-        max-width: 780px;
+        font-size: 14px;
     }
 
     .belt__card {
@@ -881,6 +881,18 @@
 
     .belt__text {
         font-size: 16px;
+    }
+
+    .belt__thumb {
+        min-width: 150px;
+    }
+
+    .belt__gallery {
+        flex-wrap: wrap;
+    }
+
+    .belt__thumb:first-of-type {
+        order: 1;
     }
 
     .belt__cards {
