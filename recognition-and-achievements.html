@@ -251,7 +251,7 @@
         </div>
 
         <div class="stamp__media">
-            <img class="stamp__image" src="assets/icons/stamp-of-peace.jpg" alt="World Painting postage stamp">
+            <img class="stamp__image" src="assets/img/stamp-of-peace.jpg" alt="World Painting postage stamp">
         </div>
     </div>
 </section>
@@ -503,7 +503,7 @@
 </section> -->
 
 <footer class="footer">
-    <img class="footer__decor" src="assets/img/footer-decor.png" alt="" width="639" height="355">
+    <img class="footer__decor" src="assets/img/footer-decor.png" alt="">
 
     <div class="footer__head">
         <div class="footer__top">
@@ -585,15 +585,16 @@
             <div class="modal__top">
                 <h2 class="modal__title">Every country. One canvas.</h2>
 
-                <div class="modal__form">
+                <form class="modal__form" name="contact" method="POST" data-netlify="true" enctype="multipart/form-data">
+                    <input type="hidden" name="form-name" value="contact">
                     <div class="modal__phone">
-                        <input id="modal-phone" class="modal__input modal__input--phone" type="tel">
+                        <input id="modal-phone" name="phone" class="modal__input modal__input--phone" type="tel">
                         <span class="modal__phone-hint" id="modal-phone-hint">(000)-000-00-00</span>
                     </div>
-                    <input class="modal__input" type="email" placeholder="Enter your Email">
-                    <input class="modal__input" type="text" placeholder="Your message">
+                    <input class="modal__input" name="email" type="email" placeholder="Enter your Email" required>
+                    <input class="modal__input" name="message" type="text" placeholder="Your message" required>
                     <label class="modal__file">
-                        <input type="file" class="modal__file-input" multiple>
+                        <input type="file" name="attachment" class="modal__file-input" multiple>
                         <svg class="modal__file-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#17415E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
                         <span class="modal__file-text">Attach a file</span>
                     </label>
@@ -604,7 +605,7 @@
                             <path d="M6.0013 6.66663L2.66797 9.99996L6.0013 13.3333" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
-                </div>
+                </form>
 
                 <span class="modal__policy">By clicking the button, you agree to the <a href="#">Privacy Policy</a></span>
             </div>

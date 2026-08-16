@@ -383,10 +383,10 @@
     }
 
     .footer__decor {
-        width: 480px;
+        width: 380px;
         height: auto;
         top: 55px;
-        right: 35px;
+        right: 55px;
     }
 
     .footer__top-wrapper {
@@ -1432,10 +1432,10 @@
 
     .footer__decor {
         top: 426px;
-        min-width: 532px;
+        min-width: 400px;
         height: 296px;
         object-fit: cover;
-        left: -170px;
+        left: -46px;
         right: none;
     }
 

@@ -972,36 +972,97 @@ if (humanityHero) {
     // (rest of the image is the white gallery / pedestal — no zoom there)
     const PAINT = { x0: 0.135, x1: 0.868, y0: 0.175, y1: 0.58 };
 
-    const onMove = (e) => {
-      if (!iw || !ih) return;
+    const hideLens = () => lens.classList.remove('is-visible');
+
+    // cover-fit geometry of the background for the current hero size
+    const geom = () => {
       const hr = humanityHero.getBoundingClientRect();
-      const cx = e.clientX - hr.left;
-      const cy = e.clientY - hr.top;
-      // replicate background-size: cover (centred)
       const s = Math.max(hr.width / iw, hr.height / ih);
       const dw = iw * s;
       const dh = ih * s;
-      const ox = (hr.width - dw) / 2; // background offset (centred)
-      const oy = (hr.height - dh) / 2;
-      // only magnify while the cursor is actually over the painting
-      if (
-        cx < ox + PAINT.x0 * dw || cx > ox + PAINT.x1 * dw ||
-        cy < oy + PAINT.y0 * dh || cy > oy + PAINT.y1 * dh
-      ) {
-        lens.classList.remove('is-visible');
-        return;
-      }
+      return { dw, dh, ox: (hr.width - dw) / 2, oy: (hr.height - dh) / 2 };
+    };
+
+    const inPaint = (cx, cy, g) => (
+      cx >= g.ox + PAINT.x0 * g.dw && cx <= g.ox + PAINT.x1 * g.dw &&
+      cy >= g.oy + PAINT.y0 * g.dh && cy <= g.oy + PAINT.y1 * g.dh
+    );
+
+    // place + zoom the lens at (cx, cy) relative to the hero.
+    // gate = true → only while over the painting (mouse); false → anywhere (touch / intro)
+    const showLens = (cx, cy, gate = true) => {
+      if (!iw || !ih) return;
+      const g = geom();
+      if (gate && !inPaint(cx, cy, g)) { hideLens(); return; }
       const L = lens.offsetWidth;
-      lens.style.backgroundSize = `${dw * ZOOM}px ${dh * ZOOM}px`;
+      lens.style.backgroundSize = `${g.dw * ZOOM}px ${g.dh * ZOOM}px`;
       lens.style.backgroundPosition =
-        `${L / 2 - (cx - ox) * ZOOM}px ${L / 2 - (cy - oy) * ZOOM}px`;
+        `${L / 2 - (cx - g.ox) * ZOOM}px ${L / 2 - (cy - g.oy) * ZOOM}px`;
       lens.style.left = `${cx - L / 2}px`;
       lens.style.top = `${cy - L / 2}px`;
       lens.classList.add('is-visible');
     };
 
-    humanityHero.addEventListener('mousemove', onMove);
-    humanityHero.addEventListener('mouseleave', () => lens.classList.remove('is-visible'));
+    // --- desktop: follow the mouse over the painting ---
+    humanityHero.addEventListener('mousemove', (e) => {
+      const hr = humanityHero.getBoundingClientRect();
+      showLens(e.clientX - hr.left, e.clientY - hr.top, true);
+    });
+    humanityHero.addEventListener('mouseleave', hideLens);
+
+    // --- mobile intro: auto-sweep the lens once so users see it's zoomable ---
+    let introRAF = null;
+    const introStop = () => {
+      if (introRAF) { cancelAnimationFrame(introRAF); introRAF = null; hideLens(); }
+    };
+    const runIntro = () => {
+      if (!window.matchMedia('(max-width: 1024px)').matches) return;
+      if (!iw || !ih) { window.setTimeout(runIntro, 200); return; } // wait for the image
+      const g = geom();
+      const x0 = g.ox + PAINT.x0 * g.dw;
+      const x1 = g.ox + PAINT.x1 * g.dw;
+      const ymid = g.oy + ((PAINT.y0 + PAINT.y1) / 2) * g.dh;
+      const DURATION = 2600;
+      const startT = performance.now();
+      const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+      const step = (now) => {
+        const t = Math.min(1, (now - startT) / DURATION);
+        const e = ease(t);
+        showLens(x0 + (x1 - x0) * e, ymid + Math.sin(e * Math.PI * 2) * (g.dh * 0.05), false);
+        if (t < 1) {
+          introRAF = requestAnimationFrame(step);
+        } else {
+          introRAF = null;
+          window.setTimeout(hideLens, 450); // linger, then fade out
+        }
+      };
+      introRAF = requestAnimationFrame(step);
+    };
+    window.setTimeout(runIntro, 900);
+
+    // --- touch: drag the lens across the painting like a real loupe ---
+    let touching = false;
+    const touchXY = (e) => {
+      const t = e.touches[0] || e.changedTouches[0];
+      const hr = humanityHero.getBoundingClientRect();
+      return { x: t.clientX - hr.left, y: t.clientY - hr.top };
+    };
+    humanityHero.addEventListener('touchstart', (e) => {
+      introStop();
+      const p = touchXY(e);
+      // only grab the loupe when the touch starts on the painting — otherwise let the page scroll
+      touching = !!iw && inPaint(p.x, p.y, geom());
+      if (touching) showLens(p.x, p.y, false);
+    }, { passive: true });
+    humanityHero.addEventListener('touchmove', (e) => {
+      if (!touching) return;
+      e.preventDefault(); // keep the page from scrolling while dragging the lens
+      const p = touchXY(e);
+      showLens(p.x, p.y, false);
+    }, { passive: false });
+    const endTouch = () => { touching = false; hideLens(); };
+    humanityHero.addEventListener('touchend', endTouch);
+    humanityHero.addEventListener('touchcancel', endTouch);
   }
 }
 

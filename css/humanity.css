@@ -69,7 +69,7 @@
    ========================================================================== */
 .unite {
     margin-top: 150px;
-    padding-bottom: 400px;
+    padding-bottom: 200px;
     background: url('../assets/img/unite-bg.png') center top 50px / 100% auto no-repeat;
 }
 
@@ -80,7 +80,7 @@
 
 .unite__title {
     max-width: 650px;
-    margin: 0 auto 55px;
+    margin: 0 auto 250px;
     font-weight: 500;
     font-size: 60px;
     line-height: 85%;

@@ -447,7 +447,7 @@
 
 }
 
-@media (max-width: 1370px) {
+@media (max-width: 1270px) {
     .peace__bottom {
         flex-direction: column;
         gap: 40px;
